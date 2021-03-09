@@ -13,7 +13,7 @@ jobs:
           fetch-depth: 1
       - uses: armory-io/spin-trigger-pipeline-action@0.0.1
         with:
-          baseUrl: https://spinnaker.cloud.armory.io
+          baseUrl: https://spinnaker-api.cloud.armory.io
           source: staging-cd
           serviceName: orca
           serviceImage: 2021.03.08.16.59.39.master
