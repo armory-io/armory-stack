@@ -11,7 +11,7 @@ jobs:
       - uses: actions/checkout@v1
         with:
           fetch-depth: 1
-      - uses: actions/spin-trigger-pipeline-action@0.0.1
+      - uses: armory-io/spin-trigger-pipeline-action@0.0.1
         with:
           baseUrl: https://spinnaker.cloud.armory.io
           source: staging-cd
