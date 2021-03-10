@@ -11,16 +11,13 @@ jobs:
       - uses: actions/checkout@v1
         with:
           fetch-depth: 1
-      - name: Trigger Spinnaker pipeline
-        run: |
-          curl -H "Content-Type: application/json" \
-          -d "{\"secret\": \"This webhook allows only known peers\", \"parameters\": { \"serviceName\": \"orca\", \"serviceImage\": \"2021.03.08.16.59.39.master\"} }" \
-          -X POST https://spinnaker.cloud.armory.io/api/v1/webhooks/webhook/staging-cd
-#      - uses: armory-io/spin-trigger-pipeline-action@0.0.1
-#        with:
-#          baseUrl: https://spinnaker.cloud.armory.io/api/v1
-#          source: staging-cd
-#          serviceName: orca
-#          serviceImage: 2021.03.08.16.59.39.master
-#          secret: This webhook allows only known peers
-#        id: trigger
+      - uses: armory-io/spin-trigger-pipeline-action@0.0.2
+        with:
+          baseUrl: https://spinnaker-api.cloud.armory.io:8443/api/v1
+          source: staging-cd
+          serviceName: orca
+          tag: 2021.03.08.17.21.00.master
+          crtFile: ${{ secrets.ARMORY_CLOUD_SPINNAKER_CLIENT_CERTIFICATE }}
+          keyFile: ${{ secrets.ARMORY_CLOUD_SPINNAKER_CLIENT_PRIVATE_KEY }}
+          passphrase: ${{ secrets.ARMORY_CLOUD_SPINNAKER_CLIENT_CERTIFICATE_PASSWORD }}
+        id: trigger
