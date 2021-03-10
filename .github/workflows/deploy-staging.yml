@@ -22,10 +22,10 @@ jobs:
           passphrase: ${{ secrets.ARMORY_CLOUD_SPINNAKER_CLIENT_CERTIFICATE_PASSWORD }}
         id: trigger
       - uses: armory-io/spin-wait-status-action@master
-          with:
-            baseUrl: https://spinnaker-api.cloud.armory.io:8443/api/v1
-            application: stagingcd
-            eventId: ${{ steps.trigger.outputs.eventId }}
-            crtFile: ${{ secrets.ARMORY_CLOUD_SPINNAKER_CLIENT_CERTIFICATE }}
-            keyFile: ${{ secrets.ARMORY_CLOUD_SPINNAKER_CLIENT_PRIVATE_KEY }}
-            passphrase: ${{ secrets.ARMORY_CLOUD_SPINNAKER_CLIENT_CERTIFICATE_PASSWORD }}
+        with:
+          baseUrl: https://spinnaker-api.cloud.armory.io:8443/api/v1
+          application: stagingcd
+          eventId: ${{ steps.trigger.outputs.eventId }}
+          crtFile: ${{ secrets.ARMORY_CLOUD_SPINNAKER_CLIENT_CERTIFICATE }}
+          keyFile: ${{ secrets.ARMORY_CLOUD_SPINNAKER_CLIENT_PRIVATE_KEY }}
+          passphrase: ${{ secrets.ARMORY_CLOUD_SPINNAKER_CLIENT_CERTIFICATE_PASSWORD }}
