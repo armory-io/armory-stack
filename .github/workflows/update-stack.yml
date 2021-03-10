@@ -1,0 +1,38 @@
+name: Update Stack Repo
+
+on:
+  repository_dispatch:
+    types:
+      - UpdateStackRepo
+
+jobs:
+  update_stack_repo:
+    name: Update Stack Repo
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v2
+
+      - name: Create yq Query
+        id: create_yq_query
+        env:
+          SERVICE_NAME: ${{ github.event.client_payload.service.name }}
+          SERVICE_UPDATE: ${{ toJson(github.event.client_payload.service) }}
+        run: |
+          echo "Updating stack repo entry for ${SERVICE_NAME}"
+          echo "Update is:"
+          echo ${SERVICE_UPDATE} | json_pp
+          echo "Current stack is:"
+          cat stack.yml
+
+          SERVICE_QUERY="(.services[] | select(.name == \"$SERVICE_NAME\"))"
+
+          echo ::set-output name=query::"$SERVICE_QUERY = ${SERVICE_UPDATE//$'\n'/}"
+
+      - name: Update Stack File
+        uses: mikefarah/yq@v4.6.1
+        with:
+          cmd: yq eval -i '${{ steps.create_yq_query.outputs.query }}' stack.yml
+      
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v3.8.2

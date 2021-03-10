@@ -1,0 +1,10 @@
+{
+  "event_type": "UpdateStackFile",
+  "client_payload": {
+    "service": {
+      "name": "orca",
+      "commit": "abc123",
+      "version": "12.34.56.78.master"
+    }
+  }
+}
