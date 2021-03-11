@@ -27,7 +27,7 @@ jobs:
 
           SERVICE_QUERY="(.services[] | select(.name == \"$SERVICE_NAME\"))"
 
-          echo ::set-output name=query::"$SERVICE_QUERY = ${SERVICE_UPDATE//$'\n'/}"
+          echo ::set-output name=query::"$SERVICE_QUERY = ${SERVICE_UPDATE//$'\n'/} | sortKeys(..)"
 
       - name: Update Stack File
         uses: mikefarah/yq@v4.6.1
