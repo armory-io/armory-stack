@@ -1,4 +1,6 @@
 services:
   - name: orca
+    commit: 1fbb67b4
+    version: 2021.03.08.17.36.22.master
 
 plugins:
