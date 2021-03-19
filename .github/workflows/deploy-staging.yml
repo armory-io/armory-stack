@@ -11,6 +11,33 @@ jobs:
       - uses: actions/checkout@v1
         with:
           fetch-depth: 1
+      - name: Determine version
+        id: determine_version
+        run: |
+          diff=$(git diff -Gversion stack.yml)
+          if [ -n "$diff" ]; then
+            count=$(echo "$diff" | grep version | wc -l)
+            if [ "$count" -eq "2" ]; then
+              oldV=$(echo "$diff" | { grep '^-' || true; } | tail -n1 | awk '{ print $3}')
+              newV=$(echo "$diff" | { grep '^+' || true; } | tail -n1 | awk '{ print $3}')
+              serviceN=$(echo "$diff" | { grep '^+.*name:' || true; } | tail -n1 | awk '{ print $4}')
+              if [ -n "$serviceN" ]; then
+                echo "##[set-output name=serviceName;]$serviceN"
+              else
+                serviceC=$(echo "$diff" | sed '/^+ /q' | grep '^ .*name:' | tail -n1 | awk '{ print $3}')
+                echo "##[set-output name=serviceName;]$serviceC"
+              fi
+              echo "##[set-output name=tag;]$newV"
+              echo "##[set-output name=hasDiff;]true"
+            fi
+          else
+            echo "##[set-output name=hasDiff;]false"
+          fi
+      - name: verify version
+        run: |
+          echo "Has Diff? ${{ steps.determine_version.outputs.hasDiff }}"
+          echo "Service to change: ${{ steps.determine_version.outputs.serviceName }}"
+          echo "With tag: ${{ steps.determine_version.outputs.tag }}"
       - uses: armory-io/spin-trigger-pipeline-action@master
         with:
           baseUrl: https://spinnaker-api.cloud.armory.io:8443/api/v1
