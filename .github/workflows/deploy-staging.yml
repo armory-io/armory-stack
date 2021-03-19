@@ -35,6 +35,11 @@ jobs:
           echo "Has Diff? ${{ steps.determine_version.outputs.hasDiff }}"
           echo "Service to change: ${{ steps.determine_version.outputs.serviceName }}"
           echo "With tag: ${{ steps.determine_version.outputs.tag }}"
+      - name: check PR info
+        run: |
+          echo "PR title: ${{ github.event.pull_request.title }}"
+          echo "PR body: ${{ github.event.pull_request.body }}"
+          echo "PR body: ${{ github.event.pull_request.payload }}"
       - uses: armory-io/spin-trigger-pipeline-action@master
         id: trigger
         if: steps.determine_version.outputs.hasDiff
