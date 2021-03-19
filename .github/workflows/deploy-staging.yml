@@ -14,7 +14,7 @@ jobs:
       - name: Determine version
         id: determine_version
         run: |
-          diff=$(git diff -Gversion stack.yml)
+          diff=$(git diff origin/master HEAD -Gversion stack.yml)
           if [ -n "$diff" ]; then
             count=$(echo "$diff" | grep version | wc -l)
             if [ "$count" -eq "2" ]; then
@@ -39,16 +39,18 @@ jobs:
           echo "Service to change: ${{ steps.determine_version.outputs.serviceName }}"
           echo "With tag: ${{ steps.determine_version.outputs.tag }}"
       - uses: armory-io/spin-trigger-pipeline-action@master
+        id: trigger
+        if: steps.determine_version.outputs.hasDiff
         with:
           baseUrl: https://spinnaker-api.cloud.armory.io:8443/api/v1
           source: staging-cd
-          serviceName: orca
-          tag: 2021.03.08.17.21.00.master
+          serviceName: ${{ steps.determine_version.outputs.serviceName }}
+          tag: ${{ steps.determine_version.outputs.tag }}
           crtFile: ${{ secrets.ARMORY_CLOUD_SPINNAKER_CLIENT_CERTIFICATE }}
           keyFile: ${{ secrets.ARMORY_CLOUD_SPINNAKER_CLIENT_PRIVATE_KEY }}
           passphrase: ${{ secrets.ARMORY_CLOUD_SPINNAKER_CLIENT_CERTIFICATE_PASSWORD }}
-        id: trigger
       - uses: armory-io/spin-wait-status-action@master
+        if: steps.determine_version.outputs.hasDiff
         with:
           baseUrl: https://spinnaker-api.cloud.armory.io:8443/api/v1
           application: stagingcd
