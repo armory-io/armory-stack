@@ -36,3 +36,6 @@ jobs:
       
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v3.8.2
+        with:
+          body: |
+            name=${{ github.event.client_payload.service.name }} version=${{ github.event.client_payload.service.version }}
