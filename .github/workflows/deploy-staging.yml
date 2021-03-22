@@ -23,14 +23,14 @@ jobs:
           fi
           echo "##[set-output name=serviceName;]${name#*=}"
           echo "##[set-output name=tag;]${version#*=}"
-      - name: verify version
+      - name: log service name & version
         run: |
           echo "Has Diff? ${{ steps.determine_version.outputs.hasDiff }}"
           echo "Service to change: ${{ steps.determine_version.outputs.serviceName }}"
           echo "With tag: ${{ steps.determine_version.outputs.tag }}"
       - uses: armory-io/spin-trigger-pipeline-action@master
         id: trigger
-        if: steps.determine_version.outputs.hasDiff
+        if: steps.determine_version.outputs.hasDiff == 'true'
         with:
           baseUrl: https://spinnaker-api.cloud.armory.io:8443/api/v1
           source: staging-cd
@@ -40,7 +40,7 @@ jobs:
           keyFile: ${{ secrets.ARMORY_CLOUD_SPINNAKER_CLIENT_PRIVATE_KEY }}
           passphrase: ${{ secrets.ARMORY_CLOUD_SPINNAKER_CLIENT_CERTIFICATE_PASSWORD }}
       - uses: armory-io/spin-wait-status-action@master
-        if: steps.determine_version.outputs.hasDiff
+        if: steps.determine_version.outputs.hasDiff == 'true'
         with:
           baseUrl: https://spinnaker-api.cloud.armory.io:8443/api/v1
           application: stagingcd
