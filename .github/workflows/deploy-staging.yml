@@ -14,32 +14,20 @@ jobs:
       - name: Determine version
         id: determine_version
         run: |
+          read -r name version <<< "${{ github.event.pull_request.body }}"
           diff=$(git diff origin/master HEAD -Gversion stack.yml)
-          if [ -n "$diff" ]; then
-            oldV=$(echo "$diff" | { grep '^-' || true; } | tail -n1 | awk '{ print $3}')
-            newV=$(echo "$diff" | { grep '^+' || true; } | tail -n1 | awk '{ print $3}')
-            serviceN=$(echo "$diff" | { grep '^+.*name:' || true; } | tail -n1 | awk '{ print $4}')
-            if [ -n "$serviceN" ]; then
-              echo "##[set-output name=serviceName;]$serviceN"
-            else
-              serviceC=$(echo "$diff" | sed '/^+ /q' | grep '^ .*name:' | tail -n1 | awk '{ print $3}')
-              echo "##[set-output name=serviceName;]$serviceC"
-            fi
-            echo "##[set-output name=tag;]$newV"
-            echo "##[set-output name=hasDiff;]true"
-          else
+          if [ -z "$diff" ]; then
             echo "##[set-output name=hasDiff;]false"
+          else
+            echo "##[set-output name=hasDiff;]true"
           fi
+          echo "##[set-output name=serviceName;]${name#*=}"
+          echo "##[set-output name=tag;]${version#*=}"
       - name: verify version
         run: |
           echo "Has Diff? ${{ steps.determine_version.outputs.hasDiff }}"
           echo "Service to change: ${{ steps.determine_version.outputs.serviceName }}"
           echo "With tag: ${{ steps.determine_version.outputs.tag }}"
-      - name: check PR info
-        run: |
-          echo "PR title: ${{ github.event.pull_request.title }}"
-          echo "PR body: ${{ github.event.pull_request.body }}"
-          echo "PR body: ${{ github.event.pull_request.payload }}"
       - uses: armory-io/spin-trigger-pipeline-action@master
         id: trigger
         if: steps.determine_version.outputs.hasDiff
