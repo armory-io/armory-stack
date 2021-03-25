@@ -32,7 +32,7 @@ jobs:
         id: trigger
         if: steps.determine_version.outputs.hasDiff == 'true'
         with:
-          baseUrl: https://spinnaker-api.cloud.armory.io:8443/api/v1
+          baseUrl: https://spinnaker-staging-api.cloud.armory.io:8443/api/v1
           source: staging-cd
           serviceName: ${{ steps.determine_version.outputs.serviceName }}
           tag: ${{ steps.determine_version.outputs.tag }}
@@ -41,7 +41,7 @@ jobs:
       - uses: armory-io/spin-wait-status-action@master
         if: steps.determine_version.outputs.hasDiff == 'true'
         with:
-          baseUrl: https://spinnaker-api.cloud.armory.io:8443/api/v1
+          baseUrl: https://spinnaker-staging-api.cloud.armory.io:8443/api/v1
           application: stagingcd
           eventId: ${{ steps.trigger.outputs.eventId }}
           crtFile: ${{ secrets.STAGING_CLIENT_CERTIFICATE }}
