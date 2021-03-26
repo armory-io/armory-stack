@@ -46,7 +46,7 @@ jobs:
           eventId: ${{ steps.trigger.outputs.eventId }}
           crtFile: ${{ secrets.STAGING_CLIENT_CERTIFICATE }}
           keyFile: ${{ secrets.STAGING_CLIENT_PRIVATE_KEY }}
-  test_kubernetes_test:
+  test_kubernetes:
     runs-on: ubuntu-18.04 # TODO: SSL client cert is getting rejected on ubuntu-latest.
     needs: deploy
     steps:
