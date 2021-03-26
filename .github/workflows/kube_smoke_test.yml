@@ -1,9 +1,9 @@
-name: OSS Kubernetes Smoke Test
+name: OSS Kubernetes Integration Test
 
 on:
   repository_dispatch:
     types:
-      - RunSmokeTest
+      - RunIntegrationTests
 
 jobs:
   test:
@@ -35,7 +35,7 @@ jobs:
         pip install pipenv
         pipenv install
 
-    - name: Run tests
+    - name: Write Cert & Key
       working-directory: testing/citest
       env:
         CERT: ${{ secrets.ARMORY_CLOUD_STAGING_CLIENT_CERT }}
@@ -43,12 +43,23 @@ jobs:
       run: |
         echo -n ${CERT} | base64 --decode > client.crt
         echo -n ${KEY} | base64 --decode > client.key
-        export CLIENT_CERTIFICATE_PATH=./client.crt 
-        export CLIENT_CERTIFICATE_KEY_PATH=./client.key 
+        echo "CLIENT_CERTIFICATE_PATH=./client.crt" >> $GITHUB_ENV
+        echo "CLIENT_CERTIFICATE_KEY_PATH=./client.key" >> $GITHUB_ENV
 
+    - name: Run Kubernetes Smoke Test
+      working-directory: testing/citest
+      run: |
         pipenv run python tests/kube_v2_smoke_test.py \
           --native_base_url=https://spinnaker-staging-api.cloud.armory.io:8443/api/v1 \
           --spinnaker_kubernetes_v2_account=k8s-v2 \
           --test_user=anonymous \
           --test_namespace=demo
 
+    - name: Run Kubernetes Artifact Test
+      working-directory: testing/citest
+      run: |
+        pipenv run python tests/kube_v2_artifact_test.py \
+          --native_base_url=https://spinnaker-staging-api.cloud.armory.io:8443/api/v1 \
+          --spinnaker_kubernetes_v2_account=k8s-v2 \
+          --test_user=anonymous \
+          --test_namespace=demo
