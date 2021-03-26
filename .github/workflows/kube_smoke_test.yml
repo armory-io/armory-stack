@@ -7,7 +7,7 @@ on:
 
 jobs:
   test:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-18.04
     steps:
     - uses: actions/checkout@v2
       with:
@@ -35,22 +35,18 @@ jobs:
         pip install pipenv
         pipenv install
 
-    - name: Write Client Certificate and Key
-      working-directory: testing/citest
-      env:
-        CERT: ${{ secrets.STAGING_CLIENT_CERTIFICATE }}
-        KEY: ${{ secrets.STAGING_CLIENT_PRIVATE_KEY }}
-      run: |
-        echo $CERT > ./client.crt
-        echo $KEY > ./client.key
-
     - name: Run tests
       working-directory: testing/citest
       env:
-        CLIENT_CERTIFICATE_PATH: ./client.crt
-        CLIENT_CERTIFICATE_KEY_PATH: ./client.key
+        CERT: ${{ secrets.ARMORY_CLOUD_STAGING_CLIENT_CERT }}
+        KEY: ${{ secrets.ARMORY_CLOUD_STAGING_CLIENT_CERT_KEY }}
       run: |
-        pipenv run python tests/kube_v2_smoke_test.py \ 
+        echo -n ${CERT} | base64 --decode > client.crt
+        echo -n ${KEY} | base64 --decode > client.key
+        export CLIENT_CERTIFICATE_PATH=./client.crt 
+        export CLIENT_CERTIFICATE_KEY_PATH=./client.key 
+
+        pipenv run python tests/kube_v2_smoke_test.py \
           --native_base_url=https://spinnaker-staging-api.cloud.armory.io:8443/api/v1 \
           --spinnaker_kubernetes_v2_account=k8s-v2 \
           --test_user=anonymous \
