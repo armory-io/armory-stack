@@ -46,13 +46,6 @@ jobs:
 
     - name: Run tests
       working-directory: testing/citest
-      env:
-        CLIENT_CERTIFICATE_PATH: ./client.crt
-        CLIENT_CERTIFICATE_KEY_PATH: ./client.key
       run: |
-        pipenv run python tests/kube_v2_smoke_test.py \ 
-          --native_base_url=https://spinnaker-staging-api.cloud.armory.io:8443/api/v1 \
-          --spinnaker_kubernetes_v2_account=k8s-v2 \
-          --test_user=anonymous \
-          --test_namespace=demo
+        CLIENT_CERTIFICATE_PATH=./client.crt CLIENT_CERTIFICATE_KEY_PATH=./client.key pipenv run python tests/kube_v2_smoke_test.py --native_base_url=https://spinnaker-staging-api.cloud.armory.io:8443/api/v1 --spinnaker_kubernetes_v2_account=k8s-v2 --test_user=anonymous --test_namespace=demo
 
