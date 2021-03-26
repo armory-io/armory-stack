@@ -48,8 +48,8 @@ If your test takes a `--spinnaker_kubernetes_v2_account` parameter, your test
 
 #### Authentication dependencies
 
-Our fork of Citest has been modified to accept SSL client certificates. Your
-client cert must not require a passphrase.
+Our fork of Citest has been modified to accept SSL client certificates using
+the environment variables listed below. Your client cert must not require a passphrase.
  
 - `CLIENT_CERTIFICATE_PATH` - path to certificate
 - `CLIENT_CERTIFICATE_KEY_PATH` - path to private key
