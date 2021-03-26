@@ -63,3 +63,12 @@ jobs:
           --spinnaker_kubernetes_v2_account=k8s-v2 \
           --test_user=anonymous \
           --test_namespace=demo
+
+    - name: Run Kubernetes Cache Test
+      working-directory: testing/citest
+      run: |
+        pipenv run python tests/kube_v2_cache_test.py \
+          --native_base_url=https://spinnaker-staging-api.cloud.armory.io:8443/api/v1 \
+          --spinnaker_kubernetes_v2_account=k8s-v2 \
+          --test_user=anonymous \
+          --test_namespace=demo
