@@ -1,0 +1,58 @@
+name: OSS Kubernetes Smoke Test
+
+on:
+  repository_dispatch:
+    types:
+      - RunSmokeTest
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        submodules: true
+        repository: armory-io/buildtool
+
+    - name: Install Kubectl
+      uses: azure/setup-kubectl@v1
+
+    - name: Set Kubectl Context
+      uses: azure/k8s-set-context@v1
+      with:
+        # https://console.cloud.google.com/kubernetes/clusters/details/us-central1-c/armory-kube/details?project=cloud-armory
+        kubeconfig: ${{ secrets.ARMORY_KUBE_KUBECONFIG }}
+
+    - name: Install Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.9
+
+    - name: Install dependencies
+      working-directory: testing/citest
+      run: |
+        python -m pip install --upgrade pip
+        pip install pipenv
+        pipenv install
+
+    - name: Write Client Certificate and Key
+      working-directory: testing/citest
+      env:
+        CERT: ${{ secrets.STAGING_CLIENT_CERTIFICATE }}
+        KEY: ${{ secrets.STAGING_CLIENT_PRIVATE_KEY }}
+      run: |
+        echo $CERT > ./client.crt
+        echo $KEY > ./client.key
+
+    - name: Run tests
+      working-directory: testing/citest
+      env:
+        CLIENT_CERTIFICATE_PATH: ./client.crt
+        CLIENT_CERTIFICATE_KEY_PATH: ./client.key
+      run: |
+        pipenv run python tests/kube_v2_smoke_test.py \ 
+          --native_base_url=https://spinnaker-staging-api.cloud.armory.io:8443/api/v1 \
+          --spinnaker_kubernetes_v2_account=k8s-v2 \
+          --test_user=anonymous \
+          --test_namespace=demo
+
