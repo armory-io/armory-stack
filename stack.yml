@@ -1,4 +1,4 @@
+plugins:
 services:
   - name: orca
-
-plugins:
+    version: 2021.03.24.00.52.35.master
