@@ -39,7 +39,7 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           commit-message: "chore(cd): update ${{ github.event.client_payload.service.name }} version to ${{ github.event.client_payload.version }}"
-          branch: ${{ github.event.client_payload.service.name }}_${{ github.event.client_payload.version }}"
+          branch: ${{ github.event.client_payload.service.name }}_${{ github.event.client_payload.service.version }}
           branch-suffix: timestamp
           title: "chore(cd): update ${{ github.event.client_payload.service.name }} version to ${{ github.event.client_payload.service.version }}"
           labels: |
