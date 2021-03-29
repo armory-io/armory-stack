@@ -1,4 +1,3 @@
+plugins:
 services:
   - name: orca
-
-plugins:
