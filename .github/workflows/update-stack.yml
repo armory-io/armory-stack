@@ -46,4 +46,7 @@ jobs:
             autoMerge
             stackUpdate
           body: |
-            name=${{ github.event.client_payload.service.name }} version=${{ github.event.client_payload.service.version }}
+            Event
+            ```
+            ${{ toJson(github.event.client_payload) }}
+            ```
