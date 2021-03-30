@@ -14,15 +14,16 @@ jobs:
       - name: Determine version
         id: determine_version
         run: |
-          read -r name version <<< "${{ github.event.pull_request.body }}"
+          title="${{ github.event.pull_request.title }}"
           diff=$(git diff origin/master HEAD -Gversion stack.yml)
           if [ -z "$diff" ]; then
             echo "##[set-output name=hasDiff;]false"
           else
             echo "##[set-output name=hasDiff;]true"
           fi
-          echo "##[set-output name=serviceName;]${name#*=}"
-          echo "##[set-output name=tag;]${version#*=}"
+          name="${title#*update }"
+          echo "##[set-output name=serviceName;]${name% version*}"
+          echo "##[set-output name=tag;]${title#*to }"
       - name: log service name & version
         run: |
           echo "Has Diff? ${{ steps.determine_version.outputs.hasDiff }}"
