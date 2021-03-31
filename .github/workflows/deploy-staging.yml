@@ -5,7 +5,7 @@ on:
       - master
 
 jobs:
-  main:
+  deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
@@ -14,15 +14,16 @@ jobs:
       - name: Determine version
         id: determine_version
         run: |
-          read -r name version <<< "${{ github.event.pull_request.body }}"
+          title="${{ github.event.pull_request.title }}"
           diff=$(git diff origin/master HEAD -Gversion stack.yml)
           if [ -z "$diff" ]; then
             echo "##[set-output name=hasDiff;]false"
           else
             echo "##[set-output name=hasDiff;]true"
           fi
-          echo "##[set-output name=serviceName;]${name#*=}"
-          echo "##[set-output name=tag;]${version#*=}"
+          name="${title#*update }"
+          echo "##[set-output name=serviceName;]${name% version*}"
+          echo "##[set-output name=tag;]${title#*to }"
       - name: log service name & version
         run: |
           echo "Has Diff? ${{ steps.determine_version.outputs.hasDiff }}"
@@ -46,3 +47,70 @@ jobs:
           eventId: ${{ steps.trigger.outputs.eventId }}
           crtFile: ${{ secrets.STAGING_CLIENT_CERTIFICATE }}
           keyFile: ${{ secrets.STAGING_CLIENT_PRIVATE_KEY }}
+  test_kubernetes:
+    runs-on: ubuntu-18.04 # TODO: SSL client cert is getting rejected on ubuntu-latest.
+    needs: deploy
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        submodules: true
+        repository: armory-io/buildtool
+
+    - name: Install Kubectl
+      uses: azure/setup-kubectl@v1
+
+    - name: Set Kubectl Context
+      uses: azure/k8s-set-context@v1
+      with:
+        # https://console.cloud.google.com/kubernetes/clusters/details/us-central1-c/armory-kube/details?project=cloud-armory
+        kubeconfig: ${{ secrets.ARMORY_KUBE_KUBECONFIG }}
+
+    - name: Install Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.9
+
+    - name: Install dependencies
+      working-directory: testing/citest
+      run: |
+        python -m pip install --upgrade pip
+        pip install pipenv
+        pipenv install
+
+    - name: Write Cert & Key
+      working-directory: testing/citest
+      env:
+        CERT: ${{ secrets.ARMORY_CLOUD_STAGING_CLIENT_CERT }}
+        KEY: ${{ secrets.ARMORY_CLOUD_STAGING_CLIENT_CERT_KEY }}
+      run: |
+        echo -n ${CERT} | base64 --decode > client.crt
+        echo -n ${KEY} | base64 --decode > client.key
+        echo "CLIENT_CERTIFICATE_PATH=./client.crt" >> $GITHUB_ENV
+        echo "CLIENT_CERTIFICATE_KEY_PATH=./client.key" >> $GITHUB_ENV
+
+    - name: Run Kubernetes Smoke Test
+      working-directory: testing/citest
+      run: |
+        pipenv run python tests/kube_v2_smoke_test.py \
+          --native_base_url=https://spinnaker-staging-api.cloud.armory.io:8443/api/v1 \
+          --spinnaker_kubernetes_v2_account=k8s-v2 \
+          --test_user=anonymous \
+          --test_namespace=k8s-v2-integration
+
+    - name: Run Kubernetes Artifact Test
+      working-directory: testing/citest
+      run: |
+        pipenv run python tests/kube_v2_artifact_test.py \
+          --native_base_url=https://spinnaker-staging-api.cloud.armory.io:8443/api/v1 \
+          --spinnaker_kubernetes_v2_account=k8s-v2 \
+          --test_user=anonymous \
+          --test_namespace=k8s-v2-integration
+
+    - name: Run Kubernetes Cache Test
+      working-directory: testing/citest
+      run: |
+        pipenv run python tests/kube_v2_cache_test.py \
+          --native_base_url=https://spinnaker-staging-api.cloud.armory.io:8443/api/v1 \
+          --spinnaker_kubernetes_v2_account=k8s-v2 \
+          --test_user=anonymous \
+          --test_namespace=k8s-v2-integration
