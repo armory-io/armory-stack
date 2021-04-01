@@ -1,4 +1,7 @@
-services:
-  - name: orca
-
 plugins:
+services:
+  - baseService: null
+    commit: null
+    image: null
+    name: orca
+    version: 2021.03.08.20.56.23.master
