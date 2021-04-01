@@ -1,4 +1,7 @@
-services:
-  - name: orca
-
 plugins:
+services:
+  - baseService: orca
+    commit: github:armory-io:orca-armory:63779e9205e3f2f8211a0defc4b9c89064e3e74f
+    image: armory-docker-local.jfrog.io/armory/orca:2021.03.22.18.01.57.master
+    name: orca
+    version: 2021.03.22.18.01.57.master
