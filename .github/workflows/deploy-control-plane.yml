@@ -1,0 +1,67 @@
+name: Deploy Control Plane
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy_control_plane:
+    name: Deploy Control Plane
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v1
+        with:
+          fetch-depth: 1
+
+      - name: Find root PR
+        uses: jwalton/gh-find-current-pr@v1
+        id: findPr
+
+      - name: Echo root PR
+        if: success() && steps.findPr.outputs.number
+        env:
+          PR: ${{ steps.findPr.outputs.pr }}
+          TITLE: ${{ steps.findPr.outputs.title }}
+        run: echo "Root PR number ${PR}, with title ${TITLE}"
+
+      - name: Determine version
+        if: success() && steps.findPr.outputs.number
+        id: determine_version
+        run: |
+          title="${{ steps.findPr.outputs.title }}"
+          name="${title#*update }"
+          echo "##[set-output name=serviceName;]${name% version*}"
+          echo "##[set-output name=tag;]${title#*to }"
+
+      - name: log service name & version
+        run: |
+          echo "Service to change: ${{ steps.determine_version.outputs.serviceName }}"
+          echo "With tag: ${{ steps.determine_version.outputs.tag }}"
+
+      - name: Trigger control plane CD
+        uses: armory-io/spin-trigger-pipeline-action@master
+        if: success() && steps.findPr.outputs.number
+        id: trigger
+        with:
+          baseUrl: https://spinnaker-api.cloud.armory.io:8443/api/v1
+          source: control-plane-cd
+          serviceName: ${{ steps.determine_version.outputs.serviceName }}
+          tag: ${{ steps.determine_version.outputs.tag }}
+          crtFile: ${{ secrets.ARMORY_CLOUD_SPINNAKER_CLIENT_CERTIFICATE }}
+          keyFile: ${{ secrets.ARMORY_CLOUD_SPINNAKER_CLIENT_PRIVATE_KEY }}
+          passphrase: ${{ secrets.ARMORY_CLOUD_SPINNAKER_CLIENT_CERTIFICATE_PASSWORD }}
+          isEncoded: true
+
+      - name: Watch for success execution
+        uses: armory-io/spin-wait-status-action@master
+        if: success() && steps.findPr.outputs.number
+        with:
+          baseUrl: https://spinnaker-api.cloud.armory.io:8443/api/v1
+          application: controlplanecd
+          eventId: ${{ steps.trigger.outputs.eventId }}
+          crtFile: ${{ secrets.STAGING_CLIENT_CERTIFICATE }}
+          keyFile: ${{ secrets.STAGING_CLIENT_PRIVATE_KEY }}
+          passphrase: ${{ secrets.ARMORY_CLOUD_SPINNAKER_CLIENT_CERTIFICATE_PASSWORD }}
+          isEncoded: true
