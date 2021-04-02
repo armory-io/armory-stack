@@ -1,3 +1,4 @@
 services:
   - name: orca-armory
+    version: 2021.03.31.15.35.31.master
   - name: orca
