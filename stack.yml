@@ -1,4 +1,5 @@
 services:
+  - name: orca-armory
   - name: orca
 
 plugins:
