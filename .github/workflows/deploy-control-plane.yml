@@ -23,20 +23,7 @@ jobs:
         if: success() && steps.findPr.outputs.number
         id: get_deploy_info
         run: |
-          eventData=$(echo '${{ steps.findPr.outputs.body }}' | sed '/^{/,/^}/!d')
-          name=$(echo $eventData | jq '.service.name')
-          baseService=$(echo $eventData | jq '.service.details.baseService')
-          image=$(echo $eventData | jq '.service.details.image.repository')
-          tag=$(echo $eventData | jq '.service.details.image.tag')
-          if [ ! -z "$baseService" -a "$baseService" = "null" ]; then
-            echo "No baseService property found, default to name property"
-            echo "##[set-output name=serviceName;]$name"
-          else
-            echo "using baseService property as serviceName"
-            echo "##[set-output name=serviceName;]$baseService"
-          fi
-          echo "##[set-output name=image;]$image"
-          echo "##[set-output name=tag;]$tag"
+          . .github/workflows/get_deploy_info_from_PR_body.sh '${{ steps.findPr.outputs.body }}'
 
       - name: Log Outputs
         run: |
