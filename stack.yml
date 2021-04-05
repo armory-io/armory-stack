@@ -1,4 +1,49 @@
 services:
-  - name: orca-armory
-    version: 2021.03.31.15.35.31.master
-  - name: orca
+  orca0:
+    baseService: orca
+    image:
+      imageId: sha256:dc09b21a10c7fe0578caa3a71c6dc9007383f914e8585f81cbf532156d0eab21
+      repository: armory/orca
+      tag: 2021.03.31.15.35.31.master
+    vcs:
+      repo:
+        orgName: armory-io
+        repoName: orca-armory
+        type: github
+      sha: df8f7146339ca02c8450303bc5d2d93e97a733ab
+  orca-armory:
+    baseService: orca
+    image:
+      imageId: sha256:123
+      repository: armory/orca
+      tag: 2021.03.01.00.00.0.master
+    vcs:
+      repo:
+        orgName: armory-io
+        repoName: orca-armory
+        type: github
+      sha: 123
+  orca:
+    baseService: orca
+    image:
+      imageId: sha256:456
+      repository: armory/orca
+      tag: 2021.03.01.00.00.1.master
+    vcs:
+      repo:
+        orgName: armory-io
+        repoName: orca-armory
+        type: github
+      sha: 456
+  orca2:
+    baseService: orca
+    image:
+      imageId: sha256:dc09b21a10c7fe0578caa3a71c6dc9007383f914e8585f81cbf532156d0eab21
+      repository: armory/orca
+      tag: 2021.03.31.15.35.31.master
+    vcs:
+      repo:
+        orgName: armory-io
+        repoName: orca-armory
+        type: github
+      sha: df8f7146339ca02c8450303bc5d2d93e97a733ab
