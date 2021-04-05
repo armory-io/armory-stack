@@ -19,26 +19,30 @@ jobs:
         uses: jwalton/gh-find-current-pr@v1
         id: findPr
 
-      - name: Echo root PR
+      - name: Get Name Image & Tag From Event Data
         if: success() && steps.findPr.outputs.number
-        env:
-          PR: ${{ steps.findPr.outputs.pr }}
-          TITLE: ${{ steps.findPr.outputs.title }}
-        run: echo "Root PR number ${PR}, with title ${TITLE}"
-
-      - name: Determine version
-        if: success() && steps.findPr.outputs.number
-        id: determine_version
+        id: get_deploy_info
         run: |
-          title="${{ steps.findPr.outputs.title }}"
-          name="${title#*update }"
-          echo "##[set-output name=serviceName;]${name% version*}"
-          echo "##[set-output name=tag;]${title#*to }"
+          eventData=$(echo '${{ steps.findPr.outputs.body }}' | sed '/^{/,/^}/!d')
+          name=$(echo $eventData | jq '.service.name')
+          baseService=$(echo $eventData | jq '.service.details.baseService')
+          image=$(echo $eventData | jq '.service.details.image.repository')
+          tag=$(echo $eventData | jq '.service.details.image.tag')
+          if [ ! -z "$baseService" -a "$baseService" = "null" ]; then
+            echo "No baseService property found, default to name property"
+            echo "##[set-output name=serviceName;]$name"
+          else
+            echo "using baseService property as serviceName"
+            echo "##[set-output name=serviceName;]$baseService"
+          fi
+          echo "##[set-output name=image;]$image"
+          echo "##[set-output name=tag;]$tag"
 
-      - name: log service name & version
+      - name: Log Outputs
         run: |
-          echo "Service to change: ${{ steps.determine_version.outputs.serviceName }}"
-          echo "With tag: ${{ steps.determine_version.outputs.tag }}"
+          echo "Service to Change: ${{ steps.get_deploy_info.outputs.serviceName }}"
+          echo "With Image: ${{ steps.get_deploy_info.outputs.image }}"
+          echo "With Tag: ${{ steps.get_deploy_info.outputs.tag }}"
 
       - name: Trigger control plane CD
         uses: armory-io/spin-trigger-pipeline-action@master
@@ -47,8 +51,9 @@ jobs:
         with:
           baseUrl: https://spinnaker-api.cloud.armory.io:8443/api/v1
           source: control-plane-cd
-          serviceName: ${{ steps.determine_version.outputs.serviceName }}
-          tag: ${{ steps.determine_version.outputs.tag }}
+          serviceName: ${{ steps.get_deploy_info.outputs.serviceName }}
+          image: ${{ steps.get_deploy_info.outputs.image }}
+          tag: ${{ steps.get_deploy_info.outputs.tag }}
           crtFile: ${{ secrets.ARMORY_CLOUD_SPINNAKER_CLIENT_CERTIFICATE }}
           keyFile: ${{ secrets.ARMORY_CLOUD_SPINNAKER_CLIENT_PRIVATE_KEY }}
           passphrase: ${{ secrets.ARMORY_CLOUD_SPINNAKER_CLIENT_CERTIFICATE_PASSWORD }}

@@ -8,47 +8,70 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     outputs:
-      hasDiff: ${{ steps.determine_version.outputs.hasDiff }}
+      hasDiff: ${{ steps.check_diff.outputs.hasDiff }}
     steps:
       - uses: actions/checkout@v1
         with:
           fetch-depth: 1
-      - name: Determine version
-        id: determine_version
+
+      - name: Get Name Image & Tag From Event Data
+        id: get_deploy_info
         run: |
-          title="${{ github.event.pull_request.title }}"
-          diff=$(git diff origin/master HEAD -Gversion stack.yml)
+          eventData=$(echo '${{ github.event.pull_request.body }}' | sed '/^{/,/^}/!d')
+          name=$(echo $eventData | jq '.service.name')
+          baseService=$(echo $eventData | jq '.service.details.baseService')
+          image=$(echo $eventData | jq '.service.details.image.repository')
+          tag=$(echo $eventData | jq '.service.details.image.tag')
+          if [ ! -z "$baseService" -a "$baseService" = "null" ]; then
+            echo "No baseService property found, default to name property"
+            echo "##[set-output name=serviceName;]$name"
+          else
+            echo "using baseService property as serviceName"
+            echo "##[set-output name=serviceName;]$baseService"
+          fi
+          echo "##[set-output name=image;]$image"
+          echo "##[set-output name=tag;]$tag"
+
+      - name: Check Diff In Stack File
+        id: check_diff
+        run: |
+          diff=$(git diff origin/master HEAD stack.yml)
           if [ -z "$diff" ]; then
             echo "##[set-output name=hasDiff;]false"
           else
             echo "##[set-output name=hasDiff;]true"
           fi
-          name="${title#*update }"
-          echo "##[set-output name=serviceName;]${name% version*}"
-          echo "##[set-output name=tag;]${title#*to }"
-      - name: log service name & version
+
+      - name: Log Outputs
         run: |
-          echo "Has Diff? ${{ steps.determine_version.outputs.hasDiff }}"
-          echo "Service to change: ${{ steps.determine_version.outputs.serviceName }}"
-          echo "With tag: ${{ steps.determine_version.outputs.tag }}"
-      - uses: armory-io/spin-trigger-pipeline-action@master
+          echo "Has Diff? ${{ steps.check_diff.outputs.hasDiff }}"
+          echo "Service to Change: ${{ steps.get_deploy_info.outputs.serviceName }}"
+          echo "With Image: ${{ steps.get_deploy_info.outputs.image }}"
+          echo "With Tag: ${{ steps.get_deploy_info.outputs.tag }}"
+
+      - name: Trigger Staging Deploy
+        uses: armory-io/spin-trigger-pipeline-action@master
         id: trigger
-        if: steps.determine_version.outputs.hasDiff == 'true'
+        if: steps.check_diff.outputs.hasDiff == 'true'
         with:
           baseUrl: https://spinnaker-staging-api.cloud.armory.io:8443/api/v1
           source: staging-cd
-          serviceName: ${{ steps.determine_version.outputs.serviceName }}
-          tag: ${{ steps.determine_version.outputs.tag }}
+          serviceName: ${{ steps.get_deploy_info.outputs.serviceName }}
+          image: ${{ steps.get_deploy_info.outputs.image }}
+          tag: ${{ steps.get_deploy_info.outputs.tag }}
           crtFile: ${{ secrets.STAGING_CLIENT_CERTIFICATE }}
           keyFile: ${{ secrets.STAGING_CLIENT_PRIVATE_KEY }}
-      - uses: armory-io/spin-wait-status-action@master
-        if: steps.determine_version.outputs.hasDiff == 'true'
+
+      - name: Watch Staging Deploy Pipeline
+        uses: armory-io/spin-wait-status-action@master
+        if: steps.check_diff.outputs.hasDiff == 'true'
         with:
           baseUrl: https://spinnaker-staging-api.cloud.armory.io:8443/api/v1
           application: stagingcd
           eventId: ${{ steps.trigger.outputs.eventId }}
           crtFile: ${{ secrets.STAGING_CLIENT_CERTIFICATE }}
           keyFile: ${{ secrets.STAGING_CLIENT_PRIVATE_KEY }}
+
   test_kubernetes:
     runs-on: ubuntu-18.04 # TODO: SSL client cert is getting rejected on ubuntu-latest.
     needs: deploy
