@@ -40,10 +40,10 @@ jobs:
         uses: peter-evans/create-pull-request@v3.8.2
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          commit-message: "chore(cd): update ${SERVICE_NAME} version to ${SERVICE_VERSION}"
-          branch: ${SERVICE_NAME}_${SERVICE_VERSION}
+          commit-message: "chore(cd): update ${{ env.SERVICE_NAME}} version to ${{ env.SERVICE_VERSION}}"
+          branch: ${{ env.SERVICE_NAME}}_${{ env.SERVICE_VERSION}}
           branch-suffix: timestamp
-          title: "chore(cd): update ${SERVICE_NAME} version to ${SERVICE_VERSION}"
+          title: "chore(cd): update ${{ env.SERVICE_NAME}} version to ${{ env.SERVICE_VERSION}}"
           labels: |
             autoMerge
             stackUpdate
