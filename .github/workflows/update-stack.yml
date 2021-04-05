@@ -9,6 +9,9 @@ jobs:
   update_stack_repo:
     name: Update Stack Repo
     runs-on: ubuntu-latest
+    env:
+      SERVICE_NAME: ${{ github.event.client_payload.service.name }}
+      SERVICE_VERSION: ${{ github.event.client_payload.service.details.image.tag }}
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v2
@@ -16,8 +19,7 @@ jobs:
       - name: Create yq Query
         id: create_yq_query
         env:
-          SERVICE_NAME: ${{ github.event.client_payload.service.name }}
-          SERVICE_UPDATE: ${{ toJson(github.event.client_payload.service) }}
+          SERVICE_UPDATE: ${{ toJson(github.event.client_payload.service.details) }}
         run: |
           echo "Updating stack repo entry for ${SERVICE_NAME}"
           echo "Update is:"
@@ -25,7 +27,7 @@ jobs:
           echo "Current stack is:"
           cat stack.yml
 
-          SERVICE_QUERY="(.services[] | select(.name == \"$SERVICE_NAME\"))"
+          SERVICE_QUERY="(.services.$SERVICE_NAME)"
 
           echo ::set-output name=query::"$SERVICE_QUERY = ${SERVICE_UPDATE//$'\n'/} | sortKeys(..)"
 
@@ -38,10 +40,10 @@ jobs:
         uses: peter-evans/create-pull-request@v3.8.2
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          commit-message: "chore(cd): update ${{ github.event.client_payload.service.name }} version to ${{ github.event.client_payload.version }}"
-          branch: ${{ github.event.client_payload.service.name }}_${{ github.event.client_payload.service.version }}
+          commit-message: "chore(cd): update ${SERVICE_NAME} version to ${SERVICE_VERSION}"
+          branch: ${SERVICE_NAME}_${SERVICE_VERSION}
           branch-suffix: timestamp
-          title: "chore(cd): update ${{ github.event.client_payload.service.name }} version to ${{ github.event.client_payload.service.version }}"
+          title: "chore(cd): update ${SERVICE_NAME} version to ${SERVICE_VERSION}"
           labels: |
             autoMerge
             stackUpdate
