@@ -14,7 +14,7 @@ services:
   orca:
     baseService: orca
     image:
-      imageId: sha256:456
+      imageId: sha256:4567
       repository: armory/orca
       tag: 2021.03.01.00.00.1.master
     vcs:
