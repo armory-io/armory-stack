@@ -16,7 +16,7 @@ services:
     image:
       imageId: sha256:dc09b21a10c7fe0578caa3a71c6dc9007383f914e8585f81cbf532156d0eab21
       repository: armory/orca
-      tag: 2021.03.31.15.35.31.master
+      tag: 2020.03.31.15.35.31.master
     vcs:
       repo:
         orgName: armory-io
