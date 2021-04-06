@@ -4,7 +4,7 @@ services:
     image:
       imageId: sha256:678
       repository: armory/orca
-      tag: 2021.04.01.00.00.00.master
+      tag: 2021.05.01.00.00.00.master
     vcs:
       repo:
         orgName: armory-io
