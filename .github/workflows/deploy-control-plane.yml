@@ -53,7 +53,7 @@ jobs:
           baseUrl: https://spinnaker-api.cloud.armory.io:8443/api/v1
           application: controlplanecd
           eventId: ${{ steps.trigger.outputs.eventId }}
-          crtFile: ${{ secrets.STAGING_CLIENT_CERTIFICATE }}
-          keyFile: ${{ secrets.STAGING_CLIENT_PRIVATE_KEY }}
+          crtFile: ${{ secrets.ARMORY_CLOUD_SPINNAKER_CLIENT_CERTIFICATE }}
+          keyFile: ${{ secrets.ARMORY_CLOUD_SPINNAKER_CLIENT_PRIVATE_KEY }}
           passphrase: ${{ secrets.ARMORY_CLOUD_SPINNAKER_CLIENT_CERTIFICATE_PASSWORD }}
           isEncoded: true
