@@ -1,4 +1,5 @@
-name: "Deploy RC to Staging"
+name: Deploy RC to Staging
+
 on:
   pull_request:
     branches:
