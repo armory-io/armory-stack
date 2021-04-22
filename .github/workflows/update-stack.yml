@@ -39,7 +39,7 @@ jobs:
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v3.8.2
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.ASTROLABE_GITHUB_TOKEN }}
           commit-message: "chore(cd): update ${{ env.SERVICE_NAME}} version to ${{ env.SERVICE_VERSION}}"
           branch: ${{ env.SERVICE_NAME}}_${{ env.SERVICE_VERSION}}
           branch-suffix: timestamp
