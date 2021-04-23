@@ -18,6 +18,8 @@ jobs:
       - name: Find root PR
         uses: jwalton/gh-find-current-pr@v1
         id: findPr
+        with:
+          github-token: ${{ secrets.ASTROLABE_GITHUB_TOKEN }}
 
       - name: Get Name Image & Tag From Event Data
         if: success() && steps.findPr.outputs.number
