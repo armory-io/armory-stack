@@ -38,9 +38,14 @@ jobs:
           echo "With Image: ${{ steps.get_deploy_info.outputs.image }}"
           echo "With Tag: ${{ steps.get_deploy_info.outputs.tag }}"
 
+      - name: Turnstyle
+        uses: softprops/turnstyle@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.ASTROLABE_GITHUB_TOKEN }}
+
       - name: Trigger Staging Deploy
         uses: armory-io/spin-trigger-pipeline-action@master
-        id: trigger
+        id: trigger_deploy
         if: steps.check_diff.outputs.hasDiff == 'true'
         with:
           baseUrl: https://spinnaker-staging-api.cloud.armory.io:8443/api/v1
@@ -57,7 +62,30 @@ jobs:
         with:
           baseUrl: https://spinnaker-staging-api.cloud.armory.io:8443/api/v1
           application: stagingcd
-          eventId: ${{ steps.trigger.outputs.eventId }}
+          eventId: ${{ steps.trigger_deploy.outputs.eventId }}
+          crtFile: ${{ secrets.STAGING_CLIENT_CERTIFICATE }}
+          keyFile: ${{ secrets.STAGING_CLIENT_PRIVATE_KEY }}
+
+      - name: Trigger Staging Test
+        uses: armory-io/spin-trigger-pipeline-action@master
+        id: trigger_test
+        if: steps.check_diff.outputs.hasDiff == 'true'
+        with:
+          baseUrl: https://spinnaker-staging-api.cloud.armory.io:8443/api/v1
+          source: integration-tests
+          serviceName: ${{ steps.get_deploy_info.outputs.serviceName }}
+          image: ${{ steps.get_deploy_info.outputs.image }}
+          tag: ${{ steps.get_deploy_info.outputs.tag }}
+          crtFile: ${{ secrets.STAGING_CLIENT_CERTIFICATE }}
+          keyFile: ${{ secrets.STAGING_CLIENT_PRIVATE_KEY }}
+
+      - name: Watch Staging Deploy Pipeline
+        uses: armory-io/spin-wait-status-action@master
+        if: steps.check_diff.outputs.hasDiff == 'true'
+        with:
+          baseUrl: https://spinnaker-staging-api.cloud.armory.io:8443/api/v1
+          application: armoryhellodeploy
+          eventId: ${{ steps.trigger_test.outputs.eventId }}
           crtFile: ${{ secrets.STAGING_CLIENT_CERTIFICATE }}
           keyFile: ${{ secrets.STAGING_CLIENT_PRIVATE_KEY }}
 
