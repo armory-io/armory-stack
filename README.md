@@ -1,16 +1,24 @@
 # Armory Stack
- The stack.yml file describes all the services & plugins version stable
- for the Armory Platform.
+ The `stack.yml` file in this repo describes a set of stable services & plugins
+in the Armory Platform.
  
- Master branch will contains the latest version for each tested service.
- in the Armory platform.
+The `master` branch contains the latest version for each tested service.
+
+## LTS releases
+
+LTS releases haven't been implemented (yet), but this is our plan:
+
+An LTS release is implemented with branches and tags. 
+When we're ready to make an LTS release named `2021-9`, we'll make a branch in this repo with that name. 
+There can be updates to this repo along that branch. When we're ready to make a release we'll make a tag on that branch.
+When we need to patch the release, there will be updates to OSS and Armory services, then commits to release branch, and then we'll make a new tag on the branch.
 
 ## Integration tests
 
 Some of the integration tests come from the Google integration test suite. We
 have a [fork of that test suite](https://github.com/armory-io/buildtool) and
 a lightly altered fork of [Citest](https://github.com/armory-io/citest), 
-Google's Spinnaker integration test runner. The two repos have mostly untouched
+Google's Spinnaker integration test runner. The two repos are mostly untouched
 except for some build improvements and the ability to include an SSL client
 certificate.
 
