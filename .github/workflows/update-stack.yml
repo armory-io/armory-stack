@@ -12,6 +12,8 @@ jobs:
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v2
+        with:
+          ref: ${{ github.event.client_payload.branch }}
 
       - name: Create yq Query
         id: create_yq_query
