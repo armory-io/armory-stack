@@ -1,4 +1,16 @@
 services:
+  clouddriver-armory:
+    baseService: clouddriver
+    image:
+      imageId: sha256:c0355edd006494507adb3c5d39a208052b3d1ec578bc0f80963b12d6e1948b42
+      repository: armory/clouddriver-armory
+      tag: 2021.05.21.17.38.39.master
+    vcs:
+      repo:
+        orgName: armory-io
+        repoName: clouddriver-armory
+        type: github
+      sha: fdd673416cab6c29051c39fecb31a5edeba58f48
   orca-armory:
     baseService: orca
     image:
