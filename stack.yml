@@ -1,4 +1,16 @@
 services:
+  fiat-armory:
+    baseService: fiat
+    image:
+      imageId: sha256:9321cd3bd658a019ca56634712e332584f67b12de34d315046eedd5f68ca8069
+      repository: armory/fiat-armory
+      tag: 2021.05.25.14.18.29.master
+    vcs:
+      repo:
+        orgName: armory-io
+        repoName: fiat-armory
+        type: github
+      sha: 243a54f745e00435f302dd216e3bd3b72bc93779
   orca-armory:
     baseService: orca
     image:
