@@ -1,4 +1,16 @@
 services:
+  igor-armory:
+    baseService: igor
+    image:
+      imageId: sha256:810af75d04fee1d395e025c40cdd02691ba26d7ab2d929d4735fc3e366064537
+      repository: armory/igor-armory
+      tag: 2021.05.21.17.41.40.master
+    vcs:
+      repo:
+        orgName: armory-io
+        repoName: igor-armory
+        type: github
+      sha: 3f5dab2837cb0996776ffa61d45af2ad21eac3cb
   fiat-armory:
     baseService: fiat
     image:
