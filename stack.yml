@@ -11,15 +11,27 @@ services:
         repoName: igor-armory
         type: github
       sha: 3f5dab2837cb0996776ffa61d45af2ad21eac3cb
+  fiat-armory:
+    baseService: fiat
+    image:
+      imageId: sha256:9321cd3bd658a019ca56634712e332584f67b12de34d315046eedd5f68ca8069
+      repository: armory/fiat-armory
+      tag: 2021.05.25.14.18.29.master
+    vcs:
+      repo:
+        orgName: armory-io
+        repoName: fiat-armory
+        type: github
+      sha: 243a54f745e00435f302dd216e3bd3b72bc93779
   orca-armory:
     baseService: orca
     image:
-      imageId: sha256:2bd85d398d7915788af703ab186b62f6d22613b097bd06c8003582bda9c1a403
+      imageId: sha256:0978cf79e57c7aa4bd6b00665a6c140d858e50d7f983dee1f4a25cfec8255bf8
       repository: armory/orca-armory
-      tag: 2021.05.13.19.36.47.master
+      tag: 2021.05.25.13.29.47.master
     vcs:
       repo:
         orgName: armory-io
         repoName: orca-armory
         type: github
-      sha: 0b588c58836654dc532b100183591df8c34b0494
+      sha: d1ff6284cdf7f5d15e5c592a25aa64fadc8904d4
