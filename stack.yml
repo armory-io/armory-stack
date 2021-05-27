@@ -11,30 +11,18 @@ services:
         repoName: clouddriver-armory
         type: github
       sha: fdd673416cab6c29051c39fecb31a5edeba58f48
-  kayenta-armory:
-    baseService: kayenta
+  echo-armory:
+    baseService: echo
     image:
-      imageId: sha256:7c4b011c9197e33d94a824a0bec96b8d9592562469f617e29a2ea9f34d7ad853
-      repository: armory/kayenta-armory
-      tag: 2021.05.25.19.19.39.master
+      imageId: sha256:921dae5b08cbf223a889774d0de6102b7c61b256ff6e40040d2f5a253861ba62
+      repository: armory/echo-armory
+      tag: 2021.05.27.21.30.28.master
     vcs:
       repo:
         orgName: armory-io
-        repoName: kayenta-armory
+        repoName: echo-armory
         type: github
-      sha: a9c1d485273eea0f2fee2493d533275cde9e0835
-  igor-armory:
-    baseService: igor
-    image:
-      imageId: sha256:810af75d04fee1d395e025c40cdd02691ba26d7ab2d929d4735fc3e366064537
-      repository: armory/igor-armory
-      tag: 2021.05.21.17.41.40.master
-    vcs:
-      repo:
-        orgName: armory-io
-        repoName: igor-armory
-        type: github
-      sha: 3f5dab2837cb0996776ffa61d45af2ad21eac3cb
+      sha: d7435c48f1b09df104e5718bc1c692a206950f65
   fiat-armory:
     baseService: fiat
     image:
@@ -47,6 +35,30 @@ services:
         repoName: fiat-armory
         type: github
       sha: 243a54f745e00435f302dd216e3bd3b72bc93779
+  igor-armory:
+    baseService: igor
+    image:
+      imageId: sha256:810af75d04fee1d395e025c40cdd02691ba26d7ab2d929d4735fc3e366064537
+      repository: armory/igor-armory
+      tag: 2021.05.21.17.41.40.master
+    vcs:
+      repo:
+        orgName: armory-io
+        repoName: igor-armory
+        type: github
+      sha: 3f5dab2837cb0996776ffa61d45af2ad21eac3cb
+  kayenta-armory:
+    baseService: kayenta
+    image:
+      imageId: sha256:7c4b011c9197e33d94a824a0bec96b8d9592562469f617e29a2ea9f34d7ad853
+      repository: armory/kayenta-armory
+      tag: 2021.05.25.19.19.39.master
+    vcs:
+      repo:
+        orgName: armory-io
+        repoName: kayenta-armory
+        type: github
+      sha: a9c1d485273eea0f2fee2493d533275cde9e0835
   orca-armory:
     baseService: orca
     image:
