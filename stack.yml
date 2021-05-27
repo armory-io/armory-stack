@@ -2,39 +2,15 @@ services:
   clouddriver-armory:
     baseService: clouddriver
     image:
-      imageId: sha256:c0355edd006494507adb3c5d39a208052b3d1ec578bc0f80963b12d6e1948b42
+      imageId: sha256:974b9c92b6e23b2a181074c7f8dc3be01124bc036a049fd2e2a991ad8d1d9e3d
       repository: armory/clouddriver-armory
-      tag: 2021.05.21.17.38.39.master
+      tag: 2021.05.27.21.44.31.master
     vcs:
       repo:
         orgName: armory-io
         repoName: clouddriver-armory
         type: github
-      sha: fdd673416cab6c29051c39fecb31a5edeba58f48
-  kayenta-armory:
-    baseService: kayenta
-    image:
-      imageId: sha256:7c4b011c9197e33d94a824a0bec96b8d9592562469f617e29a2ea9f34d7ad853
-      repository: armory/kayenta-armory
-      tag: 2021.05.25.19.19.39.master
-    vcs:
-      repo:
-        orgName: armory-io
-        repoName: kayenta-armory
-        type: github
-      sha: a9c1d485273eea0f2fee2493d533275cde9e0835
-  igor-armory:
-    baseService: igor
-    image:
-      imageId: sha256:810af75d04fee1d395e025c40cdd02691ba26d7ab2d929d4735fc3e366064537
-      repository: armory/igor-armory
-      tag: 2021.05.21.17.41.40.master
-    vcs:
-      repo:
-        orgName: armory-io
-        repoName: igor-armory
-        type: github
-      sha: 3f5dab2837cb0996776ffa61d45af2ad21eac3cb
+      sha: da4d922402fc058ea37cad0ee042bc4def0b1cd6
   fiat-armory:
     baseService: fiat
     image:
@@ -47,6 +23,30 @@ services:
         repoName: fiat-armory
         type: github
       sha: 243a54f745e00435f302dd216e3bd3b72bc93779
+  igor-armory:
+    baseService: igor
+    image:
+      imageId: sha256:810af75d04fee1d395e025c40cdd02691ba26d7ab2d929d4735fc3e366064537
+      repository: armory/igor-armory
+      tag: 2021.05.21.17.41.40.master
+    vcs:
+      repo:
+        orgName: armory-io
+        repoName: igor-armory
+        type: github
+      sha: 3f5dab2837cb0996776ffa61d45af2ad21eac3cb
+  kayenta-armory:
+    baseService: kayenta
+    image:
+      imageId: sha256:7c4b011c9197e33d94a824a0bec96b8d9592562469f617e29a2ea9f34d7ad853
+      repository: armory/kayenta-armory
+      tag: 2021.05.25.19.19.39.master
+    vcs:
+      repo:
+        orgName: armory-io
+        repoName: kayenta-armory
+        type: github
+      sha: a9c1d485273eea0f2fee2493d533275cde9e0835
   orca-armory:
     baseService: orca
     image:
