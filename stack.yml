@@ -14,15 +14,15 @@ services:
   fiat-armory:
     baseService: fiat
     image:
-      imageId: sha256:9321cd3bd658a019ca56634712e332584f67b12de34d315046eedd5f68ca8069
+      imageId: sha256:88131ae615bf973e5f21d59d7a96a3871f7664f3cbda04c6fa6e13a7e4e04ee1
       repository: armory/fiat-armory
-      tag: 2021.05.25.14.18.29.master
+      tag: 2021.05.27.21.32.55.master
     vcs:
       repo:
         orgName: armory-io
         repoName: fiat-armory
         type: github
-      sha: 243a54f745e00435f302dd216e3bd3b72bc93779
+      sha: 3bc55ff468b8df4390c0506ec24722084973b0fe
   igor-armory:
     baseService: igor
     image:
