@@ -41,6 +41,8 @@ jobs:
 
       - name: Turnstyle
         uses: softprops/turnstyle@v1
+        with:
+          same-branch-only: false
         env:
           GITHUB_TOKEN: ${{ secrets.ASTROLABE_GITHUB_TOKEN }}
 
