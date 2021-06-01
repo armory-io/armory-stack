@@ -2,15 +2,15 @@ services:
   clouddriver-armory:
     baseService: clouddriver
     image:
-      imageId: sha256:c0355edd006494507adb3c5d39a208052b3d1ec578bc0f80963b12d6e1948b42
+      imageId: sha256:974b9c92b6e23b2a181074c7f8dc3be01124bc036a049fd2e2a991ad8d1d9e3d
       repository: armory/clouddriver-armory
-      tag: 2021.05.21.17.38.39.master
+      tag: 2021.05.27.21.44.31.master
     vcs:
       repo:
         orgName: armory-io
         repoName: clouddriver-armory
         type: github
-      sha: fdd673416cab6c29051c39fecb31a5edeba58f48
+      sha: da4d922402fc058ea37cad0ee042bc4def0b1cd6
   fiat-armory:
     baseService: fiat
     image:
@@ -38,24 +38,24 @@ services:
   kayenta-armory:
     baseService: kayenta
     image:
-      imageId: sha256:7c4b011c9197e33d94a824a0bec96b8d9592562469f617e29a2ea9f34d7ad853
+      imageId: sha256:3be587b7916ddd2b257087a4080c960a6780daaabf17382f1ca93eee5a75ea81
       repository: armory/kayenta-armory
-      tag: 2021.05.25.19.19.39.master
+      tag: 2021.05.27.21.41.13.master
     vcs:
       repo:
         orgName: armory-io
         repoName: kayenta-armory
         type: github
-      sha: a9c1d485273eea0f2fee2493d533275cde9e0835
+      sha: 5d965ccff3cc5f66f091240ad4b74f4bc2c75e45
   orca-armory:
     baseService: orca
     image:
-      imageId: sha256:0978cf79e57c7aa4bd6b00665a6c140d858e50d7f983dee1f4a25cfec8255bf8
+      imageId: sha256:2c77ddba1eacaa98406c90710af4ad53e1298ae7bbe6d6a37f8a62120c2f1bf0
       repository: armory/orca-armory
-      tag: 2021.05.25.13.29.47.master
+      tag: 2021.05.27.21.28.27.master
     vcs:
       repo:
         orgName: armory-io
         repoName: orca-armory
         type: github
-      sha: d1ff6284cdf7f5d15e5c592a25aa64fadc8904d4
+      sha: 43740dbfbf4ec4762f8e4e2a9665ccdc0f4c956d
