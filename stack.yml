@@ -23,6 +23,18 @@ services:
         repoName: fiat-armory
         type: github
       sha: 3bc55ff468b8df4390c0506ec24722084973b0fe
+  gate-armory:
+    baseService: gate
+    image:
+      imageId: sha256:4438607d106a8412217319541c6d7fa8de1aa0d9f8c3887711bb5514569417b4
+      repository: armory/gate-armory
+      tag: 2021.06.02.20.36.40.master
+    vcs:
+      repo:
+        orgName: armory-io
+        repoName: gate-armory
+        type: github
+      sha: 13089d8ca9d44f053b90b92c1603bc467fc9bc2f
   igor-armory:
     baseService: igor
     image:
