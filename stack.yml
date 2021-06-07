@@ -11,3 +11,15 @@ services:
         repoName: orca-armory
         type: github
       sha: bf894a96d16cf59aeff738b28efd42c5d64ca63e
+  rosco-armory:
+    baseService: rosco
+    image:
+      imageId: sha256:ddc2f78d9d051adec3bef29b5c08ee8d32dd598b9d786cbb8d34cc6888da9eea
+      repository: armory/rosco-armory
+      tag: 2021.06.01.20.58.34.release-2.26.x
+    vcs:
+      repo:
+        orgName: armory-io
+        repoName: rosco-armory
+        type: github
+      sha: 6d896e629615105f232c5b2b00b6baf0c5d6651a
