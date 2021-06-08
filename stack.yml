@@ -11,6 +11,18 @@ services:
         repoName: clouddriver-armory
         type: github
       sha: da4d922402fc058ea37cad0ee042bc4def0b1cd6
+  deck-armory:
+    baseService: null
+    image:
+      imageId: sha256:ffcc2c60546d648eb9d07b27c727a1abbb70bf18fa791fe77088cf6b3659fd3e
+      repository: armory/deck-armory
+      tag: 2021.06.08.14.35.55.master
+    vcs:
+      repo:
+        orgName: armory-io
+        repoName: deck-armory
+        type: github
+      sha: f5002648a9ed0b22157d677f25bb054e7682ad12
   fiat-armory:
     baseService: fiat
     image:
