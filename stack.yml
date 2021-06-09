@@ -1,4 +1,16 @@
 services:
+  front50-armory:
+    baseService: null
+    image:
+      imageId: sha256:d559cd574694499d27b275b932f56d9bd22c51aad936673049e91fcabca656e7
+      repository: armory/front50-armory
+      tag: 2021.06.08.23.28.59.release-2.26.x
+    vcs:
+      repo:
+        orgName: armory-io
+        repoName: front50-armory
+        type: github
+      sha: 0fff032f382fb813cd78024d8313a876989f468e
   orca-armory:
     baseService: orca
     image:
