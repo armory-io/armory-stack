@@ -12,7 +12,7 @@ services:
         type: github
       sha: 4044b8996dd6c9138d40874d36fb07d954a08320
   rosco-armory:
-    baseService: null
+    baseService: rosco
     image:
       imageId: sha256:f0e468dc44e55a63a63fd8513c92ff7f7cd1a879beb7af630875e8a9bc7aaeb2
       repository: armory/rosco-armory
