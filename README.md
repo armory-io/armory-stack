@@ -8,12 +8,16 @@ The `master` branch contains the latest version for each tested service.
 
 See the [release FAQ](https://go.armory.io/release-faq).
 
-## Integration tests
+## End-to-end tests
 
-Some of the integration tests come from the Google integration test suite. We
-have a [fork of that test suite](https://github.com/armory-io/buildtool) and
+When Astrolabe opens a PR against this repo, we [deploy the updated service to our staging environment](https://spinnaker-staging.cloud.armory.io/#/applications/stagingcd/executions?pipeline=Deploy%20Spinnaker%20into%20SaaS%20Staging). We then [run our pipeline-based end-to-end tests](https://spinnaker-staging.cloud.armory.io/#/applications/armoryhellodeploy/executions?pipeline=Integration-Test-Runner) against the updated Spinnaker.
+
+### Google Test Suite
+
+We also run a subset of Google's Spinnaker test suite. We
+have a [fork of that suite](https://github.com/armory-io/buildtool) and
 a lightly altered fork of [Citest](https://github.com/armory-io/citest), 
-Google's Spinnaker integration test runner. The two repos are mostly untouched
+Google's Spinnaker test runner. The two repos are mostly untouched
 except for some build improvements and the ability to include an SSL client
 certificate.
 
@@ -22,7 +26,7 @@ Right now we're only running three of the tests:
 - [Kubernetes Artifact Test](https://github.com/armory-io/buildtool/blob/master/testing/citest/tests/kube_v2_artifact_test.py)
 - [Kubernetes Cache Test](https://github.com/armory-io/buildtool/blob/master/testing/citest/tests/kube_v2_cache_test.py)
 
-### Running the tests
+#### Running the tests
 
 You should be able to roughly follow the steps in the test actions. Be sure
 that you have Python 3 installed.
