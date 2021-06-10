@@ -71,3 +71,15 @@ services:
         repoName: orca-armory
         type: github
       sha: 9ef702d625986621b29d7f174e3256e43a05dde2
+  terraformer:
+    baseService: null
+    image:
+      imageId: sha256:dc31fab02fe4ac9ee168f4ef521000c3fd1faf4b1cf72c08b575cb7020c02738
+      repository: armory/terraformer
+      tag: 2021.06.10.02.22.06.master
+    vcs:
+      repo:
+        orgName: armory-io
+        repoName: terraformer
+        type: github
+      sha: a75e4f7ca1cfccfbde98546f294f9686b5902744
