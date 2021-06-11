@@ -1,6 +1,6 @@
 services:
   front50-armory:
-    baseService: front50
+    baseService: front50-
     image:
       imageId: sha256:d559cd574694499d27b275b932f56d9bd22c51aad936673049e91fcabca656e7
       repository: armory/front50-armory
