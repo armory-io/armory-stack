@@ -35,6 +35,18 @@ services:
         repoName: dinghy
         type: github
       sha: 4532c2b1446afebd350c71cbf26c900f563bc819
+  echo-armory:
+    baseService: echo
+    image:
+      imageId: sha256:05900f071b868b4c0fe6e052f871ef125b1c2deee7b892ff62b99b410449657b
+      repository: armory/echo-armory
+      tag: 2021.06.01.19.01.58.master
+    vcs:
+      repo:
+        orgName: armory-io
+        repoName: echo-armory
+        type: github
+      sha: 8f4f7c8d37c5fddbf844691b3312daaf3c89a7cf
   fiat-armory:
     baseService: fiat
     image:
