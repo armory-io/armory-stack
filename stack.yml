@@ -1,4 +1,16 @@
 services:
+  gate-armory:
+    baseService: gate-bom
+    image:
+      imageId: sha256:3b45ccbd7dc2541da2691c39bc7f1715cfc3c3520e279386497c9313135ae75f
+      repository: armory/gate-armory
+      tag: 2021.06.08.22.32.02.release-2.26.x
+    vcs:
+      repo:
+        orgName: armory-io
+        repoName: gate-armory
+        type: github
+      sha: a1d93a7cac119876d823c699c8784feb7e18e8fa
   orca-armory:
     baseService: orca
     image:
