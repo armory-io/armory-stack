@@ -1,6 +1,6 @@
 services:
   clouddriver-armory:
-    baseService: clouddriver-bom
+    baseService: clouddriver
     image:
       imageId: sha256:ef6c0de1e8497f1dcbe4e896f9dd31a13aa9a72de3bf972e89bdcebce6f6a865
       repository: armory/clouddriver-armory
