@@ -1,6 +1,6 @@
 services:
   fiat-armory:
-    baseService: fiat-bom
+    baseService: fiat
     image:
       imageId: sha256:4de0066da4189395430deb028d783ae97be18490fa11a76a3cefd649700edc3d
       repository: armory/fiat-armory
