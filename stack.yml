@@ -1,4 +1,16 @@
 services:
+  echo-armory:
+    baseService: echo-bom
+    image:
+      imageId: sha256:71aabd5b7b6812bba1a3cb04dd1c660e79a30b947d979880f10d78c1230625c7
+      repository: armory/echo-armory
+      tag: 2021.06.09.20.39.26.release-2.26.x
+    vcs:
+      repo:
+        orgName: armory-io
+        repoName: echo-armory
+        type: github
+      sha: 5ebc96e8026209d786491b2abebb614b77128abc
   orca-armory:
     baseService: orca
     image:
