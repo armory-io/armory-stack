@@ -12,7 +12,7 @@ services:
         type: github
       sha: da4d922402fc058ea37cad0ee042bc4def0b1cd6
   echo-armory:
-    baseService: echo-bom
+    baseService: echo
     image:
       imageId: sha256:05900f071b868b4c0fe6e052f871ef125b1c2deee7b892ff62b99b410449657b
       repository: armory/echo-armory
