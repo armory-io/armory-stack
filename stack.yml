@@ -11,6 +11,18 @@ services:
         repoName: clouddriver-armory
         type: github
       sha: da4d922402fc058ea37cad0ee042bc4def0b1cd6
+  dinghy:
+    baseService: null
+    image:
+      imageId: sha256:bcc19a2643a58d93d4001f0c58a9c9b30c4da28c56e5a6feaec8ac0696e2d011
+      repository: armory/dinghy
+      tag: 2021.06.10.17.07.39.master
+    vcs:
+      repo:
+        orgName: armory-io
+        repoName: dinghy
+        type: github
+      sha: 4532c2b1446afebd350c71cbf26c900f563bc819
   fiat-armory:
     baseService: fiat
     image:
