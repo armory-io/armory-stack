@@ -1,6 +1,6 @@
 services:
   gate-armory:
-    baseService: gate-bom
+    baseService: gate
     image:
       imageId: sha256:3b45ccbd7dc2541da2691c39bc7f1715cfc3c3520e279386497c9313135ae75f
       repository: armory/gate-armory
