@@ -1,6 +1,6 @@
 services:
   igor-armory:
-    baseService: igor-bom
+    baseService: igor
     image:
       imageId: sha256:db078dd8d2b5acc811f1bd78658bc195a0dd00c654fe2577ca301fac7beabdf6
       repository: armory/igor-armory
