@@ -1,4 +1,16 @@
 services:
+  igor-armory:
+    baseService: igor-bom
+    image:
+      imageId: sha256:db078dd8d2b5acc811f1bd78658bc195a0dd00c654fe2577ca301fac7beabdf6
+      repository: armory/igor-armory
+      tag: 2021.06.09.20.37.45.release-2.26.x
+    vcs:
+      repo:
+        orgName: armory-io
+        repoName: igor-armory
+        type: github
+      sha: d2ed244bf5f34c26b546e465b39e3cb6af840677
   orca-armory:
     baseService: orca
     image:
