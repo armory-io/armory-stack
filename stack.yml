@@ -1,6 +1,6 @@
 services:
   kayenta-armory:
-    baseService: kayenta-bom
+    baseService: kayenta
     image:
       imageId: sha256:f704f94ad800431b94bc57533071804e4a8cc65d712d485613d2afeb953575b6
       repository: armory/kayenta-armory
