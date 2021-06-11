@@ -24,7 +24,7 @@ services:
         type: github
       sha: 3bc55ff468b8df4390c0506ec24722084973b0fe
   gate-armory:
-    baseService: gate-bom
+    baseService: gate
     image:
       imageId: sha256:48efd9ec59e3e62311b4c89f065ff236859a611c58492b8c712d6b2b5e16418b
       repository: armory/gate-armory
