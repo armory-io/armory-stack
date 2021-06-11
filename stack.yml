@@ -24,7 +24,7 @@ services:
         type: github
       sha: 3bc55ff468b8df4390c0506ec24722084973b0fe
   front50-armory:
-    baseService: front50-bom
+    baseService: front50
     image:
       imageId: sha256:f8775f9bbfd08f05c0ecf40af088c77e955a75d1ff679a7c7ed7c929fe5a6b9b
       repository: armory/front50-armory
