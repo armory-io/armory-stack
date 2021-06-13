@@ -12,7 +12,7 @@ services:
         type: github
       sha: 8ce39c09abb776f0c9c99f90cc1528aa41ef62e2
   deck-armory:
-    baseService: null
+    baseService: deck
     image:
       imageId: sha256:b9ce4eb2fadb9ae4bd0ccce638e3657f53a6d2d92c44457e4423850fd7bd5105
       repository: armory/deck-armory
