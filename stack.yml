@@ -26,15 +26,15 @@ services:
   dinghy:
     baseService: null
     image:
-      imageId: sha256:c6f7f7ee00efcad62b8b56c4c71cabaa06c9633b3ee30953c803061908ba566b
+      imageId: sha256:8c25b78d35c8ae1841e5182fa9e85febef066dbbb09c1aca7195a0e792c56360
       repository: armory/dinghy
-      tag: 2021.06.21.18.24.28.master
+      tag: 2021.06.22.16.58.06.master
     vcs:
       repo:
         orgName: armory-io
         repoName: dinghy
         type: github
-      sha: 63681b10c144377d5c00b49848a481748b12cd2a
+      sha: e12ea2a31be204ce5d240f2af5199756daa1d13e
   fiat-armory:
     baseService: fiat
     image:
