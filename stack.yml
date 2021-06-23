@@ -2,15 +2,15 @@ services:
   clouddriver-armory:
     baseService: clouddriver
     image:
-      imageId: sha256:9cab4422039b5872f7e1e24716a9f808a1cb16eb19150b3e3b58f02307c90c33
+      imageId: sha256:4d983a89c2f56d2cbe4ee007af6b44fd653101133008e07224056bbf587328e1
       repository: armory/clouddriver-armory
-      tag: 2021.06.18.15.48.44.master
+      tag: 2021.06.22.17.58.14.master
     vcs:
       repo:
         orgName: armory-io
         repoName: clouddriver-armory
         type: github
-      sha: fa19c389cd644540af27e906b05b5f99ccd8b769
+      sha: f9f2ba8448ae6dbed5ba04473cef61809033d784
   deck-armory:
     baseService: deck
     image:
@@ -38,15 +38,15 @@ services:
   fiat-armory:
     baseService: fiat
     image:
-      imageId: sha256:88131ae615bf973e5f21d59d7a96a3871f7664f3cbda04c6fa6e13a7e4e04ee1
+      imageId: sha256:664f1ab1da08caaf6a197d7cae224fcdf8e636c9528b452d829ff9455931cbcd
       repository: armory/fiat-armory
-      tag: 2021.05.27.21.32.55.master
+      tag: 2021.06.17.18.17.23.master
     vcs:
       repo:
         orgName: armory-io
         repoName: fiat-armory
         type: github
-      sha: 3bc55ff468b8df4390c0506ec24722084973b0fe
+      sha: f823d117523867f56504669fc3fc077f5019a05e
   front50-armory:
     baseService: front50
     image:
