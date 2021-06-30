@@ -1,16 +1,4 @@
 services:
-  kayenta-armory:
-    baseService: kayenta
-    image:
-      imageId: sha256:f704f94ad800431b94bc57533071804e4a8cc65d712d485613d2afeb953575b6
-      repository: armory/kayenta-armory
-      tag: 2021.06.08.23.38.20.release-2.26.x
-    vcs:
-      repo:
-        orgName: armory-io
-        repoName: kayenta-armory
-        type: github
-      sha: acccf803484acfb43847a50a0405aa082fc1c943
   front50-armory:
     baseService: front50
     image:
@@ -23,6 +11,30 @@ services:
         repoName: front50-armory
         type: github
       sha: 0fff032f382fb813cd78024d8313a876989f468e
+  gate-armory:
+    baseService: gate
+    image:
+      imageId: sha256:e96f958a086b4c5fffc8542cb54bbf3b63d278cbacc95395f17f5d03629e2fe6
+      repository: armory/gate-armory
+      tag: 2021.06.30.21.52.21.release-2.26.x
+    vcs:
+      repo:
+        orgName: armory-io
+        repoName: gate-armory
+        type: github
+      sha: 28ff605fe2bc1a55de5dcefbbe39376cf1f3ea6a
+  kayenta-armory:
+    baseService: kayenta
+    image:
+      imageId: sha256:f704f94ad800431b94bc57533071804e4a8cc65d712d485613d2afeb953575b6
+      repository: armory/kayenta-armory
+      tag: 2021.06.08.23.38.20.release-2.26.x
+    vcs:
+      repo:
+        orgName: armory-io
+        repoName: kayenta-armory
+        type: github
+      sha: acccf803484acfb43847a50a0405aa082fc1c943
   orca-armory:
     baseService: orca
     image:
