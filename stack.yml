@@ -1,16 +1,4 @@
 services:
-  kayenta-armory:
-    baseService: kayenta
-    image:
-      imageId: sha256:f704f94ad800431b94bc57533071804e4a8cc65d712d485613d2afeb953575b6
-      repository: armory/kayenta-armory
-      tag: 2021.06.08.23.38.20.release-2.26.x
-    vcs:
-      repo:
-        orgName: armory-io
-        repoName: kayenta-armory
-        type: github
-      sha: acccf803484acfb43847a50a0405aa082fc1c943
   front50-armory:
     baseService: front50
     image:
@@ -23,6 +11,18 @@ services:
         repoName: front50-armory
         type: github
       sha: 0fff032f382fb813cd78024d8313a876989f468e
+  kayenta-armory:
+    baseService: kayenta
+    image:
+      imageId: sha256:f704f94ad800431b94bc57533071804e4a8cc65d712d485613d2afeb953575b6
+      repository: armory/kayenta-armory
+      tag: 2021.06.08.23.38.20.release-2.26.x
+    vcs:
+      repo:
+        orgName: armory-io
+        repoName: kayenta-armory
+        type: github
+      sha: acccf803484acfb43847a50a0405aa082fc1c943
   orca-armory:
     baseService: orca
     image:
@@ -38,12 +38,12 @@ services:
   rosco-armory:
     baseService: rosco
     image:
-      imageId: sha256:f0e468dc44e55a63a63fd8513c92ff7f7cd1a879beb7af630875e8a9bc7aaeb2
+      imageId: sha256:eda88fef11c23d3b55b839197cd1b72ffce214e5ac601e0971ab3ee679a45bc4
       repository: armory/rosco-armory
-      tag: 2021.06.08.22.01.40.release-2.26.x
+      tag: 2021.07.01.01.52.23.release-2.26.x
     vcs:
       repo:
         orgName: armory-io
         repoName: rosco-armory
         type: github
-      sha: 33f13972e80cbe1d83512e64ba4f076ebf27e061
+      sha: 1dfc60f1f70ccdadc2cc03ff9f27b5ca39bb9c39
