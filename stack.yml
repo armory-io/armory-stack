@@ -1,16 +1,16 @@
 services:
-  kayenta-armory:
-    baseService: kayenta
+  fiat-armory:
+    baseService: fiat
     image:
-      imageId: sha256:f704f94ad800431b94bc57533071804e4a8cc65d712d485613d2afeb953575b6
-      repository: armory/kayenta-armory
-      tag: 2021.06.08.23.38.20.release-2.26.x
+      imageId: sha256:c55d9f59893d09a4effbf1a8da7d8e724f727d330ce8ceb1dd2b6e4bc3fcca6a
+      repository: armory/fiat-armory
+      tag: 2021.07.01.00.55.59.release-2.26.x
     vcs:
       repo:
         orgName: armory-io
-        repoName: kayenta-armory
+        repoName: fiat-armory
         type: github
-      sha: acccf803484acfb43847a50a0405aa082fc1c943
+      sha: b2360f92bbe9dbbf52d021e8a4328734c365fac8
   front50-armory:
     baseService: front50
     image:
@@ -23,6 +23,18 @@ services:
         repoName: front50-armory
         type: github
       sha: 0fff032f382fb813cd78024d8313a876989f468e
+  kayenta-armory:
+    baseService: kayenta
+    image:
+      imageId: sha256:f704f94ad800431b94bc57533071804e4a8cc65d712d485613d2afeb953575b6
+      repository: armory/kayenta-armory
+      tag: 2021.06.08.23.38.20.release-2.26.x
+    vcs:
+      repo:
+        orgName: armory-io
+        repoName: kayenta-armory
+        type: github
+      sha: acccf803484acfb43847a50a0405aa082fc1c943
   orca-armory:
     baseService: orca
     image:
