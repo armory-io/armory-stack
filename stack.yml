@@ -1,4 +1,16 @@
 services:
+  front50-armory:
+    baseService: front50
+    image:
+      imageId: sha256:53af60f20599b9bc37e03aef7a17812393e274f09d3978975a41727960fe3ef4
+      repository: armory/front50-armory
+      tag: 2021.07.01.00.55.09.release-2.26.x
+    vcs:
+      repo:
+        orgName: armory-io
+        repoName: front50-armory
+        type: github
+      sha: d3dfd429b240493a7edc48ce13a69a337e70e5e8
   kayenta-armory:
     baseService: kayenta
     image:
@@ -11,18 +23,6 @@ services:
         repoName: kayenta-armory
         type: github
       sha: acccf803484acfb43847a50a0405aa082fc1c943
-  front50-armory:
-    baseService: front50
-    image:
-      imageId: sha256:d559cd574694499d27b275b932f56d9bd22c51aad936673049e91fcabca656e7
-      repository: armory/front50-armory
-      tag: 2021.06.08.23.28.59.release-2.26.x
-    vcs:
-      repo:
-        orgName: armory-io
-        repoName: front50-armory
-        type: github
-      sha: 0fff032f382fb813cd78024d8313a876989f468e
   orca-armory:
     baseService: orca
     image:
