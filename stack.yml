@@ -23,6 +23,18 @@ services:
         repoName: front50-armory
         type: github
       sha: d3dfd429b240493a7edc48ce13a69a337e70e5e8
+  gate-armory:
+    baseService: gate
+    image:
+      imageId: sha256:2d5781955c8f5068e27b796bf109798db8c99d57d23abc4c990bf7969cd4ebca
+      repository: armory/gate-armory
+      tag: 2021.07.01.01.51.33.release-2.26.x
+    vcs:
+      repo:
+        orgName: armory-io
+        repoName: gate-armory
+        type: github
+      sha: ec2ae48cda93986528077e735f4c47e45f51c0ca
   igor-armory:
     baseService: igor
     image:
