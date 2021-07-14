@@ -23,6 +23,18 @@ services:
         repoName: front50-armory
         type: github
       sha: d3dfd429b240493a7edc48ce13a69a337e70e5e8
+  igor-armory:
+    baseService: igor
+    image:
+      imageId: sha256:9ba6bd08f4e268b27f9135116ffd2700ad376246136a81353e175d7e1671fccf
+      repository: armory/igor-armory
+      tag: 2021.07.01.00.56.20.release-2.26.x
+    vcs:
+      repo:
+        orgName: armory-io
+        repoName: igor-armory
+        type: github
+      sha: a9b45bca07fb1c5bf14e37467498580316451e68
   kayenta-armory:
     baseService: kayenta
     image:
