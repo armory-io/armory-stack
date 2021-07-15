@@ -20,6 +20,6 @@ jobs:
 
       - name: Publish Image to Docker Hub
         run: |
-          docker pull ${ BASE_SERVICE_REPO }:${ BASE_SERVICE_TAG }
-          docker tag ${ BASE_SERVICE_REPO }:${ BASE_SERVICE_TAG } ${ NEW_SERVICE_REPO }:${ NEW_SERVICE_TAG }
-          docker push ${ NEW_SERVICE_REPO }:${ NEW_SERVICE_TAG }
+          docker pull ${{ env.BASE_SERVICE_REPO }}:${{ env.BASE_SERVICE_TAG }}
+          docker tag ${{ env.BASE_SERVICE_REPO }}:${{ env.BASE_SERVICE_TAG }} ${{ env.NEW_SERVICE_REPO }}:${{ env.NEW_SERVICE_TAG }}
+          docker push ${{ env.NEW_SERVICE_REPO }}:${{ env.NEW_SERVICE_TAG }}
