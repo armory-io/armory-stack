@@ -1,0 +1,25 @@
+name: Create Service Tag
+
+on:
+  repository_dispatch:
+    types:
+      - CreateServiceTag
+
+jobs:
+  update_stack_repo:
+    name: Create Service Tag
+    runs-on: ubuntu-latest
+    env:
+      BASE_SERVICE_REPO: ${{ github.event.client_payload.baseImage.repository }}
+      BASE_SERVICE_TAG: ${{ github.event.client_payload.baseImage.tag }}
+      NEW_SERVICE_REPO: ${{ github.event.client_payload.newImage.repository }}
+      NEW_SERVICE_TAG: ${{ github.event.client_payload.newImage.tag }}
+    steps:
+      - name: Login to Docker Hub
+        run: docker login -u ${{ secrets.DOCKER_HUB_USER }} -p '${{ secrets.DOCKER_HUB_PASS }}'
+
+      - name: Publish Image to Docker Hub
+        run: |
+          docker pull ${ BASE_SERVICE_REPO }:${ BASE_SERVICE_TAG }
+          docker tag ${ BASE_SERVICE_REPO }:${ BASE_SERVICE_TAG } ${ NEW_SERVICE_REPO }:${ NEW_SERVICE_TAG }
+          docker push ${ NEW_SERVICE_REPO }:${ NEW_SERVICE_TAG }
