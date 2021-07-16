@@ -95,3 +95,15 @@ services:
         repoName: rosco-armory
         type: github
       sha: 1dfc60f1f70ccdadc2cc03ff9f27b5ca39bb9c39
+  terraformer:
+    baseService: null
+    image:
+      imageId: sha256:dae7b941396f7b4831ca19d5f5dcdd45a4266202b7d02ec5a4962b0cafb568ef
+      repository: armory/terraformer
+      tag: 2021.07.16.18.35.21.release-2.26.x
+    vcs:
+      repo:
+        orgName: armory-io
+        repoName: terraformer
+        type: github
+      sha: 540902e67358fbb891b7e7f17864ebfd082e7e1b
