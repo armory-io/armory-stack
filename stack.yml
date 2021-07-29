@@ -50,15 +50,15 @@ services:
   fiat-armory:
     baseService: fiat
     image:
-      imageId: sha256:12ad0d67de25c14ffbaf3bd03695a974ba3138bba14d0d10be13231193f8652e
+      imageId: sha256:bdcffd2825209a4724696b3a4ec2b5478cf5ea69e49396fc2bba15507fd071e4
       repository: armory/fiat-armory
-      tag: 2021.07.28.18.04.40.master
+      tag: 2021.07.28.23.41.34.master
     vcs:
       repo:
         orgName: armory-io
         repoName: fiat-armory
         type: github
-      sha: 362626d2a833736578e424d9893f0b98d3988112
+      sha: a07502c9f2b82f47dc8ded022693063044ab911c
   front50-armory:
     baseService: front50
     image:
