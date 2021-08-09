@@ -22,7 +22,7 @@ jobs:
         run: |
           . .github/workflows/get_deploy_info_from_PR_body.sh '${{ github.event.pull_request.body }}'
 
-      - name: Check Diff In Stack File
+      - name: Check Diff In Stack Filee
         id: check_diff
         run: |
           diff=$(git diff origin/master HEAD stack.yml)
