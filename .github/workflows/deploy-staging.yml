@@ -32,7 +32,7 @@ jobs:
             echo "##[set-output name=hasDiff;]true"
           fi
 
-      - name: Log Outputs
+      - name: Log Outputss
         run: |
           echo "Has Diff? ${{ steps.check_diff.outputs.hasDiff }}"
           echo "Service to Change: ${{ steps.get_deploy_info.outputs.serviceName }}"
