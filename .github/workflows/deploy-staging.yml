@@ -17,7 +17,7 @@ jobs:
         with:
           fetch-depth: 1
 
-      - name: Get Name Image & Tag From Event Date
+      - name: Get Name Image & Tag From Event Datoo
         id: get_deploy_info
         run: |
           . .github/workflows/get_deploy_info_from_PR_body.sh '${{ github.event.pull_request.body }}'
