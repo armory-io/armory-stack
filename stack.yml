@@ -14,9 +14,9 @@ services:
   deck-armory:
     baseService: deck
     image:
-      imageId: sha256:12077472e8c2895f0e363ccc8622db2721d33d16e768107f436aec7df4716b9a
+      imageId: sha256:6a5c53680fd484b3e5a64bb908dad205915ba2e91ecb37fd8eefeda2b72dbe38
       repository: armory/deck-armory
-      tag: 2021.08.04.18.04.30.master
+      tag: 2021.08.04.18.04.30.release-2.27.x
     vcs:
       repo:
         orgName: armory-io
