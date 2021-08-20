@@ -1,4 +1,4 @@
-name: Create Service Tag
+name: Retag image
 
 on:
   repository_dispatch:
@@ -7,7 +7,7 @@ on:
 
 jobs:
   update_stack_repo:
-    name: Create Service Tag
+    name: ${{ github.event.client_payload.baseImage.repository }}:${{ github.event.client_payload.baseImage.tag }}
     runs-on: ubuntu-latest
     env:
       BASE_SERVICE_REPO: ${{ github.event.client_payload.baseImage.repository }}
