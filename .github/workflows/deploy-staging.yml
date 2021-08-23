@@ -70,6 +70,7 @@ jobs:
           eventId: ${{ steps.trigger_deploy.outputs.eventId }}
           crtFile: ${{ secrets.STAGING_CLIENT_CERTIFICATE }}
           keyFile: ${{ secrets.STAGING_CLIENT_PRIVATE_KEY }}
+          timeout: 900000
 
   test_pipelines:
     runs-on: ubuntu-latest
@@ -81,7 +82,6 @@ jobs:
         TestWebhookSource: [
             webhook-test,
             appengine-deploy,
-            clone-server-group,
             k8s-v2-text-patch,
             k8s-v2-text-scale,
             k8s-v2-text-find,
@@ -112,6 +112,7 @@ jobs:
           eventId: ${{ steps.trigger_test.outputs.eventId }}
           crtFile: ${{ secrets.STAGING_CLIENT_CERTIFICATE }}
           keyFile: ${{ secrets.STAGING_CLIENT_PRIVATE_KEY }}
+          timeout: 900000
 
   test_kubernetes:
     runs-on: ubuntu-18.04 # TODO: SSL client cert is getting rejected on ubuntu-latest.
