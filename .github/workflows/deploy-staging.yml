@@ -4,14 +4,16 @@ on:
   pull_request:
     branches:
       - master
-      - "release-[0-9]+.[0-9]+.x"
 
 jobs:
-  deploy_test_staging:
+  deploy_staging:
     name: Deploy Test Staging
     runs-on: ubuntu-latest
     outputs:
       hasDiff: ${{ steps.check_diff.outputs.hasDiff }}
+      serviceName: ${{ steps.get_deploy_info.outputs.serviceName }}
+      image: ${{ steps.get_deploy_info.outputs.image }}
+      tag: ${{ steps.get_deploy_info.outputs.tag }}
     steps:
       - uses: actions/checkout@v1
         with:
@@ -41,6 +43,8 @@ jobs:
 
       - name: Turnstyle
         uses: softprops/turnstyle@v1
+        with:
+          same-branch-only: false
         env:
           GITHUB_TOKEN: ${{ secrets.ASTROLABE_GITHUB_TOKEN }}
 
@@ -66,34 +70,55 @@ jobs:
           eventId: ${{ steps.trigger_deploy.outputs.eventId }}
           crtFile: ${{ secrets.STAGING_CLIENT_CERTIFICATE }}
           keyFile: ${{ secrets.STAGING_CLIENT_PRIVATE_KEY }}
+          timeout: 900000
 
-      - name: Trigger Staging Test
+  test_pipelines:
+    runs-on: ubuntu-latest
+    needs: deploy_staging
+    if: needs.deploy_staging.outputs.hasDiff == 'true'
+    strategy:
+      matrix:
+        AppName: [ armoryhellodeploy ] # App where pipelines test are located. we must keep only one.
+        TestWebhookSource: [
+            webhook-test,
+            appengine-deploy,
+            clone-server-group,
+            k8s-v2-text-patch,
+            k8s-v2-text-scale,
+            k8s-v2-text-find,
+            k8s-v2-text-undo-rollout,
+            k8s-v2-artifact-deploy-delete,
+            jenkins-job,
+            run-jenkins-job-verify,
+            terraformer-custom-provider
+        ] # webhook source to trigger pipeline
+    steps:
+      - name: Trigger Test ${{ matrix.TestWebhookSource }}
         uses: armory-io/spin-trigger-pipeline-action@master
         id: trigger_test
-        if: steps.check_diff.outputs.hasDiff == 'true'
         with:
           baseUrl: https://spinnaker-staging-api.cloud.armory.io:8443/api/v1
-          source: integration-tests
-          serviceName: ${{ steps.get_deploy_info.outputs.serviceName }}
-          image: ${{ steps.get_deploy_info.outputs.image }}
-          tag: ${{ steps.get_deploy_info.outputs.tag }}
+          source: ${{ matrix.TestWebhookSource }}
+          serviceName: ${{ needs.deploy_staging.outputs.serviceName }}
+          image: ${{ needs.deploy_staging.outputs.image }}
+          tag: ${{ needs.deploy_staging.outputs.tag }}
           crtFile: ${{ secrets.STAGING_CLIENT_CERTIFICATE }}
           keyFile: ${{ secrets.STAGING_CLIENT_PRIVATE_KEY }}
 
-      - name: Watch Staging Deploy Pipeline
+      - name: Watch Pipeline Execution For ${{ matrix.TestWebhookSource }}
         uses: armory-io/spin-wait-status-action@master
-        if: steps.check_diff.outputs.hasDiff == 'true'
         with:
           baseUrl: https://spinnaker-staging-api.cloud.armory.io:8443/api/v1
-          application: armoryhellodeploy
+          application: ${{ matrix.AppName }}
           eventId: ${{ steps.trigger_test.outputs.eventId }}
           crtFile: ${{ secrets.STAGING_CLIENT_CERTIFICATE }}
           keyFile: ${{ secrets.STAGING_CLIENT_PRIVATE_KEY }}
+          timeout: 900000
 
   test_kubernetes:
     runs-on: ubuntu-18.04 # TODO: SSL client cert is getting rejected on ubuntu-latest.
-    needs: deploy_test_staging
-    if: needs.deploy_test_staging.outputs.hasDiff == 'true'
+    needs: [ deploy_staging, test_pipelines ]
+    if: needs.deploy_staging.outputs.hasDiff == 'true'
     steps:
     - uses: actions/checkout@v2
       with:
