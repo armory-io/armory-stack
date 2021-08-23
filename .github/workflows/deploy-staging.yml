@@ -82,7 +82,6 @@ jobs:
         TestWebhookSource: [
             webhook-test,
             appengine-deploy,
-            clone-server-group,
             k8s-v2-text-patch,
             k8s-v2-text-scale,
             k8s-v2-text-find,
