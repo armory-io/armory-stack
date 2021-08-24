@@ -11,6 +11,18 @@ services:
         repoName: clouddriver-armory
         type: github
       sha: 29f61d8a6aec913f4f973e38249524023a61cb88
+  deck-armory:
+    baseService: deck
+    image:
+      imageId: sha256:c5daf27daad24b0064655ecbb23debb46040d5bc86b1fbd9a1e1af0e61d91d22
+      repository: armory/deck-armory
+      tag: 2021.08.24.22.45.10.release-2.26.x
+    vcs:
+      repo:
+        orgName: armory-io
+        repoName: deck-armory
+        type: github
+      sha: 87d1df6c5bfe4381c73a41121d8906bd2d89f42a
   dinghy:
     baseService: null
     image:
