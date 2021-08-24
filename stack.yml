@@ -11,6 +11,18 @@ services:
         repoName: clouddriver-armory
         type: github
       sha: 29f61d8a6aec913f4f973e38249524023a61cb88
+  dinghy:
+    baseService: null
+    image:
+      imageId: sha256:b8e3671389452837ae0f252839c4aadf0b4a16a08f67e84653865d670b0a7087
+      repository: armory/dinghy
+      tag: 2021.08.24.20.53.40.release-2.26.x
+    vcs:
+      repo:
+        orgName: armory-io
+        repoName: dinghy
+        type: github
+      sha: 0796be13e88a77c72d94d4e0538a4fab152366b8
   echo-armory:
     baseService: echo
     image:
