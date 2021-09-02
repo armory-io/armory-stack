@@ -2,15 +2,15 @@ services:
   clouddriver-armory:
     baseService: clouddriver
     image:
-      imageId: sha256:682b96c10c38cc4021b4df0d38bd35946d90d788c9dce79968b81af787dac208
+      imageId: sha256:ca2b99e5de4bd9bb057ec2896e5af1ecde434b7368bda0956a640100aabfaf68
       repository: armory/clouddriver-armory
-      tag: 2021.09.02.07.50.41.release-2.26.x
+      tag: 2021.09.02.08.10.11.release-2.26.x
     vcs:
       repo:
         orgName: armory-io
         repoName: clouddriver-armory
         type: github
-      sha: 9a3f18e8e6d58a40941466680395387a8483b489
+      sha: 0772985cc43f6d41d10b415b33d721f2bf85e528
   deck-armory:
     baseService: deck
     image:
