@@ -23,3 +23,11 @@ jobs:
           docker pull ${{ env.BASE_SERVICE_REPO }}:${{ env.BASE_SERVICE_TAG }}
           docker tag ${{ env.BASE_SERVICE_REPO }}:${{ env.BASE_SERVICE_TAG }} ${{ env.NEW_SERVICE_REPO }}:${{ env.NEW_SERVICE_TAG }}
           docker push ${{ env.NEW_SERVICE_REPO }}:${{ env.NEW_SERVICE_TAG }}
+
+      - name: Login to Artifactory
+        run: docker login -u ${{ secrets.ARTIFACTORY_USER }} -p ${{ secrets.ARTIFACTORY_PASSWORD }} armory-docker-local.jfrog.io
+
+      - name: Publish Image to Artifactory
+        run: |
+          docker tag ${{ env.BASE_SERVICE_REPO }}:${{ env.BASE_SERVICE_TAG }} armory-docker-local.jfrog.io/${{ env.NEW_SERVICE_REPO }}:${{ env.NEW_SERVICE_TAG }}
+          docker push armory-docker-local.jfrog.io/${{ env.NEW_SERVICE_REPO }}:${{ env.NEW_SERVICE_TAG }}
