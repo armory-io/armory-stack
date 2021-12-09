@@ -38,15 +38,15 @@ services:
   echo-armory:
     baseService: echo
     image:
-      imageId: sha256:4602aa5c1ee3e72dcd1c8be4cb8526f265dc73676a35322b8d94d51daa6b77b7
+      imageId: sha256:de8fa9b4d8fcda6f912732573d22c4f5f20f8bea67e1d4f164db5d88b8d82465
       repository: armory/echo-armory
-      tag: 2021.10.26.01.12.55.master
+      tag: 2021.12.09.11.37.06.master
     vcs:
       repo:
         orgName: armory-io
         repoName: echo-armory
         type: github
-      sha: e1cb549765d97428cd7db863bb12e6a32a5b0c61
+      sha: 7185c6b8ef91d53b26e9dd6f890cdbb37fbffa8f
   fiat-armory:
     baseService: fiat
     image:
