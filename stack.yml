@@ -134,9 +134,9 @@ services:
   terraformer:
     baseService: null
     image:
-      imageId: sha256:f29497485b0b75cfd22b3658499189dd6076793a06cf65b5b5207c3f8dbfe443
+      imageId: sha256:a12b607779d04cecf5d7d07a76ba58ee91e7d5c55dc4160cdb238ca760fecfcc
       repository: armory/terraformer
-      tag: 2021.12.08.16.32.05.master
+      tag: 2021.12.08.16.32.05.release-2.28.x
     vcs:
       repo:
         orgName: armory-io
