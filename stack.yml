@@ -26,9 +26,9 @@ services:
   dinghy:
     baseService: null
     image:
-      imageId: sha256:da70df6f65bcb071e6cbe22e18d2cc38969ec15d07505f6e6abdbc357100707b
+      imageId: sha256:468ccfb9d9e6f60b2d4aa21ef9b93bb73e3f0c1a0940c04a479b794e46ecdc97
       repository: armory/dinghy
-      tag: 2022.01.25.21.22.55.master
+      tag: 2022.01.25.21.22.55.release-2.28.x
     vcs:
       repo:
         orgName: armory-io
@@ -72,7 +72,7 @@ services:
         type: github
       sha: 343e10bdf12d6e5d2718cda1f265e0a8429353ed
   gate-armory:
-    baseService: gate 
+    baseService: gate
     image:
       imageId: sha256:04e4b4eee935e4e3469bcfe1b657af65502ed430709525c81720855e31a9a12c
       repository: armory/gate-armory
@@ -84,7 +84,7 @@ services:
         type: github
       sha: 35dfbcbd6f59ac83b744bbeb98d4666cbfb86447
   igor-armory:
-    baseService: igor 
+    baseService: igor
     image:
       imageId: sha256:0ed9d8119ff680a6c71702ccd1b5a03c209457d3ec72f8e0d48ecb0fa2032a0d
       repository: armory/igor-armory
@@ -96,7 +96,7 @@ services:
         type: github
       sha: abeae9a43af57715379281715fc6f82e282c28a2
   kayenta-armory:
-    baseService: kayenta 
+    baseService: kayenta
     image:
       imageId: sha256:14f773db08dfe67cd0d1b7aadcc2aea3a77ae810ec3d74189a4cff453c909fa1
       repository: armory/kayenta-armory
