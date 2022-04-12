@@ -2,15 +2,15 @@ services:
   clouddriver-armory:
     baseService: clouddriver
     image:
-      imageId: sha256:7d402e5da6bf2237bd29cf5eb43652b19f49594630d549c68fd8a21490bda4e4
+      imageId: sha256:17f72d77fe617ea342a61ff9d2eaa083335f35d6c8ea5d65faa681fa19650b62
       repository: armory/clouddriver-armory
-      tag: 2022.04.04.17.17.42.master
+      tag: 2022.04.12.15.49.37.master
     vcs:
       repo:
         orgName: armory-io
         repoName: clouddriver-armory
         type: github
-      sha: 5094f98634be982623dd96e959238c6e26fc8d1f
+      sha: aa0c98887154faf90b6ed40eefadcd63af628c98
   deck-armory:
     baseService: deck
     image:
@@ -72,7 +72,7 @@ services:
         type: github
       sha: 343e10bdf12d6e5d2718cda1f265e0a8429353ed
   gate-armory:
-    baseService: gate 
+    baseService: gate
     image:
       imageId: sha256:04e4b4eee935e4e3469bcfe1b657af65502ed430709525c81720855e31a9a12c
       repository: armory/gate-armory
@@ -84,7 +84,7 @@ services:
         type: github
       sha: 35dfbcbd6f59ac83b744bbeb98d4666cbfb86447
   igor-armory:
-    baseService: igor 
+    baseService: igor
     image:
       imageId: sha256:0ed9d8119ff680a6c71702ccd1b5a03c209457d3ec72f8e0d48ecb0fa2032a0d
       repository: armory/igor-armory
@@ -96,7 +96,7 @@ services:
         type: github
       sha: abeae9a43af57715379281715fc6f82e282c28a2
   kayenta-armory:
-    baseService: kayenta 
+    baseService: kayenta
     image:
       imageId: sha256:14f773db08dfe67cd0d1b7aadcc2aea3a77ae810ec3d74189a4cff453c909fa1
       repository: armory/kayenta-armory
