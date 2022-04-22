@@ -122,9 +122,9 @@ services:
   rosco-armory:
     baseService: rosco
     image:
-      imageId: sha256:caae7d39ce4f36e6f4c3f806e55ba46755801490186fdc493526e3eb46c7833b
+      imageId: sha256:ac383ed074df1d2f3fc9a14ee84e3f45fb59f74dca1e3d62fa0f0dc80963cf63
       repository: armory/rosco-armory
-      tag: 2022.04.01.15.50.46.master
+      tag: 2022.04.01.15.50.46.release-2.28.x
     vcs:
       repo:
         orgName: armory-io
