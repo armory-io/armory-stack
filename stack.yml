@@ -72,7 +72,7 @@ services:
         type: github
       sha: 343e10bdf12d6e5d2718cda1f265e0a8429353ed
   gate-armory:
-    baseService: gate 
+    baseService: gate
     image:
       imageId: sha256:04e4b4eee935e4e3469bcfe1b657af65502ed430709525c81720855e31a9a12c
       repository: armory/gate-armory
@@ -84,7 +84,7 @@ services:
         type: github
       sha: 35dfbcbd6f59ac83b744bbeb98d4666cbfb86447
   igor-armory:
-    baseService: igor 
+    baseService: igor
     image:
       imageId: sha256:0ed9d8119ff680a6c71702ccd1b5a03c209457d3ec72f8e0d48ecb0fa2032a0d
       repository: armory/igor-armory
@@ -96,17 +96,17 @@ services:
         type: github
       sha: abeae9a43af57715379281715fc6f82e282c28a2
   kayenta-armory:
-    baseService: kayenta 
+    baseService: kayenta
     image:
-      imageId: sha256:14f773db08dfe67cd0d1b7aadcc2aea3a77ae810ec3d74189a4cff453c909fa1
+      imageId: sha256:b77253a71ecdad866a1ea9d39a516b4697fad51f0fd23dd424aad357ec3009f9
       repository: armory/kayenta-armory
-      tag: 2022.04.08.20.41.27.master
+      tag: 2022.05.04.00.25.11.master
     vcs:
       repo:
         orgName: armory-io
         repoName: kayenta-armory
         type: github
-      sha: c41734ba623fbeb358f1b5aae21cba584b092236
+      sha: 974547d9517dc204529c364a8d19fbfb41fa0782
   orca-armory:
     baseService: orca
     image:
