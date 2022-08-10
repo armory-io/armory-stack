@@ -1,0 +1,55 @@
+name: Run E2E Tests
+
+on:
+  pull_request:
+    branches:
+      - master
+      - 'release-**.x'
+    paths:
+      - 'stack.yml'
+
+jobs:
+  create_ephemeral_spinnaker_and_run_tests:
+    name: create-destroy ephemeral spinnaker and run tests
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v1
+        with:
+          fetch-depth: 1
+
+      - name: Wait For Other Tests To Finish
+        uses: softprops/turnstyle@v1
+        with:
+          same-branch-only: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.ASTROLABE_GITHUB_TOKEN }}
+
+      - name: Get ArtifactId From Stack Services
+        id: services
+        run: |
+          services=( $(yq e '.services | to_entries | .[] | .key + "," + .value.image.repository + ":" + .value.image.tag' stack.yml ) )
+          for service in "${services[@]}"; do
+              repoTag=(${service//,/ })
+              echo "##[set-output name=${repoTag[0]};]${repoTag[1]}"
+          done
+
+      - name: Trigger Ephemeral Spinnaker And Tests
+        uses: armory-io/spin-trigger-pipeline-action@master
+        id: trigger_tests
+        with:
+          baseUrl: https://spinnaker-api.internal.armory.io:8443/api/v1
+          source: create-ephemeral-spinnaker
+          parameters: 'namespace:${{ github.event.pull_request.head.sha }},sha:${{ github.event.pull_request.head.sha }},branch_name:${{ github.event.pull_request.base.ref }},clouddriver_image:${{ steps.services.outputs.clouddriver-armory }},deck_image:${{ steps.services.outputs.deck-armory }},dinghy_image:${{ steps.services.outputs.dinghy }},echo_image:${{ steps.services.outputs.echo-armory }},fiat_image:${{ steps.services.outputs.fiat-armory }},front50_image:${{ steps.services.outputs.front50-armory }},gate_image:${{ steps.services.outputs.gate-armory }},igor_image:${{ steps.services.outputs.igor-armory }},kayenta_image:${{ steps.services.outputs.kayenta-armory }},orca_image:${{ steps.services.outputs.orca-armory }},rosco_image:${{ steps.services.outputs.rosco-armory }},terraformer_image:${{ steps.services.outputs.terraformer }}'
+          crtFile: ${{ secrets.STAGING_CLIENT_CERTIFICATE }}
+          keyFile: ${{ secrets.STAGING_CLIENT_PRIVATE_KEY }}
+
+      - name: Watch Pipeline Execution For E2E Tests
+        uses: armory-io/spin-wait-status-action@master
+        with:
+          baseUrl: https://spinnaker-api.internal.armory.io:8443/api/v1
+          application: dynamo-armory-enterprise-testing
+          eventId: ${{ steps.trigger_tests.outputs.eventId }}
+          crtFile: ${{ secrets.STAGING_CLIENT_CERTIFICATE }}
+          keyFile: ${{ secrets.STAGING_CLIENT_PRIVATE_KEY }}
+          timeout: 2100000
