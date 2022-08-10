@@ -2,15 +2,15 @@ services:
   clouddriver-armory:
     baseService: clouddriver
     image:
-      imageId: sha256:7d402e5da6bf2237bd29cf5eb43652b19f49594630d549c68fd8a21490bda4e4
+      imageId: sha256:14a1c2280b7ea8c896b5259f28a078e48df246cecba6568821bdab252ee4cb78
       repository: armory/clouddriver-armory
-      tag: 2022.04.04.17.17.42.master
+      tag: 2022.08.08.15.16.06.master
     vcs:
       repo:
         orgName: armory-io
         repoName: clouddriver-armory
         type: github
-      sha: 5094f98634be982623dd96e959238c6e26fc8d1f
+      sha: 220bec1290010c2c65be8a6d6f5a269833a87a3b
   deck-armory:
     baseService: deck
     image:
@@ -122,15 +122,15 @@ services:
   rosco-armory:
     baseService: rosco
     image:
-      imageId: sha256:caae7d39ce4f36e6f4c3f806e55ba46755801490186fdc493526e3eb46c7833b
+      imageId: sha256:0239102d0be64253c18df1bba7657b6eb9cdb4a2c2f40d2a4b2fc32b0c7629ed
       repository: armory/rosco-armory
-      tag: 2022.04.01.15.50.46.master
+      tag: 2022.07.20.21.06.26.master
     vcs:
       repo:
         orgName: armory-io
         repoName: rosco-armory
         type: github
-      sha: 06f25d3966952226e8ec90084bc29da3602602d9
+      sha: fb245283577bd8d2d699c331a17c98011e260afe
   terraformer:
     baseService: null
     image:
