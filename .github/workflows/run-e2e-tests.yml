@@ -65,6 +65,16 @@ jobs:
           timeout: 2100000
 
       - name: Enable automerge in PR
+        if: success()
         uses: alexwilson/enable-github-automerge-action@main
         with:
           github-token: "${{ secrets.ASTROLABE_GITHUB_TOKEN }}"
+
+      - name: Destroy Ephemeral Spinnaker
+        if: always()
+        uses: armory-io/spin-trigger-pipeline-action@master
+        with:
+          baseUrl: https://spinnaker-api.internal.armory.io:8443/api/v1
+          source: destroy-ephemeral-spinnaker
+          crtFile: ${{ secrets.STAGING_CLIENT_CERTIFICATE }}
+          keyFile: ${{ secrets.STAGING_CLIENT_PRIVATE_KEY }}
