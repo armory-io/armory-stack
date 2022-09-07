@@ -71,7 +71,7 @@ jobs:
           github-token: "${{ secrets.ASTROLABE_GITHUB_TOKEN }}"
 
       - name: Destroy Ephemeral Spinnaker
-        if: always()
+        if: !cancelled()
         uses: armory-io/spin-trigger-pipeline-action@master
         with:
           baseUrl: https://spinnaker-api.internal.armory.io:8443/api/v1
