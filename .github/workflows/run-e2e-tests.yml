@@ -76,5 +76,6 @@ jobs:
         with:
           baseUrl: https://spinnaker-api.internal.armory.io:8443/api/v1
           source: destroy-ephemeral-spinnaker
+          parameters: 'namespace:${{ github.event.pull_request.head.sha }},branch_name:${{ github.event.pull_request.base.ref }}'
           crtFile: ${{ secrets.STAGING_CLIENT_CERTIFICATE }}
           keyFile: ${{ secrets.STAGING_CLIENT_PRIVATE_KEY }}
