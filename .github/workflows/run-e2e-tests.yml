@@ -18,12 +18,22 @@ jobs:
         with:
           fetch-depth: 1
 
+      - name: Cancel checks out-of-date
+        id: skip_check
+        uses: fkirc/skip-duplicate-actions@v4
+        with:
+          cancel_others: 'true'
+
       - name: Wait For Other Tests To Finish
         uses: softprops/turnstyle@v1
         with:
           same-branch-only: false
         env:
           GITHUB_TOKEN: ${{ secrets.ASTROLABE_GITHUB_TOKEN }}
+
+      - name: Give Github time to merge new changes if exist
+        run: sleep 10s
+        shell: bash
 
       - name: Get ArtifactId From Stack Services
         id: services
@@ -53,3 +63,19 @@ jobs:
           crtFile: ${{ secrets.STAGING_CLIENT_CERTIFICATE }}
           keyFile: ${{ secrets.STAGING_CLIENT_PRIVATE_KEY }}
           timeout: 2100000
+
+      - name: Enable automerge in PR
+        if: success()
+        uses: alexwilson/enable-github-automerge-action@main
+        with:
+          github-token: "${{ secrets.ASTROLABE_GITHUB_TOKEN }}"
+
+      - name: Destroy Ephemeral Spinnaker
+        if: ${{ !cancelled() }}
+        uses: armory-io/spin-trigger-pipeline-action@master
+        with:
+          baseUrl: https://spinnaker-api.internal.armory.io:8443/api/v1
+          source: destroy-ephemeral-spinnaker
+          parameters: 'namespace:${{ github.event.pull_request.head.sha }},branch_name:${{ github.event.pull_request.base.ref }}'
+          crtFile: ${{ secrets.STAGING_CLIENT_CERTIFICATE }}
+          keyFile: ${{ secrets.STAGING_CLIENT_PRIVATE_KEY }}
