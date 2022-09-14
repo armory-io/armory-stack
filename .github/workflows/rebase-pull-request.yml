@@ -1,0 +1,16 @@
+name: Rebase Pull Requests
+on:
+  push:
+    branches:
+      - master
+      - 'release-**.x'
+    paths:
+      - 'stack.yml'
+jobs:
+  rebase:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Rebase Pull Requests Out Of Date
+        uses: linhbn123/rebase-pull-requests@v1.0.1
+        with:
+          token: ${{ secrets.ASTROLABE_GITHUB_TOKEN }}
