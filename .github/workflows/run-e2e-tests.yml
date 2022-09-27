@@ -5,13 +5,36 @@ on:
     branches:
       - master
       - 'release-**.x'
-    paths:
-      - 'stack.yml'
 
 jobs:
+  check_path:
+    name: run-tests-only-if-stack-changed
+    runs-on: ubuntu-latest
+    outputs:
+      skip-test: ${{ steps.check_stack.changed }}
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v1
+        with:
+          fetch-depth: 1
+
+      - name: Check If Stack File Changed
+        id: check_stack
+        env:
+          BRANCH_NAME: ${{ github.event.pull_request.base.ref }}
+        run: |
+          diff=$(git diff origin/$BRANCH_NAME HEAD stack.yml)
+          if [ -z "$diff" ]; then
+            echo "##[set-output name=changed;]false"
+          else
+            echo "##[set-output name=changed;]true"
+          fi
+
   create_ephemeral_spinnaker_and_run_tests:
     name: create-destroy ephemeral spinnaker and run tests
     runs-on: ubuntu-latest
+    needs: check_path
+    if: needs.check_path.outputs.skip-test == false
     steps:
       - name: Checkout Code
         uses: actions/checkout@v1
