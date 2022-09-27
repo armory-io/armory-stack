@@ -79,3 +79,17 @@ jobs:
           parameters: 'namespace:${{ github.event.pull_request.head.sha }},branch_name:${{ github.event.pull_request.base.ref }}'
           crtFile: ${{ secrets.STAGING_CLIENT_CERTIFICATE }}
           keyFile: ${{ secrets.STAGING_CLIENT_PRIVATE_KEY }}
+
+      - uses: kceb/pull-request-url-action@v1
+        if: failure()
+        id: pr-url
+
+      - name: Send Slack Notification
+        if: failure()
+        uses: rtCamp/action-slack-notify@v2
+        env:
+          SLACK_CHANNEL: eng-release-process-alerts
+          SLACK_COLOR: ${{ job.status }}
+          SLACK_MESSAGE: 'Error found in the e2e tests suit for PR: ${{ steps.pr-url.outputs.url }}'
+          SLACK_TITLE: E2E Test Alert
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
