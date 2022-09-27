@@ -80,7 +80,7 @@ jobs:
           timeout: 2100000
 
       - name: Enable automerge in PR
-        if: ${ steps.check_stack.outputs.changed == true && success() }
+        if: ${{ steps.check_stack.outputs.changed == true && success() }}
         uses: alexwilson/enable-github-automerge-action@main
         with:
           github-token: "${{ secrets.ASTROLABE_GITHUB_TOKEN }}"
@@ -96,11 +96,11 @@ jobs:
           keyFile: ${{ secrets.STAGING_CLIENT_PRIVATE_KEY }}
 
       - uses: kceb/pull-request-url-action@v1
-        if: ${ steps.check_stack.outputs.changed == true && failure() }
+        if: ${{ steps.check_stack.outputs.changed == true && failure() }}
         id: pr-url
 
       - name: Send Slack Notification
-        if: ${ steps.check_stack.outputs.changed == true && failure() }
+        if: ${{ steps.check_stack.outputs.changed == true && failure() }}
         uses: rtCamp/action-slack-notify@v2
         env:
           SLACK_CHANNEL: eng-release-process-alerts
