@@ -29,13 +29,13 @@ jobs:
           fi
 
       - name: Cancel checks out-of-date
-        if: steps.check_stack.outputs.changed == true
+        if: steps.check_stack.outputs.changed == 'true'
         uses: fkirc/skip-duplicate-actions@v4
         with:
           cancel_others: 'true'
 
       - name: Wait For Other Tests To Finish
-        if: steps.check_stack.outputs.changed == true
+        if: steps.check_stack.outputs.changed == 'true'
         uses: softprops/turnstyle@v1
         with:
           same-branch-only: false
@@ -43,12 +43,12 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.ASTROLABE_GITHUB_TOKEN }}
 
       - name: Give Github time to merge new changes if exist
-        if: steps.check_stack.outputs.changed == true
+        if: steps.check_stack.outputs.changed == 'true'
         run: sleep 10s
         shell: bash
 
       - name: Get ArtifactId From Stack Services
-        if: steps.check_stack.outputs.changed == true
+        if: steps.check_stack.outputs.changed == 'true'
         id: services
         run: |
           services=( $(yq e '.services | to_entries | .[] | .key + "," + .value.image.repository + ":" + .value.image.tag' stack.yml ) )
@@ -58,7 +58,7 @@ jobs:
           done
 
       - name: Trigger Ephemeral Spinnaker And Tests
-        if: steps.check_stack.outputs.changed == true
+        if: steps.check_stack.outputs.changed == 'true'
         uses: armory-io/spin-trigger-pipeline-action@master
         id: trigger_tests
         with:
@@ -69,7 +69,7 @@ jobs:
           keyFile: ${{ secrets.STAGING_CLIENT_PRIVATE_KEY }}
 
       - name: Watch Pipeline Execution For E2E Tests
-        if: steps.check_stack.outputs.changed == true
+        if: steps.check_stack.outputs.changed == 'true'
         uses: armory-io/spin-wait-status-action@master
         with:
           baseUrl: https://spinnaker-api.internal.armory.io:8443/api/v1
@@ -80,13 +80,13 @@ jobs:
           timeout: 2100000
 
       - name: Enable automerge in PR
-        if: ${{ steps.check_stack.outputs.changed == true && success() }}
+        if: ${{ steps.check_stack.outputs.changed == 'true' && success() }}
         uses: alexwilson/enable-github-automerge-action@main
         with:
           github-token: "${{ secrets.ASTROLABE_GITHUB_TOKEN }}"
 
       - name: Destroy Ephemeral Spinnaker
-        if: ${{ steps.check_stack.outputs.changed == true && !cancelled() }}
+        if: ${{ steps.check_stack.outputs.changed == 'true' && !cancelled() }}
         uses: armory-io/spin-trigger-pipeline-action@master
         with:
           baseUrl: https://spinnaker-api.internal.armory.io:8443/api/v1
@@ -96,11 +96,11 @@ jobs:
           keyFile: ${{ secrets.STAGING_CLIENT_PRIVATE_KEY }}
 
       - uses: kceb/pull-request-url-action@v1
-        if: ${{ steps.check_stack.outputs.changed == true && failure() }}
+        if: ${{ steps.check_stack.outputs.changed == 'true' && failure() }}
         id: pr-url
 
       - name: Send Slack Notification
-        if: ${{ steps.check_stack.outputs.changed == true && failure() }}
+        if: ${{ steps.check_stack.outputs.changed == 'true' && failure() }}
         uses: rtCamp/action-slack-notify@v2
         env:
           SLACK_CHANNEL: eng-release-process-alerts
