@@ -10,8 +10,10 @@ jobs:
     name: Update Stack Repo
     runs-on: ubuntu-latest
     env:
-      SERVICE_NAME: ${{ github.event.client_payload.service.name }}
-      SERVICE_VERSION: ${{ github.event.client_payload.service.details.image.tag }}
+      SERVICE_NAME: ${{ github.event.client_payload.stackEntry.name }}
+      SERVICE_VERSION: ${{ github.event.client_payload.stackEntry.details.image.tag }}
+      STACK_PATH: ${{ github.event.client_payload.stackPath }}
+      STACK_FILE: ${{ github.event.client_payload.stackFile }}
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v2
@@ -21,7 +23,7 @@ jobs:
       - name: Create yq Query
         id: create_yq_query
         env:
-          SERVICE_UPDATE: ${{ toJson(github.event.client_payload.service.details) }}
+          SERVICE_UPDATE: ${{ toJson(github.event.client_payload.stackEntry.details) }}
         run: |
           echo "Updating stack repo entry for ${SERVICE_NAME}"
           echo "Update is:"
@@ -29,17 +31,26 @@ jobs:
           echo "Current stack is:"
           cat stack.yml
 
-          SERVICE_QUERY="(.services.$SERVICE_NAME)"
+          SERVICE_QUERY="(.$STACK_PATH.$SERVICE_NAME)"
 
           echo ::set-output name=query::"$SERVICE_QUERY = ${SERVICE_UPDATE//$'\n'/} | sortKeys(..)"
 
       - name: Update Stack File
         uses: mikefarah/yq@v4.6.1
         with:
-          cmd: yq eval -i '${{ steps.create_yq_query.outputs.query }}' stack.yml
+          cmd: yq eval -i '${{ steps.create_yq_query.outputs.query }}' $STACK_FILE
       
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v3.8.2
+        env:
+          SERVICE_ORG: ${{ github.event.client_payload.stackEntry.details.vcs.repo.orgName }}
+          SERVICE_REPO: ${{ github.event.client_payload.stackEntry.details.vcs.repo.repoName }}
+          SERVICE_SHA: ${{ github.event.client_payload.stackEntry.details.vcs.sha }}
+          BASE_SERVICE_ORG: ${{ github.event.client_payload.stackEntry.baseVcs.repo.orgName }}
+          BASE_SERVICE_REPO: ${{ github.event.client_payload.stackEntry.baseVcs.repo.repoName }}
+          BASE_SERVICE_SHA: ${{ github.event.client_payload.stackEntry.baseVcs.sha }}
+          RELEASE_BRANCH: ${{ github.event.client_payload.branch }}
+          SERVICE_IMAGE_REPOSITORY: ${{ github.event.client_payload.stackEntry.details.image.repository }}
         with:
           token: ${{ secrets.ASTROLABE_GITHUB_TOKEN }}
           commit-message: "chore(cd): update ${{ env.SERVICE_NAME}} version to ${{ env.SERVICE_VERSION}}"
@@ -50,7 +61,25 @@ jobs:
             autoMerge
             stackUpdate
           body: |
-            Event
+            ## Promotion Of New ${{ env.SERVICE_NAME}} Version
+
+            ### Release Branch
+
+            * **${{ env.RELEASE_BRANCH}}**
+
+            ### ${{ env.SERVICE_NAME}} Image Version
+
+            ${{ env.SERVICE_IMAGE_REPOSITORY}}:${{ env.SERVICE_VERSION}}
+
+            ### Service VCS
+
+            [${{ env.SERVICE_SHA}}](https://github.com/${{ env.SERVICE_ORG}}/${{ env.SERVICE_REPO}}/commit/${{ env.SERVICE_SHA}})
+
+            ### Base Service VCS
+
+            [${{ env.BASE_SERVICE_SHA}}](https://github.com/${{ env.BASE_SERVICE_ORG}}/${{ env.BASE_SERVICE_REPO}}/commit/${{ env.BASE_SERVICE_SHA}})
+
+            Event Payload
             ```
             ${{ toJson(github.event.client_payload) }}
             ```
