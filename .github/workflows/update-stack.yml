@@ -13,6 +13,7 @@ jobs:
       SERVICE_NAME: ${{ github.event.client_payload.stackEntry.name }}
       SERVICE_VERSION: ${{ github.event.client_payload.stackEntry.details.image.tag }}
       STACK_PATH: ${{ github.event.client_payload.stackPath }}
+      STACK_FILE: ${{ github.event.client_payload.stackFile }}
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v2
@@ -37,7 +38,7 @@ jobs:
       - name: Update Stack File
         uses: mikefarah/yq@v4.6.1
         with:
-          cmd: yq eval -i '${{ steps.create_yq_query.outputs.query }}' stack.yml
+          cmd: yq eval -i '${{ steps.create_yq_query.outputs.query }}' $STACK_FILE
       
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v3.8.2
