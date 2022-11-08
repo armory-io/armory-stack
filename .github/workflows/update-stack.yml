@@ -49,6 +49,7 @@ jobs:
           BASE_SERVICE_REPO: ${{ github.event.client_payload.stackEntry.baseVcs.repo.repoName }}
           BASE_SERVICE_SHA: ${{ github.event.client_payload.stackEntry.baseVcs.sha }}
           RELEASE_BRANCH: ${{ github.event.client_payload.branch }}
+          SERVICE_IMAGE_REPOSITORY: ${{ github.event.client_payload.stackEntry.details.image.repository }}
         with:
           token: ${{ secrets.ASTROLABE_GITHUB_TOKEN }}
           commit-message: "chore(cd): update ${{ env.SERVICE_NAME}} version to ${{ env.SERVICE_VERSION}}"
@@ -65,13 +66,17 @@ jobs:
 
             * **${{ env.RELEASE_BRANCH}}**
 
+            ### ${{ env.SERVICE_NAME}} Image Version
+
+            ${{ env.SERVICE_IMAGE_REPOSITORY}}:${{ env.SERVICE_VERSION}}
+
             ### Service VCS
 
-            [${{ env.SERVICE_NAME}} commit](https://github.com/${{ env.SERVICE_ORG}}/${{ env.SERVICE_REPO}}/commit/${{ env.SERVICE_SHA}})
+            [${{ env.SERVICE_SHA}}](https://github.com/${{ env.SERVICE_ORG}}/${{ env.SERVICE_REPO}}/commit/${{ env.SERVICE_SHA}})
 
             ### Base Service VCS
 
-            [${{ env.BASE_SERVICE_REPO}} commit](https://github.com/${{ env.BASE_SERVICE_ORG}}/${{ env.BASE_SERVICE_REPO}}/commit/${{ env.BASE_SERVICE_SHA}})
+            [${{ env.BASE_SERVICE_SHA}}](https://github.com/${{ env.BASE_SERVICE_ORG}}/${{ env.BASE_SERVICE_REPO}}/commit/${{ env.BASE_SERVICE_SHA}})
 
             Event Payload
             ```
