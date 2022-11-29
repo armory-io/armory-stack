@@ -51,6 +51,7 @@ jobs:
           BASE_SERVICE_SHA: ${{ github.event.client_payload.stackEntry.baseVcs.sha }}
           RELEASE_BRANCH: ${{ github.event.client_payload.branch }}
           SERVICE_IMAGE_REPOSITORY: ${{ github.event.client_payload.stackEntry.details.image.repository }}
+          COMMITID: 'github:${{ env.SERVICE_ORG}}:${{ env.SERVICE_REPO}}:${{ env.SERVICE_SHA}}'
         with:
           token: ${{ secrets.ASTROLABE_GITHUB_TOKEN }}
           commit-message: "chore(cd): update ${{ env.SERVICE_NAME}} version to ${{ env.SERVICE_VERSION}}"
@@ -60,7 +61,7 @@ jobs:
           labels: |
             autoMerge
             stackUpdate
-            github:${{ env.SERVICE_ORG}}:${{ env.SERVICE_REPO}}:${{ env.SERVICE_SHA}}
+            ${{ env.COMMITID}}
           body: |
             ## Promotion Of New ${{ env.SERVICE_NAME}} Version
 
