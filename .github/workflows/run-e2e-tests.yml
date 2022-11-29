@@ -95,12 +95,26 @@ jobs:
           crtFile: ${{ secrets.STAGING_CLIENT_CERTIFICATE }}
           keyFile: ${{ secrets.STAGING_CLIENT_PRIVATE_KEY }}
 
+      - name: build json with labels
+        if: ${{ steps.check_stack.outputs.changed == 'true' && failure() }}
+        uses: jsdaniell/create-json@v1.2.1
+        with:
+          name: "labels.json"
+          json: ${{ toJson(github.event.pull_request.labels) }}
+
+      - name: Extract commitId from labels.json
+        if: ${{ steps.check_stack.outputs.changed == 'true' && failure() }}
+        uses: sergeysova/jq-action@v2
+        id: commitid
+        with:
+          cmd: jq -r '.labels[].name | select(startswith("github:"))' labels.json
+
       - name: Send Slack Notification
         if: ${{ steps.check_stack.outputs.changed == 'true' && failure() }}
         uses: rtCamp/action-slack-notify@v2
         env:
           SLACK_CHANNEL: eng-release-process-alerts
           SLACK_COLOR: ${{ job.status }}
-          SLACK_MESSAGE: 'Error found in the e2e tests suit for PR: ${{ github.event.pull_request.url }}'
+          SLACK_MESSAGE: 'Error found in the e2e tests suit for PR: ${{ github.event.pull_request.url }} Bathymetric: https://bathymetric.dynamo-prod.eng.armory.io/?branchName=${{ github.event.pull_request.base.ref }}&selectedStackPipelineId=${{ steps.commitid.outputs.value }}'
           SLACK_TITLE: E2E Test Alert
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}

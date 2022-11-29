@@ -60,6 +60,7 @@ jobs:
           labels: |
             autoMerge
             stackUpdate
+            github:${{ env.SERVICE_ORG}}:${{ env.SERVICE_REPO}}:${{ env.SERVICE_SHA}}
           body: |
             ## Promotion Of New ${{ env.SERVICE_NAME}} Version
 
