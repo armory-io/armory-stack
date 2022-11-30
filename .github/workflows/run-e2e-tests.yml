@@ -107,7 +107,7 @@ jobs:
         uses: sergeysova/jq-action@v2
         id: serviceKey
         with:
-          cmd: jq -r '[.labels[].name | select(. != "bug") | select(. != "github")][0]' labels.json
+          cmd: jq -r '[.labels[].name | select(. != "autoMerge") | select(. != "stackUpdate")]' labels.json
 
       - name: Extract serviceType
         if: ${{ steps.check_stack.outputs.changed == 'true' && failure() }}
@@ -143,6 +143,6 @@ jobs:
         env:
           SLACK_CHANNEL: eng-release-process-alerts
           SLACK_COLOR: ${{ job.status }}
-          SLACK_MESSAGE: 'Error found in the e2e tests suit for PR: ${{ github.event.pull_request.url }} \n Bathymetric: https://bathymetric.dynamo-prod.eng.armory.io/?branchName=${{ github.event.pull_request.base.ref }}&selectedStackPipelineId=${{ steps.serviceType.outputs.result }}:${{ steps.serviceOrg.outputs.result }}:${{ steps.serviceRepo.outputs.result }}:${{ steps.serviceSha.outputs.result }}'
+          SLACK_MESSAGE: 'Error found in the e2e tests suit for PR: ${{ github.event.pull_request.url }} Bathymetric: https://bathymetric.dynamo-prod.eng.armory.io/?branchName=${{ github.event.pull_request.base.ref }}&selectedStackPipelineId=${{ steps.serviceType.outputs.result }}:${{ steps.serviceOrg.outputs.result }}:${{ steps.serviceRepo.outputs.result }}:${{ steps.serviceSha.outputs.result }}'
           SLACK_TITLE: E2E Test Alert
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
