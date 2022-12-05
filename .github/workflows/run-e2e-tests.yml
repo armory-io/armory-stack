@@ -100,7 +100,7 @@ jobs:
         uses: jsdaniell/create-json@v1.2.1
         with:
           name: "pr-info.json"
-          json: ${{ toJson(github.event.pull_request.labels) }}
+          json: ${{ toJson(github.event.pull_request) }}
 
       - name: Extract serviceName from pr-info.json
         if: ${{ steps.check_stack.outputs.changed == 'true' && failure() }}
