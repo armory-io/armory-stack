@@ -95,9 +95,47 @@ jobs:
           crtFile: ${{ secrets.STAGING_CLIENT_CERTIFICATE }}
           keyFile: ${{ secrets.STAGING_CLIENT_PRIVATE_KEY }}
 
-      - uses: kceb/pull-request-url-action@v1
+      - name: build json with labels
         if: ${{ steps.check_stack.outputs.changed == 'true' && failure() }}
-        id: pr-url
+        uses: jsdaniell/create-json@v1.2.1
+        with:
+          name: "pr-info.json"
+          json: ${{ toJson(github.event.pull_request) }}
+
+      - name: Extract serviceName from pr-info.json
+        if: ${{ steps.check_stack.outputs.changed == 'true' && failure() }}
+        uses: sergeysova/jq-action@v2
+        id: serviceKey
+        with:
+          cmd: jq -r '[.labels[].name | select(. != "autoMerge") | select(. != "stackUpdate")][0]' pr-info.json
+
+      - name: Extract serviceType
+        if: ${{ steps.check_stack.outputs.changed == 'true' && failure() }}
+        uses: mikefarah/yq@master
+        id: serviceType
+        with:
+          cmd: yq '.services.["${{ steps.serviceKey.outputs.value }}"].vcs.repo.type' stack.yml
+
+      - name: Extract serviceOrg
+        if: ${{ steps.check_stack.outputs.changed == 'true' && failure() }}
+        uses: mikefarah/yq@master
+        id: serviceOrg
+        with:
+          cmd: yq '.services.["${{ steps.serviceKey.outputs.value }}"].vcs.repo.orgName' stack.yml
+
+      - name: Extract serviceRepo
+        if: ${{ steps.check_stack.outputs.changed == 'true' && failure() }}
+        uses: mikefarah/yq@master
+        id: serviceRepo
+        with:
+          cmd: yq '.services.["${{ steps.serviceKey.outputs.value }}"].vcs.repo.repoName' stack.yml
+
+      - name: Extract serviceSha
+        if: ${{ steps.check_stack.outputs.changed == 'true' && failure() }}
+        uses: mikefarah/yq@master
+        id: serviceSha
+        with:
+          cmd: yq '.services.["${{ steps.serviceKey.outputs.value }}"].vcs.sha' stack.yml
 
       - name: Send Slack Notification
         if: ${{ steps.check_stack.outputs.changed == 'true' && failure() }}
@@ -105,6 +143,6 @@ jobs:
         env:
           SLACK_CHANNEL: eng-release-process-alerts
           SLACK_COLOR: ${{ job.status }}
-          SLACK_MESSAGE: 'Error found in the e2e tests suit for PR: ${{ steps.pr-url.outputs.url }}'
+          SLACK_MESSAGE: 'Error found in the e2e tests suit for PR: ${{ github.event.pull_request.html_url }} Bathymetric: https://bathymetric.dynamo-prod.eng.armory.io/?branchName=${{ github.event.pull_request.base.ref }}&selectedStackPipelineId=${{ steps.serviceType.outputs.result }}:${{ steps.serviceOrg.outputs.result }}:${{ steps.serviceRepo.outputs.result }}:${{ steps.serviceSha.outputs.result }}'
           SLACK_TITLE: E2E Test Alert
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
