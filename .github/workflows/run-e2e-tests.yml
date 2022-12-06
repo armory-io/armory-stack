@@ -107,7 +107,7 @@ jobs:
         uses: sergeysova/jq-action@v2
         id: serviceKey
         with:
-          cmd: jq -r '[.labels[].name | select(. != "autoMerge") | select(. != "stackUpdate")]' pr-info.json
+          cmd: jq -r '[.labels[].name | select(. != "autoMerge") | select(. != "stackUpdate")][0]' pr-info.json
 
       - name: Extract serviceType
         if: ${{ steps.check_stack.outputs.changed == 'true' && failure() }}
