@@ -73,9 +73,9 @@ services:
   gate-armory:
     baseService: gate
     image:
-      imageId: sha256:67b4e14ca1adece5011a8425777bf61630fe0fabeb64d0ef9ab64d47c1ac965e
+      imageId: sha256:64a16e850f1321729c2107d78fcafd941049df78bc9e545698a01f0c186fdf96
       repository: armory/gate-armory
-      tag: 2022.11.17.22.19.35.master
+      tag: 2022.11.17.22.19.35.release-2.29.x
     vcs:
       repo:
         orgName: armory-io
