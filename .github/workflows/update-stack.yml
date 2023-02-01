@@ -60,6 +60,7 @@ jobs:
           labels: |
             autoMerge
             stackUpdate
+            ${{ github.event.client_payload.stackEntry.name }}
           body: |
             ## Promotion Of New ${{ env.SERVICE_NAME}} Version
 
