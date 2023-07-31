@@ -97,9 +97,9 @@ services:
   kayenta-armory:
     baseService: kayenta
     image:
-      imageId: sha256:0ec1ad4d70fc24f09834b9180b63b79aa037b95192a9a06fabced4286961b421
+      imageId: sha256:21732929958c646de59742ab2df20cdf68128bf900933a14e0e23ae94f40234b
       repository: armory/kayenta-armory
-      tag: 2023.05.08.15.35.55.master
+      tag: 2023.05.08.15.35.55.release-2.31.x
     vcs:
       repo:
         orgName: armory-io
