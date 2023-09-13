@@ -24,6 +24,17 @@ jobs:
           docker tag ${{ env.BASE_SERVICE_REPO }}:${{ env.BASE_SERVICE_TAG }} ${{ env.NEW_SERVICE_REPO }}:${{ env.NEW_SERVICE_TAG }}
           docker push ${{ env.NEW_SERVICE_REPO }}:${{ env.NEW_SERVICE_TAG }}
 
+      - name: Scan Using Aquasec
+        uses: armory-io/aquasec-scan-action@v0.1.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          username: ${{ secrets.AQUA_USER }}
+          password: ${{ secrets.AQUA_PASSWORD }}
+          url: https://aquasec.armory.io
+          registry: Docker Hub
+          image: ${{ env.NEW_SERVICE_REPO }}:${{ env.NEW_SERVICE_TAG }}
+
       - name: Login to Artifactory
         run: docker login -u ${{ secrets.ARTIFACTORY_USER }} -p ${{ secrets.ARTIFACTORY_PASSWORD }} armory-docker-local.jfrog.io
 
