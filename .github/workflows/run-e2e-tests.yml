@@ -77,7 +77,7 @@ jobs:
           eventId: ${{ steps.trigger_tests.outputs.eventId }}
           crtFile: ${{ secrets.STAGING_CLIENT_CERTIFICATE }}
           keyFile: ${{ secrets.STAGING_CLIENT_PRIVATE_KEY }}
-          timeout: 2100000
+          timeout: 3600000
 
       - name: Enable automerge in PR
         if: ${{ steps.check_stack.outputs.changed == 'true' && success() }}
