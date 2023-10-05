@@ -73,15 +73,15 @@ services:
   gate-armory:
     baseService: gate
     image:
-      imageId: sha256:f12384344ededf748195982f14dfc4ffd172a5ea32804ace89d2aec29b6e1888
+      imageId: sha256:aa0ba765bd0564fa4d1a821f497e1e7bd1678e1fc8716f048cdc0d2985c153b7
       repository: armory/gate-armory
-      tag: 2023.04.01.01.41.08.release-2.27.x
+      tag: 2023.09.21.17.51.24.release-2.27.x
     vcs:
       repo:
         orgName: armory-io
         repoName: gate-armory
         type: github
-      sha: a7113de29cbcf45e43e4b14dcd58b5fd85b74227
+      sha: a0d7630cae3c3d09094843286c7f4cf7f5b4615f
   igor-armory:
     baseService: igor
     image:
