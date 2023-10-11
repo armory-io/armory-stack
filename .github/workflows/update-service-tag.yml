@@ -15,14 +15,17 @@ jobs:
       NEW_SERVICE_REPO: ${{ github.event.client_payload.newImage.repository }}
       NEW_SERVICE_TAG: ${{ github.event.client_payload.newImage.tag }}
     steps:
+      - name: Install regctl
+        uses: iarekylew00t/regctl-installer@v1
+        with:
+          regctl-release: v0.5.3
+
       - name: Login to Docker Hub
         run: docker login -u ${{ secrets.DOCKER_HUB_USER }} -p '${{ secrets.DOCKER_HUB_PASS }}'
 
       - name: Publish Image to Docker Hub
         run: |
-          docker pull ${{ env.BASE_SERVICE_REPO }}:${{ env.BASE_SERVICE_TAG }}
-          docker tag ${{ env.BASE_SERVICE_REPO }}:${{ env.BASE_SERVICE_TAG }} ${{ env.NEW_SERVICE_REPO }}:${{ env.NEW_SERVICE_TAG }}
-          docker push ${{ env.NEW_SERVICE_REPO }}:${{ env.NEW_SERVICE_TAG }}
+          regctl image copy ${{ env.BASE_SERVICE_REPO }}:${{ env.BASE_SERVICE_TAG }} ${{ env.NEW_SERVICE_REPO }}:${{ env.NEW_SERVICE_TAG }}
 
       - name: Scan Using Aquasec
         uses: armory-io/aquasec-scan-action@v0.1.0
@@ -40,5 +43,4 @@ jobs:
 
       - name: Publish Image to Artifactory
         run: |
-          docker tag ${{ env.BASE_SERVICE_REPO }}:${{ env.BASE_SERVICE_TAG }} armory-docker-local.jfrog.io/${{ env.NEW_SERVICE_REPO }}:${{ env.NEW_SERVICE_TAG }}
-          docker push armory-docker-local.jfrog.io/${{ env.NEW_SERVICE_REPO }}:${{ env.NEW_SERVICE_TAG }}
+          regctl image copy ${{ env.BASE_SERVICE_REPO }}:${{ env.BASE_SERVICE_TAG }} armory-docker-local.jfrog.io/${{ env.NEW_SERVICE_REPO }}:${{ env.NEW_SERVICE_TAG }}
