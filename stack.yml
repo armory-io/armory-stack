@@ -85,9 +85,9 @@ services:
   igor-armory:
     baseService: igor
     image:
-      imageId: sha256:d9498ab90b76c900d305a9cedd2fd65d5a8423a4893f0a5705f78e38b2c00c2f
+      imageId: sha256:7d4f25d179d0e6b19514a4963836ea2f2c1c62dfc161f554ec98219511e0b4fc
       repository: armory/igor-armory
-      tag: 2022.09.14.16.39.54.master
+      tag: 2022.09.14.16.39.54.release-2.32.x
     vcs:
       repo:
         orgName: armory-io
