@@ -132,12 +132,12 @@ services:
       sha: 6b4119df0c8a7be5859d63a19d76ea4605f92781
   terraformer:
     image:
-      imageId: sha256:1506ec5c67610640e8491759bb0dc4ab2d75375185616ec0d3b66758b8459cd5
+      imageId: sha256:c57279c6dfb0c64bd54bc77f759de32585e753ffe9da3886b787499f0ef2fd3b
       repository: armory/terraformer
-      tag: 2024.01.29.14.46.59.master
+      tag: 2024.02.08.08.58.59.master
     vcs:
       repo:
         orgName: armory-io
         repoName: terraformer
         type: github
-      sha: 3af8055b100be1c50162e2fa82dd5c4f99471225
+      sha: 7c3877386f561f76b3da9c7c16b85bda67c6e90d
