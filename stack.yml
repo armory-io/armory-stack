@@ -121,15 +121,15 @@ services:
   rosco-armory:
     baseService: rosco
     image:
-      imageId: sha256:eaa7ea882a380e0e95c75fe13056a640a0c9a0f00b0d2f29fd0272572faefda6
+      imageId: sha256:331287a6d4ad331a27be1b62f045d69bfb6a0c956a5108b03f6eb94777c77384
       repository: armory/rosco-armory
-      tag: 2024.01.24.10.13.05.release-2.31.x
+      tag: 2024.02.28.09.06.38.release-2.31.x
     vcs:
       repo:
         orgName: armory-io
         repoName: rosco-armory
         type: github
-      sha: a8ff067ff32d892f9bf29102d4ac663eeed1b4a0
+      sha: 9812503db8271e32cd5d7960db12441fa8a39494
   terraformer:
     image:
       imageId: sha256:be5fa34bdacbf1d1804055339c4685b2a2aa6e0ff4c26121bae7bcaae18b3565
