@@ -61,15 +61,15 @@ services:
   front50-armory:
     baseService: front50
     image:
-      imageId: sha256:11e5aec5b0929d40bfbe06f929e0e7807cee6c78e23a7844ded3a75ae9ae1fcf
+      imageId: sha256:a16b64064140d940a4ea8f1b78ea9445c481347108ed844dfb9dfa24d818fe50
       repository: armory/front50-armory
-      tag: 2024.04.19.02.53.12.master
+      tag: 2024.04.29.15.57.45.master
     vcs:
       repo:
         orgName: armory-io
         repoName: front50-armory
         type: github
-      sha: 20bf9f59bcb4e45b35e4b0157f029726efc872e5
+      sha: 228c933975ef6e263914eaee3de183afc44c8e3c
   gate-armory:
     baseService: gate
     image:
