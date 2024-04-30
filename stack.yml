@@ -109,9 +109,9 @@ services:
   orca-armory:
     baseService: orca
     image:
-      imageId: sha256:dec86f1cf0d219ea7d04ec2922e42a34e41126736f3140ef20f3dd9e953b7d5d
+      imageId: sha256:bba1acdd0c16971ef02e22f2bd2a9230d337f488ad58640e5cbf7c0327005119
       repository: armory/orca-armory
-      tag: 2024.04.29.19.34.54.master
+      tag: 2024.04.29.19.34.54.release-2.34.x
     vcs:
       repo:
         orgName: armory-io
