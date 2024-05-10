@@ -109,15 +109,15 @@ services:
   orca-armory:
     baseService: orca
     image:
-      imageId: sha256:0551ac9c37748cad8f6802ae4ab7bf0d57ea165f65290dc29f17547b2f946659
+      imageId: sha256:613cc5b5bf2f26eaf46f789023923d60daa6f1b9447ef8c07c43d69337e4a91d
       repository: armory/orca-armory
-      tag: 2024.05.09.12.02.27.master
+      tag: 2024.05.10.18.49.03.master
     vcs:
       repo:
         orgName: armory-io
         repoName: orca-armory
         type: github
-      sha: ed758685195b81419450032de82059fcec97fe8b
+      sha: ad6acffb04df4bd9dfd7c2e17c00c0efe43ff9eb
   rosco-armory:
     baseService: rosco
     image:
