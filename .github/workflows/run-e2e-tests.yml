@@ -89,7 +89,7 @@ jobs:
         if: ${{ steps.check_stack.outputs.changed == 'true' && !cancelled() }}
         uses: armory-io/spin-trigger-pipeline-action@master
         with:
-          baseUrl: https://spinnaker-api.internal.armory.io:8443/api/v1
+          baseUrl: ${{ secrets.MANAGED_GATE_X509_URL }}
           source: destroy-ephemeral-spinnaker
           parameters: 'namespace:${{ github.event.pull_request.head.sha }},branch_name:${{ github.event.pull_request.base.ref }}'
           crtFile: ${{ secrets.MANAGED_CLIENT_CERTIFICATE }}
