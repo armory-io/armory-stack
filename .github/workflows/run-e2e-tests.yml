@@ -62,21 +62,21 @@ jobs:
         uses: armory-io/spin-trigger-pipeline-action@master
         id: trigger_tests
         with:
-          baseUrl: https://spinnaker-api.internal.armory.io:8443/api/v1
+          baseUrl: ${{ secrets.MANAGED_GATE_X509_URL }}
           source: create-ephemeral-spinnaker
           parameters: 'namespace:${{ github.event.pull_request.head.sha }},sha:${{ github.event.pull_request.head.sha }},branch_name:${{ github.event.pull_request.base.ref }},clouddriver_image:${{ steps.services.outputs.clouddriver-armory }},deck_image:${{ steps.services.outputs.deck-armory }},dinghy_image:${{ steps.services.outputs.dinghy }},echo_image:${{ steps.services.outputs.echo-armory }},fiat_image:${{ steps.services.outputs.fiat-armory }},front50_image:${{ steps.services.outputs.front50-armory }},gate_image:${{ steps.services.outputs.gate-armory }},igor_image:${{ steps.services.outputs.igor-armory }},kayenta_image:${{ steps.services.outputs.kayenta-armory }},orca_image:${{ steps.services.outputs.orca-armory }},rosco_image:${{ steps.services.outputs.rosco-armory }},terraformer_image:${{ steps.services.outputs.terraformer }},pr_url:${{ github.event.pull_request.html_url }}'
-          crtFile: ${{ secrets.STAGING_CLIENT_CERTIFICATE }}
-          keyFile: ${{ secrets.STAGING_CLIENT_PRIVATE_KEY }}
+          crtFile: ${{ secrets.MANAGED_CLIENT_CERTIFICATE }}
+          keyFile: ${{ secrets.MANAGED_CLIENT_PRIVATE_KEY }}
 
       - name: Watch Pipeline Execution For E2E Tests
         if: steps.check_stack.outputs.changed == 'true'
         uses: armory-io/spin-wait-status-action@master
         with:
-          baseUrl: https://spinnaker-api.internal.armory.io:8443/api/v1
+          baseUrl: ${{ secrets.MANAGED_GATE_X509_URL }}
           application: dynamo-armory-enterprise-testing
           eventId: ${{ steps.trigger_tests.outputs.eventId }}
-          crtFile: ${{ secrets.STAGING_CLIENT_CERTIFICATE }}
-          keyFile: ${{ secrets.STAGING_CLIENT_PRIVATE_KEY }}
+          crtFile: ${{ secrets.MANAGED_CLIENT_CERTIFICATE }}
+          keyFile: ${{ secrets.MANAGED_CLIENT_PRIVATE_KEY }}
           timeout: 3600000
 
       - name: Enable automerge in PR
@@ -92,8 +92,8 @@ jobs:
           baseUrl: https://spinnaker-api.internal.armory.io:8443/api/v1
           source: destroy-ephemeral-spinnaker
           parameters: 'namespace:${{ github.event.pull_request.head.sha }},branch_name:${{ github.event.pull_request.base.ref }}'
-          crtFile: ${{ secrets.STAGING_CLIENT_CERTIFICATE }}
-          keyFile: ${{ secrets.STAGING_CLIENT_PRIVATE_KEY }}
+          crtFile: ${{ secrets.MANAGED_CLIENT_CERTIFICATE }}
+          keyFile: ${{ secrets.MANAGED_CLIENT_PRIVATE_KEY }}
 
       - name: build json with labels
         if: ${{ steps.check_stack.outputs.changed == 'true' && failure() }}
