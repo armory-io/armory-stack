@@ -4,7 +4,7 @@ services:
     image:
       imageId: sha256:6e0f939218c7006c306fad945895298b5c1b40142a7f1ccd1277de94a803bea9
       repository: armory/clouddriver-armory
-      tag: 2025.02.19.17.47.21.master
+      tag: 2025.03.13.21.12.20.master
     vcs:
       repo:
         orgName: armory-io
