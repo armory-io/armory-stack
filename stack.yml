@@ -2,9 +2,9 @@ services:
   clouddriver-armory:
     baseService: clouddriver
     image:
-      imageId: sha256:273426bc928d86aa17c4aacea9ae2bb4e08c36f1662b0cf723a08d5da3943267
+      imageId: sha256:6ac9014235de1119e8c848f4ea4643f5f6d7b9ae87879920e957a43c7dec4477
       repository: armory/clouddriver-armory
-      tag: 2025.08.04.13.27.28.release-2.36.x
+      tag: 2025.08.06.10.36.50.release-2.36.x
     vcs:
       repo:
         orgName: armory-io
@@ -37,9 +37,9 @@ services:
   echo-armory:
     baseService: echo
     image:
-      imageId: sha256:e23c0fae1150b3a4730bb4c6f2c182ff8707b1f323bbad9c8a1f2b25497a8556
+      imageId: sha256:774cc63d7c816e709b1c8b834857a1d945cb957d364ded326153dd799b2eb67c
       repository: armory/echo-armory
-      tag: 2025.08.04.13.57.42.release-2.36.x
+      tag: 2025.08.06.10.36.41.release-2.36.x
     vcs:
       repo:
         orgName: armory-io
@@ -49,9 +49,9 @@ services:
   fiat-armory:
     baseService: fiat
     image:
-      imageId: sha256:e8b920ca4b95a6c0127937d4b03104b16d19825c10a3b408e1f82a4f7eaae886
+      imageId: sha256:53880d0c0c080320d8f3bb2fa0bcdfd62f66ea8d07386364a0cbc86a39d5cbb7
       repository: armory/fiat-armory
-      tag: 2025.08.04.13.35.22.release-2.36.x
+      tag: 2025.08.06.11.07.02.release-2.36.x
     vcs:
       repo:
         orgName: armory-io
@@ -61,9 +61,9 @@ services:
   front50-armory:
     baseService: front50
     image:
-      imageId: sha256:552bfe614c97cac286246e6cad3370ef681929becfcbd87e0a15ccd84c754edf
+      imageId: sha256:387c6a180d27ca84419014a955e557481459feec8e21892da399c00a7724bbc8
       repository: armory/front50-armory
-      tag: 2025.08.04.13.27.21.release-2.36.x
+      tag: 2025.08.06.10.36.07.release-2.36.x
     vcs:
       repo:
         orgName: armory-io
@@ -73,9 +73,9 @@ services:
   gate-armory:
     baseService: gate
     image:
-      imageId: sha256:39d621d993b6e8a0b44232b181e78dbcefe7cded810526b4330f3b27260bc287
+      imageId: sha256:cdb3cd64a7c1ea266b4d675f09ee4a28b04c71b643d05baf99635333d91c82fa
       repository: armory/gate-armory
-      tag: 2025.08.04.13.31.01.release-2.36.x
+      tag: 2025.08.06.10.35.55.release-2.36.x
     vcs:
       repo:
         orgName: armory-io
@@ -85,9 +85,9 @@ services:
   igor-armory:
     baseService: igor
     image:
-      imageId: sha256:1de9ef0d9d461395520aa6c8616c5843c6255c94dc09ca768bf2abeca6f341c9
+      imageId: sha256:97aac185fd9fcbcd4230d25967998be3115c171eb632b7b5ec46b03ed04ca860
       repository: armory/igor-armory
-      tag: 2025.08.04.13.25.14.release-2.36.x
+      tag: 2025.08.06.10.36.29.release-2.36.x
     vcs:
       repo:
         orgName: armory-io
@@ -97,9 +97,9 @@ services:
   kayenta-armory:
     baseService: kayenta
     image:
-      imageId: sha256:fd7351a02b342e76ba0cd8a261afa00d95fd3ba72f8e17b02a1abc21c4c71d5a
+      imageId: sha256:4b492ca618fb1b43a0a47a5482640cafc4ab3f1f05e94db199a69ecd4e5037a8
       repository: armory/kayenta-armory
-      tag: 2025.08.04.14.11.42.release-2.36.x
+      tag: 2025.08.06.10.35.41.release-2.36.x
     vcs:
       repo:
         orgName: armory-io
@@ -121,16 +121,16 @@ services:
   rosco-armory:
     baseService: rosco
     image:
-      imageId: sha256:bf2d8e591362eb9baadc862d04ed1e248099b01c87acf1d52120db82adea9ed4
+      imageId: sha256:f69a66815932a5bf5dbc96d54c83104bce926a9080418992541b5e253410aac7
       repository: armory/rosco-armory
-      tag: 2025.08.04.13.28.31.release-2.36.x
+      tag: 2025.08.06.12.26.58.release-2.36.x
     vcs:
       repo:
         orgName: armory-io
         repoName: rosco-armory
         type: github
       sha: b18365f1351beeb330760d268df570f4bab9a691
-  terraformer: #Need Confirmation on this service
+  terraformer:
     image:
       imageId: sha256:4b537f3dc43fe9328b2238a78788cf4d0b212552544dcc6152be65386df1dc08
       repository: armory/terraformer
