@@ -110,9 +110,27 @@ services:
   orca-armory:
     baseService: orca
     image:
+<<<<<<< HEAD
       imageId: sha256:13b8f11e51c07db13d02aa10920c74f6aa9c408a51cb038c63687408e0025d6e
       repository: armory/orca-armory
       tag: 2025.09.23.09.44.26.main
+=======
+      imageId: sha256:4000be48b99bbeb2616baedece6815d30bf4ee885ba0c716ff0669fc72297d4b
+      repository: armory/orca-armory
+      tag: 2025.09.24.11.46.24.release-2.38.x
+    vcs:
+      repo:
+        orgName: armory-io
+        repoName: armory-extensions
+        type: github
+      sha: ecb4f105b01162bd2a10e6ef63bf1a568e4a4b31
+  rosco-armory:
+    baseService: rosco
+    image:
+      imageId: sha256:0f36738ad07c97377d29a2187ce9ffd209e939835f92417cd1f6dc1646362f37
+      repository: armory/rosco-armory
+      tag: 2025.09.18.16.38.26.release-2.38.x
+>>>>>>> ee8f479 (chore(cd): update orca-armory version to 2025.09.24.11.46.24.release-2.38.x)
     vcs:
       repo:
         orgName: armory-io
