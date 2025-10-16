@@ -80,15 +80,25 @@ services:
   fiat-armory:
     baseService: fiat
     image:
+<<<<<<< HEAD
       imageId: sha256:1923f0eef0828e51058a4af3f1ae2f52c04fb59edda35e98ecb7f6a3e84373d5
       repository: armory/fiat-armory
       tag: 2025.09.02.19.15.07.main
+=======
+      imageId: sha256:1af33f1d11c943f2ce4430f95ebfe5c51ffd538e346edbcbf04f8d922a39c620
+      repository: armory/fiat-armory
+      tag: 2025.10.16.09.21.43.release-2.38.x
+>>>>>>> 2e27193 (chore(cd): update fiat-armory version to 2025.10.16.09.21.43.release-2.38.x)
     vcs:
       repo:
         orgName: armory-io
         repoName: armory-extensions
         type: github
+<<<<<<< HEAD
       sha: f4366b132cb05a85d64a032f86aac66694fc20db
+=======
+      sha: 84dd609c94a99524dd30604d3cd10b24a08a9bfa
+>>>>>>> 2e27193 (chore(cd): update fiat-armory version to 2025.10.16.09.21.43.release-2.38.x)
   front50-armory:
     baseService: front50
     image:
