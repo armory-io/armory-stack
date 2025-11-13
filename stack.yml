@@ -62,15 +62,15 @@ services:
   front50-armory:
     baseService: front50
     image:
-      imageId: sha256:4068cd1789939ff8bf328fbf2e396635b391c7dcb852dbed42522a6e6085dec1
+      imageId: sha256:6cd7ab2b78e2cb4b8de39ade50f1b50630aa139a9ecf7d12b8c6f04b60bc7250
       repository: armory/front50-armory
-      tag: 2025.11.05.02.40.09.release-2.38.x
+      tag: 2025.11.10.19.59.09.release-2.38.x
     vcs:
       repo:
         orgName: armory-io
         repoName: armory-extensions
         type: github
-      sha: a3861da65c3750ca676ceec1f76ede5fe17490a1
+      sha: 582c94fdd4167bf1cf689f719c70e2c89eba3348
   gate-armory:
     baseService: gate
     image:
@@ -86,15 +86,15 @@ services:
   igor-armory:
     baseService: igor
     image:
-      imageId: sha256:6a23da54354dfe7e1f633c80005fe2fbc83b4a1107bc273135eacf37aa6d03ea
+      imageId: sha256:d7c7a55490cbb7e183acd020d150056e046f91681a997ff6ee53de3eb9c84579
       repository: armory/igor-armory
-      tag: 2025.11.05.02.40.09.release-2.38.x
+      tag: 2025.11.10.19.59.09.release-2.38.x
     vcs:
       repo:
         orgName: armory-io
         repoName: armory-extensions
         type: github
-      sha: a3861da65c3750ca676ceec1f76ede5fe17490a1
+      sha: 582c94fdd4167bf1cf689f719c70e2c89eba3348
   kayenta-armory:
     baseService: kayenta
     image:
