@@ -50,7 +50,7 @@ services:
   fiat-armory:
     baseService: fiat
     image:
-      imageId: sha256:942b86bdea46849dd13c0562d9a455b72bd00c0bd44c1edea93d450a2b07756e
+      imageId: sha256:f0ddb7030a97242217b6555b51ef0752b11e4112c00e7430150acb603fab1fd8
       repository: armory/fiat-armory
       tag: 2026.07.07.13.52.09.release-2.40.x
     vcs:
