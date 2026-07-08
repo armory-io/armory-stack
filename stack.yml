@@ -62,7 +62,7 @@ services:
   front50-armory:
     baseService: front50
     image:
-      imageId: sha256:e7949cdee30b6a3841ff0930faa17879a7cf10e36df1b0c42a490360bd630b08
+      imageId: sha256:796b9d7a51ef6a1c9de9e749764516f92f5e3b464a8d434bed1a1ea7b75b9802
       repository: armory/front50-armory
       tag: 2026.07.07.13.52.09.release-2.40.x
     vcs:
