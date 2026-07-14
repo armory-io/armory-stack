@@ -27,7 +27,7 @@ services:
     baseService: dinghy
     image:
       imageId: sha256:8adf3eaeb95f5cb35e01b3a111ec983283af36a2e0679f134a338deebe951161
-      repository: armory-extensions
+      repository: armory/dinghy
       tag: 2026.07.13.08.57.58.release-2.40.x
     vcs:
       repo:
