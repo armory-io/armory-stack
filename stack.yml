@@ -86,15 +86,15 @@ services:
   igor-armory:
     baseService: igor
     image:
-      imageId: sha256:ebdc137c0b7adeea41ab456cc1b96dba6204cac6168bbbd3e848fe04df4ce1a7
+      imageId: sha256:5836935fd261ca56f0ad33b40f6f2366454e9e4dde1d95fd08bb8d498e78f14f
       repository: armory/igor-armory
-      tag: 2026.07.14.10.51.13.release-2.40.x
+      tag: 2026.07.15.08.54.01.release-2.40.x
     vcs:
       repo:
         orgName: armory-io
         repoName: armory-extensions
         type: github
-      sha: 566ee4ff8ac096c4e07febe036eb846c9a554c99
+      sha: e099cb401ee08c956cd23ff1871e2d403263f479
   kayenta-armory:
     baseService: kayenta
     image:
