@@ -26,15 +26,15 @@ services:
   dinghy:
     baseService: dinghy
     image:
-      imageId: sha256:093e4eac07d739529115b24c74a0ce4ce0ca86db9f821173a352ace901d1710b
+      imageId: sha256:f71c738ec7e739276a2a6115912c72c1c195d546723d6a42f77dfc2c6936302d
       repository: armory/dinghy
-      tag: 2026.07.24.13.50.08.release-2.40.x
+      tag: 2026.08.05.15.58.28.release-2.40.x
     vcs:
       repo:
         orgName: armory-io
         repoName: armory-extensions
         type: github
-      sha: 6e605c0756d2286bed4b85326b084af6e8ab8c20
+      sha: 9d0a0abba407b8e2a3fbae6d0326712233c2572c
   echo-armory:
     baseService: echo
     image:
