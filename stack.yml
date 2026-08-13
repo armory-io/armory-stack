@@ -98,15 +98,15 @@ services:
   kayenta-armory:
     baseService: kayenta
     image:
-      imageId: sha256:ff6a9843d23f804a276b1a6617d38919eacacc7dde86872c1c743db1885592a7
+      imageId: sha256:89c3cc743dc5846c1b65983012d4ecef0239ab73c927a1c6d116cd49edaf1745
       repository: armory/kayenta-armory
-      tag: 2026.07.08.15.43.20.main
+      tag: 2026.08.13.13.56.45.main
     vcs:
       repo:
         orgName: armory-io
         repoName: armory-extensions
         type: github
-      sha: f22d5925ee1d282a725a5926317f40ff76b1d742
+      sha: a5fa7cb0ec92217c788707301b86cd6e668b7471
   orca-armory:
     baseService: orca
     image:
