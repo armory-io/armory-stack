@@ -14,15 +14,15 @@ services:
   deck-armory:
     baseService: deck
     image:
-      imageId: sha256:1839f10f86c48058f7535ee8b5bcf185d02a84f6924d9f0d23ff406e97573059
+      imageId: sha256:268e02589f4e177e3b31d314a099d778ebebfb98e13ec8999a686d691932c652
       repository: armory/deck-armory
-      tag: 2026.08.24.14.21.16.main
+      tag: 2026.09.01.12.53.12.main
     vcs:
       repo:
         orgName: armory-io
         repoName: armory-extensions
         type: github
-      sha: 7f31ef8dcab37e027d2b3c3b6b3792908a7cc987
+      sha: ed650432a3b928b80d5859b427e1da293101fccc
   dinghy:
     baseService: dinghy
     image:
