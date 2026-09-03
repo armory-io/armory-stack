@@ -10,8 +10,6 @@ jobs:
     name: Update Stack Repo
     runs-on: ubuntu-latest
     env:
-      SERVICE_NAME: ${{ github.event.client_payload.stackEntry.name }}
-      SERVICE_VERSION: ${{ github.event.client_payload.stackEntry.details.image.tag }}
       STACK_PATH: ${{ github.event.client_payload.stackPath }}
       STACK_FILE: ${{ github.event.client_payload.stackFile }}
     steps:
@@ -20,67 +18,76 @@ jobs:
         with:
           ref: ${{ github.event.client_payload.branch }}
 
-      - name: Create yq Query
-        id: create_yq_query
-        env:
-          SERVICE_UPDATE: ${{ toJson(github.event.client_payload.stackEntry.details) }}
+      - name: Install yq
         run: |
-          echo "Updating stack repo entry for ${SERVICE_NAME}"
-          echo "Update is:"
-          echo ${SERVICE_UPDATE} | json_pp
-          echo "Current stack is:"
-          cat stack.yml
+          sudo wget -qO /usr/local/bin/yq https://github.com/mikefarah/yq/releases/download/v4.6.1/yq_linux_amd64
+          sudo chmod +x /usr/local/bin/yq
 
-          SERVICE_QUERY="(.$STACK_PATH.$SERVICE_NAME)"
+      - name: Normalize Services List
+        env:
+          PAYLOAD: ${{ toJson(github.event.client_payload) }}
+        run: |
+          echo "$PAYLOAD" > payload.json
 
-          echo ::set-output name=query::"$SERVICE_QUERY = ${SERVICE_UPDATE//$'\n'/} | sortKeys(..)"
+          # Support both the legacy single-service "stackEntry" shape and the
+          # newer batched "services" array shape in the same payload.
+          jq 'if has("services") then .services else [.stackEntry] end' payload.json > services.json
+
+          echo "Services to update:"
+          cat services.json
 
       - name: Update Stack File
-        uses: mikefarah/yq@v4.6.1
-        with:
-          cmd: yq eval -i '${{ steps.create_yq_query.outputs.query }}' $STACK_FILE
-      
+        run: |
+          echo "Current $STACK_FILE:"
+          cat "$STACK_FILE"
+
+          count=$(jq 'length' services.json)
+          for i in $(seq 0 $((count - 1))); do
+            entry=$(jq -c ".[$i]" services.json)
+            name=$(jq -r '.name' <<< "$entry")
+            details=$(jq -c '.details' <<< "$entry")
+
+            echo "Updating $STACK_PATH.$name in $STACK_FILE"
+            yq eval -i "(.${STACK_PATH}.${name}) = ${details} | sortKeys(..)" "$STACK_FILE"
+          done
+
+          echo "Updated $STACK_FILE:"
+          cat "$STACK_FILE"
+
+      - name: Build Pull Request Metadata
+        id: meta
+        run: |
+          names=$(jq -r '[.[].name] | join(", ")' services.json)
+          branch_slug=$(jq -r '[.[].name] | join("_")' services.json | cut -c1-200)
+
+          {
+            echo "names=$names"
+            echo "branch_slug=$branch_slug"
+          } >> "$GITHUB_OUTPUT"
+
+          {
+            echo "## Promotion Of New Service Version(s)"
+            echo
+            echo "### Release Branch"
+            echo
+            echo "* **${{ github.event.client_payload.branch }}**"
+            echo
+            jq -r '.[] | "### \(.name)\n\n- Image: `\(.details.image.repository):\(.details.image.tag)`\n- Service VCS: [\(.details.vcs.sha // "n/a")](https://github.com/\(.details.vcs.repo.orgName // "")/\(.details.vcs.repo.repoName // "")/commit/\(.details.vcs.sha // ""))\n- Base Service VCS: [\(.baseVcs.sha // "n/a")](https://github.com/\(.baseVcs.repo.orgName // "")/\(.baseVcs.repo.repoName // "")/commit/\(.baseVcs.sha // ""))\n"' services.json
+            echo "Event Payload"
+            echo '```json'
+            cat payload.json
+            echo '```'
+          } > body.md
+
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v3.8.2
-        env:
-          SERVICE_ORG: ${{ github.event.client_payload.stackEntry.details.vcs.repo.orgName }}
-          SERVICE_REPO: ${{ github.event.client_payload.stackEntry.details.vcs.repo.repoName }}
-          SERVICE_SHA: ${{ github.event.client_payload.stackEntry.details.vcs.sha }}
-          BASE_SERVICE_ORG: ${{ github.event.client_payload.stackEntry.baseVcs.repo.orgName }}
-          BASE_SERVICE_REPO: ${{ github.event.client_payload.stackEntry.baseVcs.repo.repoName }}
-          BASE_SERVICE_SHA: ${{ github.event.client_payload.stackEntry.baseVcs.sha }}
-          RELEASE_BRANCH: ${{ github.event.client_payload.branch }}
-          SERVICE_IMAGE_REPOSITORY: ${{ github.event.client_payload.stackEntry.details.image.repository }}
         with:
           token: ${{ secrets.ASTROLABE_GITHUB_TOKEN }}
-          commit-message: "chore(cd): update ${{ env.SERVICE_NAME}} version to ${{ env.SERVICE_VERSION}}"
-          branch: ${{ env.SERVICE_NAME}}_${{ env.SERVICE_VERSION}}
+          commit-message: "chore(cd): update ${{ steps.meta.outputs.names }} version(s)"
+          branch: stack-update_${{ steps.meta.outputs.branch_slug }}
           branch-suffix: timestamp
-          title: "chore(cd): update ${{ env.SERVICE_NAME}} version to ${{ env.SERVICE_VERSION}}"
+          title: "chore(cd): update ${{ steps.meta.outputs.names }} version(s)"
           labels: |
             autoMerge
             stackUpdate
-            ${{ github.event.client_payload.stackEntry.name }}
-          body: |
-            ## Promotion Of New ${{ env.SERVICE_NAME}} Version
-
-            ### Release Branch
-
-            * **${{ env.RELEASE_BRANCH}}**
-
-            ### ${{ env.SERVICE_NAME}} Image Version
-
-            ${{ env.SERVICE_IMAGE_REPOSITORY}}:${{ env.SERVICE_VERSION}}
-
-            ### Service VCS
-
-            [${{ env.SERVICE_SHA}}](https://github.com/${{ env.SERVICE_ORG}}/${{ env.SERVICE_REPO}}/commit/${{ env.SERVICE_SHA}})
-
-            ### Base Service VCS
-
-            [${{ env.BASE_SERVICE_SHA}}](https://github.com/${{ env.BASE_SERVICE_ORG}}/${{ env.BASE_SERVICE_REPO}}/commit/${{ env.BASE_SERVICE_SHA}})
-
-            Event Payload
-            ```
-            ${{ toJson(github.event.client_payload) }}
-            ```
+          body-path: body.md
