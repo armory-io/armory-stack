@@ -59,10 +59,12 @@ jobs:
         run: |
           names=$(jq -r '[.[].name] | join(", ")' services.json)
           branch_slug=$(jq -r '[.[].name] | join("_")' services.json | cut -c1-200)
+          version=$(jq -r '.[0].details.image.tag' services.json)
 
           {
             echo "names=$names"
             echo "branch_slug=$branch_slug"
+            echo "version=$version"
           } >> "$GITHUB_OUTPUT"
 
           {
@@ -83,10 +85,10 @@ jobs:
         uses: peter-evans/create-pull-request@v3.8.2
         with:
           token: ${{ secrets.ASTROLABE_GITHUB_TOKEN }}
-          commit-message: "chore(cd): update ${{ steps.meta.outputs.names }} version(s)"
+          commit-message: "chore(cd): update ${{ steps.meta.outputs.names }} to ${{ steps.meta.outputs.version }}"
           branch: stack-update_${{ steps.meta.outputs.branch_slug }}
           branch-suffix: timestamp
-          title: "chore(cd): update ${{ steps.meta.outputs.names }} version(s)"
+          title: "chore(cd): update ${{ steps.meta.outputs.names }} to ${{ steps.meta.outputs.version }}"
           labels: |
             autoMerge
             stackUpdate
