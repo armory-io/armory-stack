@@ -1,0 +1,49 @@
+## Promotion Of New Service Version(s)
+
+### Release Branch
+
+* **release-2.40.x**
+
+### echo-armory
+
+- Image: `armory/echo-armory:2026.09.03.14.45.03.release-2.40.x`
+- Service VCS: [3521e306392dab6b50dfa97b51a110701ce0ac2a](https://github.com/armory-io/armory-extensions/commit/3521e306392dab6b50dfa97b51a110701ce0ac2a)
+- Base Service VCS: [](https://github.com/spinnaker/spinnaker/commit/)
+
+Event Payload
+```json
+{
+  "branch": "release-2.40.x",
+  "services": [
+    {
+      "baseVcs": {
+        "repo": {
+          "orgName": "spinnaker",
+          "repoName": "spinnaker",
+          "type": "github"
+        },
+        "sha": ""
+      },
+      "details": {
+        "baseService": "echo",
+        "image": {
+          "imageId": "sha256:b192b5aee3fdc82ac55ad4eced1b0329ce77b687da73d323ea6c51a912b81b03",
+          "repository": "armory/echo-armory",
+          "tag": "2026.09.03.14.45.03.release-2.40.x"
+        },
+        "vcs": {
+          "repo": {
+            "orgName": "armory-io",
+            "repoName": "armory-extensions",
+            "type": "github"
+          },
+          "sha": "3521e306392dab6b50dfa97b51a110701ce0ac2a"
+        }
+      },
+      "name": "echo-armory"
+    }
+  ],
+  "stackFile": "stack.yml",
+  "stackPath": "services"
+}
+```
