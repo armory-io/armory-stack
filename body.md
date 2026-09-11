@@ -4,10 +4,10 @@
 
 * **master**
 
-### fiat-armory
+### terraformer
 
-- Image: `armory/fiat-armory:2026.09.08.14.54.20.main`
-- Service VCS: [6bb63ddcd4ca8e3b2bffdb23110c14af9c8962cc](https://github.com/armory-io/armory-extensions/commit/6bb63ddcd4ca8e3b2bffdb23110c14af9c8962cc)
+- Image: `armory/terraformer:2026.09.11.20.48.23.main`
+- Service VCS: [39dd866ea25736b4358f2044671629b81f8e8973](https://github.com/armory-io/armory-extensions/commit/39dd866ea25736b4358f2044671629b81f8e8973)
 - Base Service VCS: [](https://github.com/spinnaker/spinnaker/commit/)
 
 Event Payload
@@ -25,11 +25,11 @@ Event Payload
         "sha": ""
       },
       "details": {
-        "baseService": "fiat",
+        "baseService": "terraformer",
         "image": {
-          "imageId": "sha256:073a1d03d1c35b68e12641a8471e93556bd95f2b83aeefa2cbd83b6497f170ce",
-          "repository": "armory/fiat-armory",
-          "tag": "2026.09.08.14.54.20.main"
+          "imageId": "sha256:0756d1296dececcc6a9cabcbdd813c98452e0245d7f418e78683a3189c5a5fcf",
+          "repository": "armory/terraformer",
+          "tag": "2026.09.11.20.48.23.main"
         },
         "vcs": {
           "repo": {
@@ -37,10 +37,10 @@ Event Payload
             "repoName": "armory-extensions",
             "type": "github"
           },
-          "sha": "6bb63ddcd4ca8e3b2bffdb23110c14af9c8962cc"
+          "sha": "39dd866ea25736b4358f2044671629b81f8e8973"
         }
       },
-      "name": "fiat-armory"
+      "name": "terraformer"
     }
   ],
   "stackFile": "stack.yml",
