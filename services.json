@@ -9,11 +9,11 @@
       "sha": ""
     },
     "details": {
-      "baseService": "fiat",
+      "baseService": "clouddriver",
       "image": {
-        "imageId": "sha256:073a1d03d1c35b68e12641a8471e93556bd95f2b83aeefa2cbd83b6497f170ce",
-        "repository": "armory/fiat-armory",
-        "tag": "2026.09.08.14.54.20.main"
+        "imageId": "sha256:69938c7daa0e01ceb2bcb60f3bc6d6cba63082e0195550959190af5812427ffb",
+        "repository": "armory/clouddriver-armory",
+        "tag": "2026.09.15.16.59.21.main"
       },
       "vcs": {
         "repo": {
@@ -21,9 +21,252 @@
           "repoName": "armory-extensions",
           "type": "github"
         },
-        "sha": "6bb63ddcd4ca8e3b2bffdb23110c14af9c8962cc"
+        "sha": "e30c684ec01280c89b12ba1e0823b78a0212b1bb"
+      }
+    },
+    "name": "clouddriver-armory"
+  },
+  {
+    "baseVcs": {
+      "repo": {
+        "orgName": "spinnaker",
+        "repoName": "spinnaker",
+        "type": "github"
+      },
+      "sha": ""
+    },
+    "details": {
+      "baseService": "deck",
+      "image": {
+        "imageId": "sha256:7a02023d13fdabc35513a5a349256565a87f79e7a11201e1d8cfc255f95539f8",
+        "repository": "armory/deck-armory",
+        "tag": "2026.09.15.16.59.21.main"
+      },
+      "vcs": {
+        "repo": {
+          "orgName": "armory-io",
+          "repoName": "armory-extensions",
+          "type": "github"
+        },
+        "sha": "e30c684ec01280c89b12ba1e0823b78a0212b1bb"
+      }
+    },
+    "name": "deck-armory"
+  },
+  {
+    "baseVcs": {
+      "repo": {
+        "orgName": "spinnaker",
+        "repoName": "spinnaker",
+        "type": "github"
+      },
+      "sha": ""
+    },
+    "details": {
+      "baseService": "echo",
+      "image": {
+        "imageId": "sha256:db088f2a02b111cf387c2019fa1d14b5847f1c90a66fef0238d68f1f4a1ad7b0",
+        "repository": "armory/echo-armory",
+        "tag": "2026.09.15.16.59.21.main"
+      },
+      "vcs": {
+        "repo": {
+          "orgName": "armory-io",
+          "repoName": "armory-extensions",
+          "type": "github"
+        },
+        "sha": "e30c684ec01280c89b12ba1e0823b78a0212b1bb"
+      }
+    },
+    "name": "echo-armory"
+  },
+  {
+    "baseVcs": {
+      "repo": {
+        "orgName": "spinnaker",
+        "repoName": "spinnaker",
+        "type": "github"
+      },
+      "sha": ""
+    },
+    "details": {
+      "baseService": "fiat",
+      "image": {
+        "imageId": "sha256:a3e594ef2dd5dbaf9fdf11b77c31f7134fb7f14d9af29bcfe40006290aad2f2a",
+        "repository": "armory/fiat-armory",
+        "tag": "2026.09.15.16.59.21.main"
+      },
+      "vcs": {
+        "repo": {
+          "orgName": "armory-io",
+          "repoName": "armory-extensions",
+          "type": "github"
+        },
+        "sha": "e30c684ec01280c89b12ba1e0823b78a0212b1bb"
       }
     },
     "name": "fiat-armory"
+  },
+  {
+    "baseVcs": {
+      "repo": {
+        "orgName": "spinnaker",
+        "repoName": "spinnaker",
+        "type": "github"
+      },
+      "sha": ""
+    },
+    "details": {
+      "baseService": "front50",
+      "image": {
+        "imageId": "sha256:ac0c10064d87b4f4e6999346c4930a7da0fbe7db86601ee9464077076f358fb4",
+        "repository": "armory/front50-armory",
+        "tag": "2026.09.15.16.59.21.main"
+      },
+      "vcs": {
+        "repo": {
+          "orgName": "armory-io",
+          "repoName": "armory-extensions",
+          "type": "github"
+        },
+        "sha": "e30c684ec01280c89b12ba1e0823b78a0212b1bb"
+      }
+    },
+    "name": "front50-armory"
+  },
+  {
+    "baseVcs": {
+      "repo": {
+        "orgName": "spinnaker",
+        "repoName": "spinnaker",
+        "type": "github"
+      },
+      "sha": ""
+    },
+    "details": {
+      "baseService": "gate",
+      "image": {
+        "imageId": "sha256:27b6d77370a48aaa615376b1db181614607a60155351192533f9cdfe84547fc6",
+        "repository": "armory/gate-armory",
+        "tag": "2026.09.15.16.59.21.main"
+      },
+      "vcs": {
+        "repo": {
+          "orgName": "armory-io",
+          "repoName": "armory-extensions",
+          "type": "github"
+        },
+        "sha": "e30c684ec01280c89b12ba1e0823b78a0212b1bb"
+      }
+    },
+    "name": "gate-armory"
+  },
+  {
+    "baseVcs": {
+      "repo": {
+        "orgName": "spinnaker",
+        "repoName": "spinnaker",
+        "type": "github"
+      },
+      "sha": ""
+    },
+    "details": {
+      "baseService": "igor",
+      "image": {
+        "imageId": "sha256:6eb7326f0525f95301c0cca59c20947becce7da1e1d16f7a6df43be28e03b49e",
+        "repository": "armory/igor-armory",
+        "tag": "2026.09.15.16.59.21.main"
+      },
+      "vcs": {
+        "repo": {
+          "orgName": "armory-io",
+          "repoName": "armory-extensions",
+          "type": "github"
+        },
+        "sha": "e30c684ec01280c89b12ba1e0823b78a0212b1bb"
+      }
+    },
+    "name": "igor-armory"
+  },
+  {
+    "baseVcs": {
+      "repo": {
+        "orgName": "spinnaker",
+        "repoName": "spinnaker",
+        "type": "github"
+      },
+      "sha": ""
+    },
+    "details": {
+      "baseService": "kayenta",
+      "image": {
+        "imageId": "sha256:2dc2957f9405dd647b6f7d8954c96e1c9d4eb6996339dc18d2d714ab56c09bde",
+        "repository": "armory/kayenta-armory",
+        "tag": "2026.09.15.16.59.21.main"
+      },
+      "vcs": {
+        "repo": {
+          "orgName": "armory-io",
+          "repoName": "armory-extensions",
+          "type": "github"
+        },
+        "sha": "e30c684ec01280c89b12ba1e0823b78a0212b1bb"
+      }
+    },
+    "name": "kayenta-armory"
+  },
+  {
+    "baseVcs": {
+      "repo": {
+        "orgName": "spinnaker",
+        "repoName": "spinnaker",
+        "type": "github"
+      },
+      "sha": ""
+    },
+    "details": {
+      "baseService": "orca",
+      "image": {
+        "imageId": "sha256:3385682fc09137321a05f71543b9efe198b13b83bfce68d3a691a505f27cf67d",
+        "repository": "armory/orca-armory",
+        "tag": "2026.09.15.16.59.21.main"
+      },
+      "vcs": {
+        "repo": {
+          "orgName": "armory-io",
+          "repoName": "armory-extensions",
+          "type": "github"
+        },
+        "sha": "e30c684ec01280c89b12ba1e0823b78a0212b1bb"
+      }
+    },
+    "name": "orca-armory"
+  },
+  {
+    "baseVcs": {
+      "repo": {
+        "orgName": "spinnaker",
+        "repoName": "spinnaker",
+        "type": "github"
+      },
+      "sha": ""
+    },
+    "details": {
+      "baseService": "rosco",
+      "image": {
+        "imageId": "sha256:66a26952024da736130c3316f9c7151991b4067e2adf8d5f5a4aa9631ba9e50c",
+        "repository": "armory/rosco-armory",
+        "tag": "2026.09.15.16.59.21.main"
+      },
+      "vcs": {
+        "repo": {
+          "orgName": "armory-io",
+          "repoName": "armory-extensions",
+          "type": "github"
+        },
+        "sha": "e30c684ec01280c89b12ba1e0823b78a0212b1bb"
+      }
+    },
+    "name": "rosco-armory"
   }
 ]
