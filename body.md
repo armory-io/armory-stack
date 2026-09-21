@@ -4,10 +4,10 @@
 
 * **master**
 
-### fiat-armory
+### dinghy
 
-- Image: `armory/fiat-armory:2026.09.08.14.54.20.main`
-- Service VCS: [6bb63ddcd4ca8e3b2bffdb23110c14af9c8962cc](https://github.com/armory-io/armory-extensions/commit/6bb63ddcd4ca8e3b2bffdb23110c14af9c8962cc)
+- Image: `armory/dinghy:2026.09.21.21.47.29.main`
+- Service VCS: [18d8ca386dd06e1b82df2be8523768a7fa7a5e57](https://github.com/armory-io/armory-extensions/commit/18d8ca386dd06e1b82df2be8523768a7fa7a5e57)
 - Base Service VCS: [](https://github.com/spinnaker/spinnaker/commit/)
 
 Event Payload
@@ -25,11 +25,11 @@ Event Payload
         "sha": ""
       },
       "details": {
-        "baseService": "fiat",
+        "baseService": "dinghy",
         "image": {
-          "imageId": "sha256:073a1d03d1c35b68e12641a8471e93556bd95f2b83aeefa2cbd83b6497f170ce",
-          "repository": "armory/fiat-armory",
-          "tag": "2026.09.08.14.54.20.main"
+          "imageId": "sha256:1de2d676d22c23bf46ed2f526e634deb97c737039e8dbaf7b60be0317807884a",
+          "repository": "armory/dinghy",
+          "tag": "2026.09.21.21.47.29.main"
         },
         "vcs": {
           "repo": {
@@ -37,10 +37,10 @@ Event Payload
             "repoName": "armory-extensions",
             "type": "github"
           },
-          "sha": "6bb63ddcd4ca8e3b2bffdb23110c14af9c8962cc"
+          "sha": "18d8ca386dd06e1b82df2be8523768a7fa7a5e57"
         }
       },
-      "name": "fiat-armory"
+      "name": "dinghy"
     }
   ],
   "stackFile": "stack.yml",
