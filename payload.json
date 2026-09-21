@@ -11,11 +11,11 @@
         "sha": ""
       },
       "details": {
-        "baseService": "fiat",
+        "baseService": "terraformer",
         "image": {
-          "imageId": "sha256:073a1d03d1c35b68e12641a8471e93556bd95f2b83aeefa2cbd83b6497f170ce",
-          "repository": "armory/fiat-armory",
-          "tag": "2026.09.08.14.54.20.main"
+          "imageId": "sha256:fa2c563d92b69db7d3df8d04ca9c540f83dcc74582c453e89e2b4c7524df8509",
+          "repository": "armory/terraformer",
+          "tag": "2026.09.21.21.46.26.main"
         },
         "vcs": {
           "repo": {
@@ -23,10 +23,10 @@
             "repoName": "armory-extensions",
             "type": "github"
           },
-          "sha": "6bb63ddcd4ca8e3b2bffdb23110c14af9c8962cc"
+          "sha": "c569eb3ec76a87454dcca3803cf1fecfd1838fce"
         }
       },
-      "name": "fiat-armory"
+      "name": "terraformer"
     }
   ],
   "stackFile": "stack.yml",
