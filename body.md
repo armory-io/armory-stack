@@ -4,10 +4,10 @@
 
 * **master**
 
-### dinghy
+### terraformer
 
-- Image: `armory/dinghy:2026.09.21.21.47.29.main`
-- Service VCS: [18d8ca386dd06e1b82df2be8523768a7fa7a5e57](https://github.com/armory-io/armory-extensions/commit/18d8ca386dd06e1b82df2be8523768a7fa7a5e57)
+- Image: `armory/terraformer:2026.09.23.02.36.46.main`
+- Service VCS: [16a62864783126d5c7413fb08a97e2ffc2894d31](https://github.com/armory-io/armory-extensions/commit/16a62864783126d5c7413fb08a97e2ffc2894d31)
 - Base Service VCS: [](https://github.com/spinnaker/spinnaker/commit/)
 
 Event Payload
@@ -25,11 +25,11 @@ Event Payload
         "sha": ""
       },
       "details": {
-        "baseService": "dinghy",
+        "baseService": "terraformer",
         "image": {
-          "imageId": "sha256:1de2d676d22c23bf46ed2f526e634deb97c737039e8dbaf7b60be0317807884a",
-          "repository": "armory/dinghy",
-          "tag": "2026.09.21.21.47.29.main"
+          "imageId": "sha256:3a596240fa2c7e4d95b82b738601e009360989176138472d96f0c58059792ab7",
+          "repository": "armory/terraformer",
+          "tag": "2026.09.23.02.36.46.main"
         },
         "vcs": {
           "repo": {
@@ -37,10 +37,10 @@ Event Payload
             "repoName": "armory-extensions",
             "type": "github"
           },
-          "sha": "18d8ca386dd06e1b82df2be8523768a7fa7a5e57"
+          "sha": "16a62864783126d5c7413fb08a97e2ffc2894d31"
         }
       },
-      "name": "dinghy"
+      "name": "terraformer"
     }
   ],
   "stackFile": "stack.yml",
