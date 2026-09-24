@@ -11,11 +11,11 @@
         "sha": ""
       },
       "details": {
-        "baseService": "terraformer",
+        "baseService": "dinghy",
         "image": {
-          "imageId": "sha256:3a596240fa2c7e4d95b82b738601e009360989176138472d96f0c58059792ab7",
-          "repository": "armory/terraformer",
-          "tag": "2026.09.23.02.36.46.main"
+          "imageId": "sha256:4cd96bd04fba588075f4e45b085d0f46262215fc28a6727c1bbaeb148dde6776",
+          "repository": "armory/dinghy",
+          "tag": "2026.09.24.17.55.24.main"
         },
         "vcs": {
           "repo": {
@@ -23,10 +23,10 @@
             "repoName": "armory-extensions",
             "type": "github"
           },
-          "sha": "16a62864783126d5c7413fb08a97e2ffc2894d31"
+          "sha": "d2e8c015ba80efb3f1c9941e200a41168af09c64"
         }
       },
-      "name": "terraformer"
+      "name": "dinghy"
     }
   ],
   "stackFile": "stack.yml",
