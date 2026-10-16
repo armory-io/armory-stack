@@ -4,16 +4,10 @@
 
 * **master**
 
-### igor-armory
+### clouddriver-armory
 
-- Image: `armory/igor-armory:2026.10.16.13.48.22.main`
-- Service VCS: [ba464caef1782220c3e48543d2814bda5a61a905](https://github.com/armory-io/armory-extensions/commit/ba464caef1782220c3e48543d2814bda5a61a905)
-- Base Service VCS: [](https://github.com/spinnaker/spinnaker/commit/)
-
-### kayenta-armory
-
-- Image: `armory/kayenta-armory:2026.10.16.13.48.22.main`
-- Service VCS: [ba464caef1782220c3e48543d2814bda5a61a905](https://github.com/armory-io/armory-extensions/commit/ba464caef1782220c3e48543d2814bda5a61a905)
+- Image: `armory/clouddriver-armory:2026.10.16.15.27.58.main`
+- Service VCS: [0caac807c5d49299b91b8eadbde2cd3d8b3b72bd](https://github.com/armory-io/armory-extensions/commit/0caac807c5d49299b91b8eadbde2cd3d8b3b72bd)
 - Base Service VCS: [](https://github.com/spinnaker/spinnaker/commit/)
 
 Event Payload
@@ -31,11 +25,11 @@ Event Payload
         "sha": ""
       },
       "details": {
-        "baseService": "igor",
+        "baseService": "clouddriver",
         "image": {
-          "imageId": "sha256:f8e6c05a93b76a9967ae061574ab591e65674753e14053d4f0a367c5cfda0e29",
-          "repository": "armory/igor-armory",
-          "tag": "2026.10.16.13.48.22.main"
+          "imageId": "sha256:38cb428019a1dd5baf8a48488141d1a286dd737dba86b5e0868974c114c5289a",
+          "repository": "armory/clouddriver-armory",
+          "tag": "2026.10.16.15.27.58.main"
         },
         "vcs": {
           "repo": {
@@ -43,37 +37,10 @@ Event Payload
             "repoName": "armory-extensions",
             "type": "github"
           },
-          "sha": "ba464caef1782220c3e48543d2814bda5a61a905"
+          "sha": "0caac807c5d49299b91b8eadbde2cd3d8b3b72bd"
         }
       },
-      "name": "igor-armory"
-    },
-    {
-      "baseVcs": {
-        "repo": {
-          "orgName": "spinnaker",
-          "repoName": "spinnaker",
-          "type": "github"
-        },
-        "sha": ""
-      },
-      "details": {
-        "baseService": "kayenta",
-        "image": {
-          "imageId": "sha256:601fd9ea2a43d235088ce0ff29ca1c142f5ca79dc166762cba2e1050977e5029",
-          "repository": "armory/kayenta-armory",
-          "tag": "2026.10.16.13.48.22.main"
-        },
-        "vcs": {
-          "repo": {
-            "orgName": "armory-io",
-            "repoName": "armory-extensions",
-            "type": "github"
-          },
-          "sha": "ba464caef1782220c3e48543d2814bda5a61a905"
-        }
-      },
-      "name": "kayenta-armory"
+      "name": "clouddriver-armory"
     }
   ],
   "stackFile": "stack.yml",
