@@ -4,10 +4,16 @@
 
 * **master**
 
-### terraformer
+### igor-armory
 
-- Image: `armory/terraformer:2026.09.23.02.36.46.main`
-- Service VCS: [16a62864783126d5c7413fb08a97e2ffc2894d31](https://github.com/armory-io/armory-extensions/commit/16a62864783126d5c7413fb08a97e2ffc2894d31)
+- Image: `armory/igor-armory:2026.10.16.13.48.22.main`
+- Service VCS: [ba464caef1782220c3e48543d2814bda5a61a905](https://github.com/armory-io/armory-extensions/commit/ba464caef1782220c3e48543d2814bda5a61a905)
+- Base Service VCS: [](https://github.com/spinnaker/spinnaker/commit/)
+
+### kayenta-armory
+
+- Image: `armory/kayenta-armory:2026.10.16.13.48.22.main`
+- Service VCS: [ba464caef1782220c3e48543d2814bda5a61a905](https://github.com/armory-io/armory-extensions/commit/ba464caef1782220c3e48543d2814bda5a61a905)
 - Base Service VCS: [](https://github.com/spinnaker/spinnaker/commit/)
 
 Event Payload
@@ -25,11 +31,11 @@ Event Payload
         "sha": ""
       },
       "details": {
-        "baseService": "terraformer",
+        "baseService": "igor",
         "image": {
-          "imageId": "sha256:3a596240fa2c7e4d95b82b738601e009360989176138472d96f0c58059792ab7",
-          "repository": "armory/terraformer",
-          "tag": "2026.09.23.02.36.46.main"
+          "imageId": "sha256:f8e6c05a93b76a9967ae061574ab591e65674753e14053d4f0a367c5cfda0e29",
+          "repository": "armory/igor-armory",
+          "tag": "2026.10.16.13.48.22.main"
         },
         "vcs": {
           "repo": {
@@ -37,10 +43,37 @@ Event Payload
             "repoName": "armory-extensions",
             "type": "github"
           },
-          "sha": "16a62864783126d5c7413fb08a97e2ffc2894d31"
+          "sha": "ba464caef1782220c3e48543d2814bda5a61a905"
         }
       },
-      "name": "terraformer"
+      "name": "igor-armory"
+    },
+    {
+      "baseVcs": {
+        "repo": {
+          "orgName": "spinnaker",
+          "repoName": "spinnaker",
+          "type": "github"
+        },
+        "sha": ""
+      },
+      "details": {
+        "baseService": "kayenta",
+        "image": {
+          "imageId": "sha256:601fd9ea2a43d235088ce0ff29ca1c142f5ca79dc166762cba2e1050977e5029",
+          "repository": "armory/kayenta-armory",
+          "tag": "2026.10.16.13.48.22.main"
+        },
+        "vcs": {
+          "repo": {
+            "orgName": "armory-io",
+            "repoName": "armory-extensions",
+            "type": "github"
+          },
+          "sha": "ba464caef1782220c3e48543d2814bda5a61a905"
+        }
+      },
+      "name": "kayenta-armory"
     }
   ],
   "stackFile": "stack.yml",

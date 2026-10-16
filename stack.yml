@@ -86,27 +86,27 @@ services:
   igor-armory:
     baseService: igor
     image:
-      imageId: sha256:e5eaf4cedd10aa6ebfb96f4069ea84d0090b911dfa2184dbc406e4ac1d369370
+      imageId: sha256:f8e6c05a93b76a9967ae061574ab591e65674753e14053d4f0a367c5cfda0e29
       repository: armory/igor-armory
-      tag: 2026.09.08.14.49.36.main
+      tag: 2026.10.16.13.48.22.main
     vcs:
       repo:
         orgName: armory-io
         repoName: armory-extensions
         type: github
-      sha: 1cd5040f84ec4234d44eeb66371fcdc4b674712e
+      sha: ba464caef1782220c3e48543d2814bda5a61a905
   kayenta-armory:
     baseService: kayenta
     image:
-      imageId: sha256:0a2b30796c33cc5a7e4f4248b58a0635d253f573294538dd43dc854d8ae0505d
+      imageId: sha256:601fd9ea2a43d235088ce0ff29ca1c142f5ca79dc166762cba2e1050977e5029
       repository: armory/kayenta-armory
-      tag: 2026.09.08.14.49.36.main
+      tag: 2026.10.16.13.48.22.main
     vcs:
       repo:
         orgName: armory-io
         repoName: armory-extensions
         type: github
-      sha: 1cd5040f84ec4234d44eeb66371fcdc4b674712e
+      sha: ba464caef1782220c3e48543d2814bda5a61a905
   orca-armory:
     baseService: orca
     image:
