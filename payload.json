@@ -11,11 +11,11 @@
         "sha": ""
       },
       "details": {
-        "baseService": "igor",
+        "baseService": "clouddriver",
         "image": {
-          "imageId": "sha256:f8e6c05a93b76a9967ae061574ab591e65674753e14053d4f0a367c5cfda0e29",
-          "repository": "armory/igor-armory",
-          "tag": "2026.10.16.13.48.22.main"
+          "imageId": "sha256:5a5f4176e39010a61cd5729b76b4fa1791e2fdfb4fb7063d02114c0cefc4c701",
+          "repository": "armory/clouddriver-armory",
+          "tag": "2026.10.22.13.04.26.main"
         },
         "vcs": {
           "repo": {
@@ -23,10 +23,10 @@
             "repoName": "armory-extensions",
             "type": "github"
           },
-          "sha": "ba464caef1782220c3e48543d2814bda5a61a905"
+          "sha": "a5bfb6c34fd2fc90c1db5b43b6c18885dc09e244"
         }
       },
-      "name": "igor-armory"
+      "name": "clouddriver-armory"
     },
     {
       "baseVcs": {
@@ -38,11 +38,11 @@
         "sha": ""
       },
       "details": {
-        "baseService": "kayenta",
+        "baseService": "front50",
         "image": {
-          "imageId": "sha256:601fd9ea2a43d235088ce0ff29ca1c142f5ca79dc166762cba2e1050977e5029",
-          "repository": "armory/kayenta-armory",
-          "tag": "2026.10.16.13.48.22.main"
+          "imageId": "sha256:8b30abb15242dff5770d8a466f3fc78e68648df7e91b7bac46a0ea59fbe8ebf6",
+          "repository": "armory/front50-armory",
+          "tag": "2026.10.22.13.04.26.main"
         },
         "vcs": {
           "repo": {
@@ -50,10 +50,91 @@
             "repoName": "armory-extensions",
             "type": "github"
           },
-          "sha": "ba464caef1782220c3e48543d2814bda5a61a905"
+          "sha": "a5bfb6c34fd2fc90c1db5b43b6c18885dc09e244"
         }
       },
-      "name": "kayenta-armory"
+      "name": "front50-armory"
+    },
+    {
+      "baseVcs": {
+        "repo": {
+          "orgName": "spinnaker",
+          "repoName": "spinnaker",
+          "type": "github"
+        },
+        "sha": ""
+      },
+      "details": {
+        "baseService": "gate",
+        "image": {
+          "imageId": "sha256:51a0c3190872a43ebc240df47353bd527fbca2f58166f486d85b520e018bf70e",
+          "repository": "armory/gate-armory",
+          "tag": "2026.10.22.13.04.26.main"
+        },
+        "vcs": {
+          "repo": {
+            "orgName": "armory-io",
+            "repoName": "armory-extensions",
+            "type": "github"
+          },
+          "sha": "a5bfb6c34fd2fc90c1db5b43b6c18885dc09e244"
+        }
+      },
+      "name": "gate-armory"
+    },
+    {
+      "baseVcs": {
+        "repo": {
+          "orgName": "spinnaker",
+          "repoName": "spinnaker",
+          "type": "github"
+        },
+        "sha": ""
+      },
+      "details": {
+        "baseService": "orca",
+        "image": {
+          "imageId": "sha256:6ca12d9991b69d3489661b8aff5e2e0724e0f5a060a8b022231279c6a3f7751c",
+          "repository": "armory/orca-armory",
+          "tag": "2026.10.22.13.04.26.main"
+        },
+        "vcs": {
+          "repo": {
+            "orgName": "armory-io",
+            "repoName": "armory-extensions",
+            "type": "github"
+          },
+          "sha": "a5bfb6c34fd2fc90c1db5b43b6c18885dc09e244"
+        }
+      },
+      "name": "orca-armory"
+    },
+    {
+      "baseVcs": {
+        "repo": {
+          "orgName": "spinnaker",
+          "repoName": "spinnaker",
+          "type": "github"
+        },
+        "sha": ""
+      },
+      "details": {
+        "baseService": "rosco",
+        "image": {
+          "imageId": "sha256:9d572d5308b230fb861fb92d27515635325548bc751a1555ffbdddc9d5469813",
+          "repository": "armory/rosco-armory",
+          "tag": "2026.10.22.13.04.26.main"
+        },
+        "vcs": {
+          "repo": {
+            "orgName": "armory-io",
+            "repoName": "armory-extensions",
+            "type": "github"
+          },
+          "sha": "a5bfb6c34fd2fc90c1db5b43b6c18885dc09e244"
+        }
+      },
+      "name": "rosco-armory"
     }
   ],
   "stackFile": "stack.yml",
