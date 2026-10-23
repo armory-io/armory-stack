@@ -1,0 +1,29 @@
+[
+  {
+    "baseVcs": {
+      "repo": {
+        "orgName": "spinnaker",
+        "repoName": "spinnaker",
+        "type": "github"
+      },
+      "sha": ""
+    },
+    "details": {
+      "baseService": "dinghy",
+      "image": {
+        "imageId": "sha256:380a1b1e74a5c1f7b85f872210f9f9b813cba02772efa6c572698ca5ca7c1f18",
+        "repository": "armory/dinghy",
+        "tag": "2026.10.23.10.36.24.release-2.39.x"
+      },
+      "vcs": {
+        "repo": {
+          "orgName": "armory-io",
+          "repoName": "armory-extensions",
+          "type": "github"
+        },
+        "sha": "d50350aa8d923129a0edb0255dba52bfe11bfab1"
+      }
+    },
+    "name": "dinghy"
+  }
+]
