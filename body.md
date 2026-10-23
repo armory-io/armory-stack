@@ -1,0 +1,74 @@
+## Promotion Of New Service Version(s)
+
+### Release Branch
+
+* **release-2.39.x**
+
+### front50-armory
+
+- Image: `armory/front50-armory:2026.10.23.13.45.52.release-2.39.x`
+- Service VCS: [158055df01f14a0bf9ba08577f7b630107bbab37](https://github.com/armory-io/armory-extensions/commit/158055df01f14a0bf9ba08577f7b630107bbab37)
+- Base Service VCS: [](https://github.com/spinnaker/spinnaker/commit/)
+
+Event Payload
+```json
+{
+  "branch": "release-2.39.x",
+  "service": {
+    "baseVcs": {
+      "repo": {
+        "orgName": "spinnaker",
+        "repoName": "spinnaker",
+        "type": "github"
+      },
+      "sha": ""
+    },
+    "details": {
+      "baseService": "front50",
+      "image": {
+        "imageId": "sha256:ab73037a7e723f98031e5824b10b6ae4e1564f9d152a6b90b0a828ab331f1b95",
+        "repository": "armory/front50-armory",
+        "tag": "2026.10.23.13.45.52.release-2.39.x"
+      },
+      "vcs": {
+        "repo": {
+          "orgName": "armory-io",
+          "repoName": "armory-extensions",
+          "type": "github"
+        },
+        "sha": "158055df01f14a0bf9ba08577f7b630107bbab37"
+      }
+    },
+    "name": "front50-armory"
+  },
+  "stackEntry": {
+    "baseVcs": {
+      "repo": {
+        "orgName": "spinnaker",
+        "repoName": "spinnaker",
+        "type": "github"
+      },
+      "sha": ""
+    },
+    "details": {
+      "baseService": "front50",
+      "image": {
+        "imageId": "sha256:ab73037a7e723f98031e5824b10b6ae4e1564f9d152a6b90b0a828ab331f1b95",
+        "repository": "armory/front50-armory",
+        "tag": "2026.10.23.13.45.52.release-2.39.x"
+      },
+      "vcs": {
+        "repo": {
+          "orgName": "armory-io",
+          "repoName": "armory-extensions",
+          "type": "github"
+        },
+        "sha": "158055df01f14a0bf9ba08577f7b630107bbab37"
+      }
+    },
+    "name": "front50-armory"
+  },
+  "stackFile": "stack.yml",
+  "stackPath": "services"
+}
+```
