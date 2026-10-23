@@ -1,0 +1,59 @@
+{
+  "branch": "release-2.39.x",
+  "service": {
+    "baseVcs": {
+      "repo": {
+        "orgName": "spinnaker",
+        "repoName": "spinnaker",
+        "type": "github"
+      },
+      "sha": ""
+    },
+    "details": {
+      "baseService": "front50",
+      "image": {
+        "imageId": "sha256:f4fc03ad8a6f51d4b9b84cf288343599c6647f8441f7135671f72994ddb54473",
+        "repository": "armory/front50-armory",
+        "tag": "2026.07.15.14.26.13.release-2.39.x"
+      },
+      "vcs": {
+        "repo": {
+          "orgName": "armory-io",
+          "repoName": "armory-extensions",
+          "type": "github"
+        },
+        "sha": "190059c422784c728064171219efbdbebf8d3c90"
+      }
+    },
+    "name": "front50-armory"
+  },
+  "stackEntry": {
+    "baseVcs": {
+      "repo": {
+        "orgName": "spinnaker",
+        "repoName": "spinnaker",
+        "type": "github"
+      },
+      "sha": ""
+    },
+    "details": {
+      "baseService": "front50",
+      "image": {
+        "imageId": "sha256:f4fc03ad8a6f51d4b9b84cf288343599c6647f8441f7135671f72994ddb54473",
+        "repository": "armory/front50-armory",
+        "tag": "2026.07.15.14.26.13.release-2.39.x"
+      },
+      "vcs": {
+        "repo": {
+          "orgName": "armory-io",
+          "repoName": "armory-extensions",
+          "type": "github"
+        },
+        "sha": "190059c422784c728064171219efbdbebf8d3c90"
+      }
+    },
+    "name": "front50-armory"
+  },
+  "stackFile": "stack.yml",
+  "stackPath": "services"
+}
