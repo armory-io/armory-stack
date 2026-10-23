@@ -2,7 +2,7 @@ services:
   clouddriver-armory:
     baseService: clouddriver
     image:
-      imageId: sha256:50bd7b7c8981d52fb9e013f57dd823b3dd8d830ef338c52a92cf9649c808a533
+      imageId: sha256:44395cf2994e83ec3758fb67da259c27b8e33c72fe310f9103403a0da71ed78e
       repository: armory/clouddriver-armory
       tag: 2026.07.15.14.26.13.release-2.39.x
     vcs:

@@ -1,0 +1,29 @@
+[
+  {
+    "baseVcs": {
+      "repo": {
+        "orgName": "spinnaker",
+        "repoName": "spinnaker",
+        "type": "github"
+      },
+      "sha": ""
+    },
+    "details": {
+      "baseService": "clouddriver",
+      "image": {
+        "imageId": "sha256:44395cf2994e83ec3758fb67da259c27b8e33c72fe310f9103403a0da71ed78e",
+        "repository": "armory/clouddriver-armory",
+        "tag": "2026.07.15.14.26.13.release-2.39.x"
+      },
+      "vcs": {
+        "repo": {
+          "orgName": "armory-io",
+          "repoName": "armory-extensions",
+          "type": "github"
+        },
+        "sha": "190059c422784c728064171219efbdbebf8d3c90"
+      }
+    },
+    "name": "clouddriver-armory"
+  }
+]
