@@ -1,0 +1,74 @@
+## Promotion Of New Service Version(s)
+
+### Release Branch
+
+* **release-2.39.x**
+
+### rosco-armory
+
+- Image: `armory/rosco-armory:2026.07.15.14.26.13.release-2.39.x`
+- Service VCS: [190059c422784c728064171219efbdbebf8d3c90](https://github.com/armory-io/armory-extensions/commit/190059c422784c728064171219efbdbebf8d3c90)
+- Base Service VCS: [](https://github.com/spinnaker/spinnaker/commit/)
+
+Event Payload
+```json
+{
+  "branch": "release-2.39.x",
+  "service": {
+    "baseVcs": {
+      "repo": {
+        "orgName": "spinnaker",
+        "repoName": "spinnaker",
+        "type": "github"
+      },
+      "sha": ""
+    },
+    "details": {
+      "baseService": "rosco",
+      "image": {
+        "imageId": "sha256:a3184a4cc7e250471875e98dac06d65a92acb41e162b47c4e279e068a1f5ce9a",
+        "repository": "armory/rosco-armory",
+        "tag": "2026.07.15.14.26.13.release-2.39.x"
+      },
+      "vcs": {
+        "repo": {
+          "orgName": "armory-io",
+          "repoName": "armory-extensions",
+          "type": "github"
+        },
+        "sha": "190059c422784c728064171219efbdbebf8d3c90"
+      }
+    },
+    "name": "rosco-armory"
+  },
+  "stackEntry": {
+    "baseVcs": {
+      "repo": {
+        "orgName": "spinnaker",
+        "repoName": "spinnaker",
+        "type": "github"
+      },
+      "sha": ""
+    },
+    "details": {
+      "baseService": "rosco",
+      "image": {
+        "imageId": "sha256:a3184a4cc7e250471875e98dac06d65a92acb41e162b47c4e279e068a1f5ce9a",
+        "repository": "armory/rosco-armory",
+        "tag": "2026.07.15.14.26.13.release-2.39.x"
+      },
+      "vcs": {
+        "repo": {
+          "orgName": "armory-io",
+          "repoName": "armory-extensions",
+          "type": "github"
+        },
+        "sha": "190059c422784c728064171219efbdbebf8d3c90"
+      }
+    },
+    "name": "rosco-armory"
+  },
+  "stackFile": "stack.yml",
+  "stackPath": "services"
+}
+```
