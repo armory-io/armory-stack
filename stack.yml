@@ -2,27 +2,27 @@ services:
   clouddriver-armory:
     baseService: clouddriver
     image:
-      imageId: sha256:d01b7fd0af1decf19769e8b334a0c4d47995f6907402130bf49229393bbf74ba
+      imageId: sha256:d935dd38556984abd0492eed6e587c3698a62c408a5676f5bd93e58171993931
       repository: armory/clouddriver-armory
-      tag: 2026.09.08.14.49.36.main
+      tag: 2026.10.23.08.11.23.main
     vcs:
       repo:
         orgName: armory-io
         repoName: armory-extensions
         type: github
-      sha: 1cd5040f84ec4234d44eeb66371fcdc4b674712e
+      sha: 9e7c90c53baaa611bc4ad65aa0811982a6a5c0b1
   deck-armory:
     baseService: deck
     image:
-      imageId: sha256:273e796db3b91b2560eda344adeb73fda321ce3e6545644f600949a11efe6663
+      imageId: sha256:da0afbc215eb1d48e69ce3db479b798c79e25d84eb2d1c2417943798b9ae6b09
       repository: armory/deck-armory
-      tag: 2026.09.08.14.49.36.main
+      tag: 2026.10.23.08.11.23.main
     vcs:
       repo:
         orgName: armory-io
         repoName: armory-extensions
         type: github
-      sha: 1cd5040f84ec4234d44eeb66371fcdc4b674712e
+      sha: 9e7c90c53baaa611bc4ad65aa0811982a6a5c0b1
   dinghy:
     baseService: dinghy
     image:
@@ -62,27 +62,27 @@ services:
   front50-armory:
     baseService: front50
     image:
-      imageId: sha256:d3a472aea112917322cd6bd41ba27fdfbfcb1437b64ac28747695802ed9eea1c
+      imageId: sha256:84c9622101e140e07c1cf1c5356ed423832342af806ca3bc6f1dd64694207ce5
       repository: armory/front50-armory
-      tag: 2026.09.08.14.49.36.main
+      tag: 2026.10.23.08.11.23.main
     vcs:
       repo:
         orgName: armory-io
         repoName: armory-extensions
         type: github
-      sha: 1cd5040f84ec4234d44eeb66371fcdc4b674712e
+      sha: 9e7c90c53baaa611bc4ad65aa0811982a6a5c0b1
   gate-armory:
     baseService: gate
     image:
-      imageId: sha256:9dbae9adee6d5079581eb54df9f8f84e56b82c59061781c73165fab03683538a
+      imageId: sha256:d25e9af722c0a1b04c777dbffac7a5b2e0767477ca194a46e1da3b3a04ab15fb
       repository: armory/gate-armory
-      tag: 2026.09.08.14.49.36.main
+      tag: 2026.10.23.08.11.23.main
     vcs:
       repo:
         orgName: armory-io
         repoName: armory-extensions
         type: github
-      sha: 1cd5040f84ec4234d44eeb66371fcdc4b674712e
+      sha: 9e7c90c53baaa611bc4ad65aa0811982a6a5c0b1
   igor-armory:
     baseService: igor
     image:
@@ -110,15 +110,15 @@ services:
   orca-armory:
     baseService: orca
     image:
-      imageId: sha256:7163438fb329a561f450fbc89419ad195a76c6b1fbfdd687e6d67896546926c6
+      imageId: sha256:fcbf540e8212f7be88ad4957883fa5ecb03520f0130cb3e4cb2114b8e60965d6
       repository: armory/orca-armory
-      tag: 2026.09.08.14.49.36.main
+      tag: 2026.10.23.08.11.23.main
     vcs:
       repo:
         orgName: armory-io
         repoName: armory-extensions
         type: github
-      sha: 1cd5040f84ec4234d44eeb66371fcdc4b674712e
+      sha: 9e7c90c53baaa611bc4ad65aa0811982a6a5c0b1
   rosco-armory:
     baseService: rosco
     image:
