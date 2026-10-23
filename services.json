@@ -1,0 +1,29 @@
+[
+  {
+    "baseVcs": {
+      "repo": {
+        "orgName": "spinnaker",
+        "repoName": "spinnaker",
+        "type": "github"
+      },
+      "sha": ""
+    },
+    "details": {
+      "baseService": "echo",
+      "image": {
+        "imageId": "sha256:94cab384ed390618894497f7470105f6b88e85723a13385878c949e9d18282e4",
+        "repository": "armory/echo-armory",
+        "tag": "2026.07.15.14.26.13.release-2.39.x"
+      },
+      "vcs": {
+        "repo": {
+          "orgName": "armory-io",
+          "repoName": "armory-extensions",
+          "type": "github"
+        },
+        "sha": "190059c422784c728064171219efbdbebf8d3c90"
+      }
+    },
+    "name": "echo-armory"
+  }
+]

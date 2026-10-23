@@ -38,7 +38,7 @@ services:
   echo-armory:
     baseService: echo
     image:
-      imageId: sha256:7db522b08644114789c20176a2ff1b50efee8d68788495af85444e95085f113f
+      imageId: sha256:94cab384ed390618894497f7470105f6b88e85723a13385878c949e9d18282e4
       repository: armory/echo-armory
       tag: 2026.07.15.14.26.13.release-2.39.x
     vcs:
