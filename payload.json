@@ -13,7 +13,7 @@
       "details": {
         "baseService": "clouddriver",
         "image": {
-          "imageId": "sha256:e6ac117af709584f034cc49ebc73f9073a54e3fa7998bc5f17c49fa3d167e640",
+          "imageId": "sha256:93c521104b47b48f06a2715f04bbde3ed03d6c71479ff8b6cd29e67a2d6a7d93",
           "repository": "armory/clouddriver-armory",
           "tag": "2026.10.05.15.04.59.release-2.40.x"
         },
@@ -40,7 +40,7 @@
       "details": {
         "baseService": "deck",
         "image": {
-          "imageId": "sha256:53d95713676506019256f96f7857b4b2b994230800854c609b8ec8a79cb813b7",
+          "imageId": "sha256:6fa7489926a7327ff9027d549424fb6ba6a11de853b76829712ba38695866e07",
           "repository": "armory/deck-armory",
           "tag": "2026.10.05.15.04.59.release-2.40.x"
         },
@@ -67,7 +67,7 @@
       "details": {
         "baseService": "dinghy",
         "image": {
-          "imageId": "sha256:ec3290b35c17d2258bfbbb4112ea0c41c04489e7adaa2308be8eccdc532c67ae",
+          "imageId": "sha256:8faaa021d3c9959ee01b2e839e131190ff782a3c9a423311ce600e97b97d50c3",
           "repository": "armory/dinghy",
           "tag": "2026.10.05.15.04.59.release-2.40.x"
         },
@@ -94,7 +94,7 @@
       "details": {
         "baseService": "echo",
         "image": {
-          "imageId": "sha256:b25012fb0ce60f236b042f498846ad4944c1d3962f7aa4c9609b811cdbf91550",
+          "imageId": "sha256:c562db556c9a78c4a3bcc8e511b42ab5897cbeb649567ae07f78543cba0dbf96",
           "repository": "armory/echo-armory",
           "tag": "2026.10.05.15.04.59.release-2.40.x"
         },
@@ -121,7 +121,7 @@
       "details": {
         "baseService": "fiat",
         "image": {
-          "imageId": "sha256:fe3bcda0faf3b1b01b2ba72b976479fd05894b373cd8e6d7f0206ab02a78f6cc",
+          "imageId": "sha256:61f0efb4d491572a6f61ed3c82dcdc47819b9665c0a131a5e8c23f04110aa9f9",
           "repository": "armory/fiat-armory",
           "tag": "2026.10.05.15.04.59.release-2.40.x"
         },
@@ -148,7 +148,7 @@
       "details": {
         "baseService": "front50",
         "image": {
-          "imageId": "sha256:cd8ae04cb499f160d0d38f58ab9b43236a5678abf505365a55d7e5c3f3e84aa9",
+          "imageId": "sha256:e7d33db3bb62dffa517703ac4707b9709fd94b0fc0a111991661e1fcb6f77642",
           "repository": "armory/front50-armory",
           "tag": "2026.10.05.15.04.59.release-2.40.x"
         },
@@ -175,7 +175,7 @@
       "details": {
         "baseService": "gate",
         "image": {
-          "imageId": "sha256:f5265d3c6858db972d3c27783f3a071b010f29f171421bb3d45c46772f58bf25",
+          "imageId": "sha256:e10aa7bf99ee4999d2e2e22a7ee2cdd82e9eb79f44bd3daa9b8f6a902192970f",
           "repository": "armory/gate-armory",
           "tag": "2026.10.05.15.04.59.release-2.40.x"
         },
@@ -202,7 +202,7 @@
       "details": {
         "baseService": "igor",
         "image": {
-          "imageId": "sha256:27313376c12e54cfb26d6ca56153fe091faf9545f36fb7becda0a7e08ee54a54",
+          "imageId": "sha256:d6544bc9810c2059bb90dde755127189a23bbaa9248f4008ab17927b4a70661d",
           "repository": "armory/igor-armory",
           "tag": "2026.10.05.15.04.59.release-2.40.x"
         },
@@ -229,7 +229,7 @@
       "details": {
         "baseService": "kayenta",
         "image": {
-          "imageId": "sha256:2c047f5c86c56aa47faa52c4782aaab28e6e8698cc37a52803fedafdd0c900f5",
+          "imageId": "sha256:193db0389b52b353d3d50b75e76ccdbf8931514bf8b39691514ac415848cae36",
           "repository": "armory/kayenta-armory",
           "tag": "2026.10.05.15.04.59.release-2.40.x"
         },
@@ -256,7 +256,7 @@
       "details": {
         "baseService": "orca",
         "image": {
-          "imageId": "sha256:75416891172a35d7454215e9a980a6f7d68430c8dcbc009f2db3c9f028e4da2f",
+          "imageId": "sha256:571bee0fe391b7f1c48c268568bbffd60eaaa81661c7dd005a8312ee2952a93a",
           "repository": "armory/orca-armory",
           "tag": "2026.10.05.15.04.59.release-2.40.x"
         },
@@ -283,7 +283,7 @@
       "details": {
         "baseService": "rosco",
         "image": {
-          "imageId": "sha256:0f53111bc3ee9334bc17fecb00822d5d2ab6aaeefeb2cffec341313bf54b83d5",
+          "imageId": "sha256:33bf5fcf7a85a0100f9f8a91042f540823e4ed702c6919b9ccaa5519079c1b7b",
           "repository": "armory/rosco-armory",
           "tag": "2026.10.05.15.04.59.release-2.40.x"
         },
@@ -310,7 +310,7 @@
       "details": {
         "baseService": "terraformer",
         "image": {
-          "imageId": "sha256:85e58c6c33c0d82a21ff786ca0a150b21af353a6b966f42751b0dad31b67cc26",
+          "imageId": "sha256:c1354b6249f374dcfa6af60f25181b51b402d34f055923153553af176a808b84",
           "repository": "armory/terraformer",
           "tag": "2026.10.05.15.04.59.release-2.40.x"
         },
