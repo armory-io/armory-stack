@@ -2,27 +2,27 @@ services:
   clouddriver-armory:
     baseService: clouddriver
     image:
-      imageId: sha256:3e29ee080553b206785da8562742e49cf309dc1f6951a8ed6582a0409e0aecd3
+      imageId: sha256:7ab519f101850b4da0cb3fec3a6ff195fd556a9b8eb88aacdf6648f2a7a07b64
       repository: armory/clouddriver-armory
-      tag: 2026.10.16.15.37.38.release-2.41.x
+      tag: 2026.10.28.14.21.26.release-2.41.x
     vcs:
       repo:
         orgName: armory-io
         repoName: armory-extensions
         type: github
-      sha: 8b8f98f26ee0d6151423bd342482b828b4bc53b0
+      sha: 35517bcddd1fa6a89be2dde4c01da2c08620f43e
   deck-armory:
     baseService: deck
     image:
-      imageId: sha256:5ede9cc5ce234a38f27ff772617105a9f39236ee6ae4c219401c43e1cbbbd136
+      imageId: sha256:b180e008c7ccef4ecfc6af5436349f7a995b7ee3fb7f490bb54e57850cd76af5
       repository: armory/deck-armory
-      tag: 2026.10.16.15.37.38.release-2.41.x
+      tag: 2026.10.28.14.21.26.release-2.41.x
     vcs:
       repo:
         orgName: armory-io
         repoName: armory-extensions
         type: github
-      sha: 8b8f98f26ee0d6151423bd342482b828b4bc53b0
+      sha: 35517bcddd1fa6a89be2dde4c01da2c08620f43e
   dinghy:
     baseService: dinghy
     image:
@@ -38,108 +38,108 @@ services:
   echo-armory:
     baseService: echo
     image:
-      imageId: sha256:245dd044cbb8a5bf9471523c2d44327ea7668063a6bb42289e5fc8752cbf82a9
+      imageId: sha256:5e0117dc58a20ad09b6c32c13ec08bb9dbae7fcb10c567cca4155f657f3e5f6a
       repository: armory/echo-armory
-      tag: 2026.10.16.15.37.38.release-2.41.x
+      tag: 2026.10.28.14.21.26.release-2.41.x
     vcs:
       repo:
         orgName: armory-io
         repoName: armory-extensions
         type: github
-      sha: 8b8f98f26ee0d6151423bd342482b828b4bc53b0
+      sha: 35517bcddd1fa6a89be2dde4c01da2c08620f43e
   fiat-armory:
     baseService: fiat
     image:
-      imageId: sha256:a1c1eabcd35c0aaec5a8b5ed1131aedaa720ad66235ff1830a839c867110174f
+      imageId: sha256:d47cc4f4f566884620b88c5e99128916724f4ddd197488c9dcd0ab2b4160e3ae
       repository: armory/fiat-armory
-      tag: 2026.10.16.15.37.38.release-2.41.x
+      tag: 2026.10.28.14.21.26.release-2.41.x
     vcs:
       repo:
         orgName: armory-io
         repoName: armory-extensions
         type: github
-      sha: 8b8f98f26ee0d6151423bd342482b828b4bc53b0
+      sha: 35517bcddd1fa6a89be2dde4c01da2c08620f43e
   front50-armory:
     baseService: front50
     image:
-      imageId: sha256:b0e432433b84a6096b9fe954231fa90044abd45f0c69c1aa50a5f4d43e3b2b80
+      imageId: sha256:a54672b0b3eed221e08061c8709cbde90c98a3bf3cc39870363cad511d9ba63a
       repository: armory/front50-armory
-      tag: 2026.10.16.15.37.38.release-2.41.x
+      tag: 2026.10.28.14.21.26.release-2.41.x
     vcs:
       repo:
         orgName: armory-io
         repoName: armory-extensions
         type: github
-      sha: 8b8f98f26ee0d6151423bd342482b828b4bc53b0
+      sha: 35517bcddd1fa6a89be2dde4c01da2c08620f43e
   gate-armory:
     baseService: gate
     image:
-      imageId: sha256:dabf24f98a3757f261a4a3a95b00b5fd27963b5db778327de216187ed671cbfa
+      imageId: sha256:8d2451940462afbd85ab805dfbb6c3c83e42222dcea9fe0da757c24f3dd8e664
       repository: armory/gate-armory
-      tag: 2026.10.16.15.37.38.release-2.41.x
+      tag: 2026.10.28.14.21.26.release-2.41.x
     vcs:
       repo:
         orgName: armory-io
         repoName: armory-extensions
         type: github
-      sha: 8b8f98f26ee0d6151423bd342482b828b4bc53b0
+      sha: 35517bcddd1fa6a89be2dde4c01da2c08620f43e
   igor-armory:
     baseService: igor
     image:
-      imageId: sha256:daf55761ba33694af1375bc7a0908b2b45ee9f90cd5594b4948a2bc332d4fa3a
+      imageId: sha256:5fdd90c1dd5ebb534c597241313f924598dd864dddc64f33a19e8c34f28336a4
       repository: armory/igor-armory
-      tag: 2026.10.16.15.37.38.release-2.41.x
+      tag: 2026.10.28.14.21.26.release-2.41.x
     vcs:
       repo:
         orgName: armory-io
         repoName: armory-extensions
         type: github
-      sha: 8b8f98f26ee0d6151423bd342482b828b4bc53b0
+      sha: 35517bcddd1fa6a89be2dde4c01da2c08620f43e
   kayenta-armory:
     baseService: kayenta
     image:
-      imageId: sha256:b8a9271633fab7b2bee8d2c2811a740261d45dd2b30ffda56751dfe85377bf9c
+      imageId: sha256:b5f0f61c1ed39aa8065b0d435a7a88fc9281e46b9ca5afed1b3be5e1bd6ba718
       repository: armory/kayenta-armory
-      tag: 2026.10.16.15.37.38.release-2.41.x
+      tag: 2026.10.28.14.21.26.release-2.41.x
     vcs:
       repo:
         orgName: armory-io
         repoName: armory-extensions
         type: github
-      sha: 8b8f98f26ee0d6151423bd342482b828b4bc53b0
+      sha: 35517bcddd1fa6a89be2dde4c01da2c08620f43e
   orca-armory:
     baseService: orca
     image:
-      imageId: sha256:b95c4737ef6a9181f62fc046c6384453a8f4f54027b5d52ffee1079bb985e189
+      imageId: sha256:1668d079707879094f10428b909260bdb504d2830a3e0c1468000f8f43586e8b
       repository: armory/orca-armory
-      tag: 2026.10.16.15.37.38.release-2.41.x
+      tag: 2026.10.28.14.21.26.release-2.41.x
     vcs:
       repo:
         orgName: armory-io
         repoName: armory-extensions
         type: github
-      sha: 8b8f98f26ee0d6151423bd342482b828b4bc53b0
+      sha: 35517bcddd1fa6a89be2dde4c01da2c08620f43e
   rosco-armory:
     baseService: rosco
     image:
-      imageId: sha256:cd6a58deecd68af84bf62becbac6a8801d80e1aa739526b2a2b811b3d72bad02
+      imageId: sha256:ee66eed53fc4e1de549497494638aff2d8b4e075e2a17184c604f93b8651e04f
       repository: armory/rosco-armory
-      tag: 2026.10.16.15.37.38.release-2.41.x
+      tag: 2026.10.28.14.21.26.release-2.41.x
     vcs:
       repo:
         orgName: armory-io
         repoName: armory-extensions
         type: github
-      sha: 8b8f98f26ee0d6151423bd342482b828b4bc53b0
+      sha: 35517bcddd1fa6a89be2dde4c01da2c08620f43e
   terraformer:
     baseService: terraformer
     image:
-      imageId: sha256:9e45871de3f1126b97c0ff149cc48f318f2663af6614289805a11d5601fae197
+      imageId: sha256:5cd64b0808e90b452f8b2fd3b7049e1685ca0c1956e0a4303452a9089c6e8f51
       repository: armory/terraformer
-      tag: 2026.10.16.15.37.38.release-2.41.x
+      tag: 2026.10.28.14.21.26.release-2.41.x
     vcs:
       repo:
         orgName: armory-io
         repoName: armory-extensions
         type: github
-      sha: 8b8f98f26ee0d6151423bd342482b828b4bc53b0
+      sha: 35517bcddd1fa6a89be2dde4c01da2c08620f43e
