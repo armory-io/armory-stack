@@ -4,16 +4,10 @@
 
 * **master**
 
-### igor-armory
+### terraformer
 
-- Image: `armory/igor-armory:2026.10.16.13.48.22.main`
-- Service VCS: [ba464caef1782220c3e48543d2814bda5a61a905](https://github.com/armory-io/armory-extensions/commit/ba464caef1782220c3e48543d2814bda5a61a905)
-- Base Service VCS: [](https://github.com/spinnaker/spinnaker/commit/)
-
-### kayenta-armory
-
-- Image: `armory/kayenta-armory:2026.10.16.13.48.22.main`
-- Service VCS: [ba464caef1782220c3e48543d2814bda5a61a905](https://github.com/armory-io/armory-extensions/commit/ba464caef1782220c3e48543d2814bda5a61a905)
+- Image: `armory/terraformer:2026.10.29.14.27.59.main`
+- Service VCS: [93fe8e956984d9c21567ddf609d6481adef4a2fb](https://github.com/armory-io/armory-extensions/commit/93fe8e956984d9c21567ddf609d6481adef4a2fb)
 - Base Service VCS: [](https://github.com/spinnaker/spinnaker/commit/)
 
 Event Payload
@@ -31,11 +25,11 @@ Event Payload
         "sha": ""
       },
       "details": {
-        "baseService": "igor",
+        "baseService": "terraformer",
         "image": {
-          "imageId": "sha256:f8e6c05a93b76a9967ae061574ab591e65674753e14053d4f0a367c5cfda0e29",
-          "repository": "armory/igor-armory",
-          "tag": "2026.10.16.13.48.22.main"
+          "imageId": "sha256:acee5be99712eb3275a1c74d76550a2bc6b2005f1172804dd7f2680a895d8499",
+          "repository": "armory/terraformer",
+          "tag": "2026.10.29.14.27.59.main"
         },
         "vcs": {
           "repo": {
@@ -43,37 +37,10 @@ Event Payload
             "repoName": "armory-extensions",
             "type": "github"
           },
-          "sha": "ba464caef1782220c3e48543d2814bda5a61a905"
+          "sha": "93fe8e956984d9c21567ddf609d6481adef4a2fb"
         }
       },
-      "name": "igor-armory"
-    },
-    {
-      "baseVcs": {
-        "repo": {
-          "orgName": "spinnaker",
-          "repoName": "spinnaker",
-          "type": "github"
-        },
-        "sha": ""
-      },
-      "details": {
-        "baseService": "kayenta",
-        "image": {
-          "imageId": "sha256:601fd9ea2a43d235088ce0ff29ca1c142f5ca79dc166762cba2e1050977e5029",
-          "repository": "armory/kayenta-armory",
-          "tag": "2026.10.16.13.48.22.main"
-        },
-        "vcs": {
-          "repo": {
-            "orgName": "armory-io",
-            "repoName": "armory-extensions",
-            "type": "github"
-          },
-          "sha": "ba464caef1782220c3e48543d2814bda5a61a905"
-        }
-      },
-      "name": "kayenta-armory"
+      "name": "terraformer"
     }
   ],
   "stackFile": "stack.yml",
