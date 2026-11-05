@@ -1,0 +1,59 @@
+{
+  "branch": "release-2.36.x",
+  "service": {
+    "baseVcs": {
+      "repo": {
+        "orgName": "spinnaker",
+        "repoName": "clouddriver",
+        "type": "github"
+      },
+      "sha": "1730ad7c66f7f276b707ddd54688a9ee963760e4"
+    },
+    "details": {
+      "baseService": "clouddriver",
+      "image": {
+        "imageId": "sha256:842fa1c657ea134f17ed0d5aa8d04a9c504e984b35ec621399adf71899467194",
+        "repository": "armory/clouddriver-armory",
+        "tag": "2026.11.05.16.14.08.release-2.36.x"
+      },
+      "vcs": {
+        "repo": {
+          "orgName": "armory-io",
+          "repoName": "clouddriver-armory",
+          "type": "github"
+        },
+        "sha": "17c735012081dc7f4cf23600bb9969ab7a53a056"
+      }
+    },
+    "name": "clouddriver-armory"
+  },
+  "stackEntry": {
+    "baseVcs": {
+      "repo": {
+        "orgName": "spinnaker",
+        "repoName": "clouddriver",
+        "type": "github"
+      },
+      "sha": "1730ad7c66f7f276b707ddd54688a9ee963760e4"
+    },
+    "details": {
+      "baseService": "clouddriver",
+      "image": {
+        "imageId": "sha256:842fa1c657ea134f17ed0d5aa8d04a9c504e984b35ec621399adf71899467194",
+        "repository": "armory/clouddriver-armory",
+        "tag": "2026.11.05.16.14.08.release-2.36.x"
+      },
+      "vcs": {
+        "repo": {
+          "orgName": "armory-io",
+          "repoName": "clouddriver-armory",
+          "type": "github"
+        },
+        "sha": "17c735012081dc7f4cf23600bb9969ab7a53a056"
+      }
+    },
+    "name": "clouddriver-armory"
+  },
+  "stackFile": "stack.yml",
+  "stackPath": "services"
+}
