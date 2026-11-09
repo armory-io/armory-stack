@@ -11,9 +11,9 @@
     "details": {
       "baseService": "clouddriver",
       "image": {
-        "imageId": "sha256:80c2dc71cbb061d9b4d441e2bf050407b28f426774001a1791a82291d9cd5ef5",
+        "imageId": "sha256:dccf528152509c5a6f0c962021eefa332abc434b65776174226d487e27d1d3ec",
         "repository": "armory/clouddriver-armory",
-        "tag": "2026.11.04.21.26.38.release-2.41.x"
+        "tag": "2026.11.09.12.25.13.release-2.41.x"
       },
       "vcs": {
         "repo": {
@@ -21,7 +21,7 @@
           "repoName": "armory-extensions",
           "type": "github"
         },
-        "sha": "2fd916053ff7f0bf4671af06105633bdf294cba8"
+        "sha": "15ae2ee64c210deb7783018b440ea35c6a21bd91"
       }
     },
     "name": "clouddriver-armory"
@@ -38,9 +38,9 @@
     "details": {
       "baseService": "deck",
       "image": {
-        "imageId": "sha256:bc2e6a80dae122d4afefd823a1f6ed77ac83a9836dcc06ed1b41704fda4bd254",
+        "imageId": "sha256:04f79292bf09df815968b9f0e3f5cd7ece3fb4ec6f9b9300ddc718b6ad745f5d",
         "repository": "armory/deck-armory",
-        "tag": "2026.11.04.21.26.38.release-2.41.x"
+        "tag": "2026.11.09.12.25.13.release-2.41.x"
       },
       "vcs": {
         "repo": {
@@ -48,7 +48,7 @@
           "repoName": "armory-extensions",
           "type": "github"
         },
-        "sha": "2fd916053ff7f0bf4671af06105633bdf294cba8"
+        "sha": "15ae2ee64c210deb7783018b440ea35c6a21bd91"
       }
     },
     "name": "deck-armory"
@@ -65,9 +65,9 @@
     "details": {
       "baseService": "echo",
       "image": {
-        "imageId": "sha256:b6c30d487111daa89c51b2f0b10150e9a29980747ca3f5f40d777725a31ae243",
+        "imageId": "sha256:6d96ff5d71a5227484b1c27c9a82591ea759bd09c677d41c3ab8e6a7a2c83b99",
         "repository": "armory/echo-armory",
-        "tag": "2026.11.04.21.26.38.release-2.41.x"
+        "tag": "2026.11.09.12.25.13.release-2.41.x"
       },
       "vcs": {
         "repo": {
@@ -75,7 +75,7 @@
           "repoName": "armory-extensions",
           "type": "github"
         },
-        "sha": "2fd916053ff7f0bf4671af06105633bdf294cba8"
+        "sha": "15ae2ee64c210deb7783018b440ea35c6a21bd91"
       }
     },
     "name": "echo-armory"
@@ -92,9 +92,9 @@
     "details": {
       "baseService": "fiat",
       "image": {
-        "imageId": "sha256:f2b98c7cbdfac527597454852ee7aada409d275768d526a0a15f9f3e72343325",
+        "imageId": "sha256:545ab19bd9a7dae04379b7c874d8398d81100cbee21290f3b00aa0f422cb05d0",
         "repository": "armory/fiat-armory",
-        "tag": "2026.11.04.21.26.38.release-2.41.x"
+        "tag": "2026.11.09.12.25.13.release-2.41.x"
       },
       "vcs": {
         "repo": {
@@ -102,7 +102,7 @@
           "repoName": "armory-extensions",
           "type": "github"
         },
-        "sha": "2fd916053ff7f0bf4671af06105633bdf294cba8"
+        "sha": "15ae2ee64c210deb7783018b440ea35c6a21bd91"
       }
     },
     "name": "fiat-armory"
@@ -119,9 +119,9 @@
     "details": {
       "baseService": "front50",
       "image": {
-        "imageId": "sha256:f9b69236f0fe7dfcd8bcdb3960f43c0a0fb5c0eef00ea7501007d17e90475a09",
+        "imageId": "sha256:04285ec37a902ca7b5e707f4e2c2c2899a273febddb07d585cd20488e4f16f73",
         "repository": "armory/front50-armory",
-        "tag": "2026.11.04.21.26.38.release-2.41.x"
+        "tag": "2026.11.09.12.25.13.release-2.41.x"
       },
       "vcs": {
         "repo": {
@@ -129,7 +129,7 @@
           "repoName": "armory-extensions",
           "type": "github"
         },
-        "sha": "2fd916053ff7f0bf4671af06105633bdf294cba8"
+        "sha": "15ae2ee64c210deb7783018b440ea35c6a21bd91"
       }
     },
     "name": "front50-armory"
@@ -146,9 +146,9 @@
     "details": {
       "baseService": "gate",
       "image": {
-        "imageId": "sha256:abd1ac23c2bb75e27a2abd6d9c6df88490bf5db2c7701042cf38f6c6326be8d4",
+        "imageId": "sha256:b6a3ce7602efa12ec42ebbbd12d547b38bde264675f8747e640fd64a48a2aa13",
         "repository": "armory/gate-armory",
-        "tag": "2026.11.04.21.26.38.release-2.41.x"
+        "tag": "2026.11.09.12.25.13.release-2.41.x"
       },
       "vcs": {
         "repo": {
@@ -156,7 +156,7 @@
           "repoName": "armory-extensions",
           "type": "github"
         },
-        "sha": "2fd916053ff7f0bf4671af06105633bdf294cba8"
+        "sha": "15ae2ee64c210deb7783018b440ea35c6a21bd91"
       }
     },
     "name": "gate-armory"
@@ -173,9 +173,9 @@
     "details": {
       "baseService": "igor",
       "image": {
-        "imageId": "sha256:da18f2ce95a8969442577b05a62a45d3284d628b279540b48974ad6ae0c1387b",
+        "imageId": "sha256:8436b758de832e5279e4b4b2ec57c2d95fed22fe8483b90cae3c6af52eda6fd0",
         "repository": "armory/igor-armory",
-        "tag": "2026.11.04.21.26.38.release-2.41.x"
+        "tag": "2026.11.09.12.25.13.release-2.41.x"
       },
       "vcs": {
         "repo": {
@@ -183,7 +183,7 @@
           "repoName": "armory-extensions",
           "type": "github"
         },
-        "sha": "2fd916053ff7f0bf4671af06105633bdf294cba8"
+        "sha": "15ae2ee64c210deb7783018b440ea35c6a21bd91"
       }
     },
     "name": "igor-armory"
@@ -200,9 +200,9 @@
     "details": {
       "baseService": "kayenta",
       "image": {
-        "imageId": "sha256:76426f4d3f511223f485dd141c111356a37ec9f9a04011458a48a399e9e6ff67",
+        "imageId": "sha256:cf252f9e580ce9d5c464d1130299e00f2eca1b7b03fa1d57fb659eae480e405e",
         "repository": "armory/kayenta-armory",
-        "tag": "2026.11.04.21.26.38.release-2.41.x"
+        "tag": "2026.11.09.12.25.13.release-2.41.x"
       },
       "vcs": {
         "repo": {
@@ -210,7 +210,7 @@
           "repoName": "armory-extensions",
           "type": "github"
         },
-        "sha": "2fd916053ff7f0bf4671af06105633bdf294cba8"
+        "sha": "15ae2ee64c210deb7783018b440ea35c6a21bd91"
       }
     },
     "name": "kayenta-armory"
@@ -227,9 +227,9 @@
     "details": {
       "baseService": "orca",
       "image": {
-        "imageId": "sha256:cb536579acba06acd8db87c22000df13cc65b99ece437b29aafdfa3e843ce64f",
+        "imageId": "sha256:017589f301c057f35bd85e73571b6f73398b2db2cdcbed1149f35849194abcc4",
         "repository": "armory/orca-armory",
-        "tag": "2026.11.04.21.26.38.release-2.41.x"
+        "tag": "2026.11.09.12.25.13.release-2.41.x"
       },
       "vcs": {
         "repo": {
@@ -237,7 +237,7 @@
           "repoName": "armory-extensions",
           "type": "github"
         },
-        "sha": "2fd916053ff7f0bf4671af06105633bdf294cba8"
+        "sha": "15ae2ee64c210deb7783018b440ea35c6a21bd91"
       }
     },
     "name": "orca-armory"
@@ -254,9 +254,9 @@
     "details": {
       "baseService": "rosco",
       "image": {
-        "imageId": "sha256:8ad8b24022c17c48627230aa2775059d3fa7624ba8791009044ea7eaf1578fea",
+        "imageId": "sha256:393286d9db87ec8c0fcdb6c790568c708fdb62f1563a0a9d8f4183cdd5c23ef8",
         "repository": "armory/rosco-armory",
-        "tag": "2026.11.04.21.26.38.release-2.41.x"
+        "tag": "2026.11.09.12.25.13.release-2.41.x"
       },
       "vcs": {
         "repo": {
@@ -264,7 +264,7 @@
           "repoName": "armory-extensions",
           "type": "github"
         },
-        "sha": "2fd916053ff7f0bf4671af06105633bdf294cba8"
+        "sha": "15ae2ee64c210deb7783018b440ea35c6a21bd91"
       }
     },
     "name": "rosco-armory"
@@ -281,9 +281,9 @@
     "details": {
       "baseService": "terraformer",
       "image": {
-        "imageId": "sha256:fac6c83d385b9e76764cceb78b8c122c801caef6d370099eb4496be90f6d2d9f",
+        "imageId": "sha256:b8ba61cbb45a8113fd701d18ff43af3dd8f7e42dacfbc52c0fe20ace2c8a96ef",
         "repository": "armory/terraformer",
-        "tag": "2026.11.04.21.26.38.release-2.41.x"
+        "tag": "2026.11.09.12.25.13.release-2.41.x"
       },
       "vcs": {
         "repo": {
@@ -291,7 +291,7 @@
           "repoName": "armory-extensions",
           "type": "github"
         },
-        "sha": "2fd916053ff7f0bf4671af06105633bdf294cba8"
+        "sha": "15ae2ee64c210deb7783018b440ea35c6a21bd91"
       }
     },
     "name": "terraformer"
