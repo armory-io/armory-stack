@@ -6,62 +6,62 @@
 
 ### clouddriver-armory
 
-- Image: `armory/clouddriver-armory:2026.11.09.12.21.07.release-2.42.x`
-- Service VCS: [f2efc37b5f1e40467efac14674082db5e60e107e](https://github.com/armory-io/armory-extensions/commit/f2efc37b5f1e40467efac14674082db5e60e107e)
+- Image: `armory/clouddriver-armory:2026.11.09.17.05.37.release-2.42.x`
+- Service VCS: [eaf71d49235bf95659464a4eba63f7bbbe9bb947](https://github.com/armory-io/armory-extensions/commit/eaf71d49235bf95659464a4eba63f7bbbe9bb947)
 - Base Service VCS: [](https://github.com/spinnaker/spinnaker/commit/)
 
 ### deck-armory
 
-- Image: `armory/deck-armory:2026.11.09.12.21.07.release-2.42.x`
-- Service VCS: [f2efc37b5f1e40467efac14674082db5e60e107e](https://github.com/armory-io/armory-extensions/commit/f2efc37b5f1e40467efac14674082db5e60e107e)
+- Image: `armory/deck-armory:2026.11.09.17.05.37.release-2.42.x`
+- Service VCS: [eaf71d49235bf95659464a4eba63f7bbbe9bb947](https://github.com/armory-io/armory-extensions/commit/eaf71d49235bf95659464a4eba63f7bbbe9bb947)
 - Base Service VCS: [](https://github.com/spinnaker/spinnaker/commit/)
 
 ### echo-armory
 
-- Image: `armory/echo-armory:2026.11.09.12.21.07.release-2.42.x`
-- Service VCS: [f2efc37b5f1e40467efac14674082db5e60e107e](https://github.com/armory-io/armory-extensions/commit/f2efc37b5f1e40467efac14674082db5e60e107e)
+- Image: `armory/echo-armory:2026.11.09.17.05.37.release-2.42.x`
+- Service VCS: [eaf71d49235bf95659464a4eba63f7bbbe9bb947](https://github.com/armory-io/armory-extensions/commit/eaf71d49235bf95659464a4eba63f7bbbe9bb947)
 - Base Service VCS: [](https://github.com/spinnaker/spinnaker/commit/)
 
 ### fiat-armory
 
-- Image: `armory/fiat-armory:2026.11.09.12.21.07.release-2.42.x`
-- Service VCS: [f2efc37b5f1e40467efac14674082db5e60e107e](https://github.com/armory-io/armory-extensions/commit/f2efc37b5f1e40467efac14674082db5e60e107e)
+- Image: `armory/fiat-armory:2026.11.09.17.05.37.release-2.42.x`
+- Service VCS: [eaf71d49235bf95659464a4eba63f7bbbe9bb947](https://github.com/armory-io/armory-extensions/commit/eaf71d49235bf95659464a4eba63f7bbbe9bb947)
 - Base Service VCS: [](https://github.com/spinnaker/spinnaker/commit/)
 
 ### front50-armory
 
-- Image: `armory/front50-armory:2026.11.09.12.21.07.release-2.42.x`
-- Service VCS: [f2efc37b5f1e40467efac14674082db5e60e107e](https://github.com/armory-io/armory-extensions/commit/f2efc37b5f1e40467efac14674082db5e60e107e)
+- Image: `armory/front50-armory:2026.11.09.17.05.37.release-2.42.x`
+- Service VCS: [eaf71d49235bf95659464a4eba63f7bbbe9bb947](https://github.com/armory-io/armory-extensions/commit/eaf71d49235bf95659464a4eba63f7bbbe9bb947)
 - Base Service VCS: [](https://github.com/spinnaker/spinnaker/commit/)
 
 ### gate-armory
 
-- Image: `armory/gate-armory:2026.11.09.12.21.07.release-2.42.x`
-- Service VCS: [f2efc37b5f1e40467efac14674082db5e60e107e](https://github.com/armory-io/armory-extensions/commit/f2efc37b5f1e40467efac14674082db5e60e107e)
+- Image: `armory/gate-armory:2026.11.09.17.05.37.release-2.42.x`
+- Service VCS: [eaf71d49235bf95659464a4eba63f7bbbe9bb947](https://github.com/armory-io/armory-extensions/commit/eaf71d49235bf95659464a4eba63f7bbbe9bb947)
 - Base Service VCS: [](https://github.com/spinnaker/spinnaker/commit/)
 
 ### igor-armory
 
-- Image: `armory/igor-armory:2026.11.09.12.21.07.release-2.42.x`
-- Service VCS: [f2efc37b5f1e40467efac14674082db5e60e107e](https://github.com/armory-io/armory-extensions/commit/f2efc37b5f1e40467efac14674082db5e60e107e)
+- Image: `armory/igor-armory:2026.11.09.17.05.37.release-2.42.x`
+- Service VCS: [eaf71d49235bf95659464a4eba63f7bbbe9bb947](https://github.com/armory-io/armory-extensions/commit/eaf71d49235bf95659464a4eba63f7bbbe9bb947)
 - Base Service VCS: [](https://github.com/spinnaker/spinnaker/commit/)
 
 ### kayenta-armory
 
-- Image: `armory/kayenta-armory:2026.11.09.12.21.07.release-2.42.x`
-- Service VCS: [f2efc37b5f1e40467efac14674082db5e60e107e](https://github.com/armory-io/armory-extensions/commit/f2efc37b5f1e40467efac14674082db5e60e107e)
+- Image: `armory/kayenta-armory:2026.11.09.17.05.37.release-2.42.x`
+- Service VCS: [eaf71d49235bf95659464a4eba63f7bbbe9bb947](https://github.com/armory-io/armory-extensions/commit/eaf71d49235bf95659464a4eba63f7bbbe9bb947)
 - Base Service VCS: [](https://github.com/spinnaker/spinnaker/commit/)
 
 ### orca-armory
 
-- Image: `armory/orca-armory:2026.11.09.12.21.07.release-2.42.x`
-- Service VCS: [f2efc37b5f1e40467efac14674082db5e60e107e](https://github.com/armory-io/armory-extensions/commit/f2efc37b5f1e40467efac14674082db5e60e107e)
+- Image: `armory/orca-armory:2026.11.09.17.05.37.release-2.42.x`
+- Service VCS: [eaf71d49235bf95659464a4eba63f7bbbe9bb947](https://github.com/armory-io/armory-extensions/commit/eaf71d49235bf95659464a4eba63f7bbbe9bb947)
 - Base Service VCS: [](https://github.com/spinnaker/spinnaker/commit/)
 
 ### rosco-armory
 
-- Image: `armory/rosco-armory:2026.11.09.12.21.07.release-2.42.x`
-- Service VCS: [f2efc37b5f1e40467efac14674082db5e60e107e](https://github.com/armory-io/armory-extensions/commit/f2efc37b5f1e40467efac14674082db5e60e107e)
+- Image: `armory/rosco-armory:2026.11.09.17.05.37.release-2.42.x`
+- Service VCS: [eaf71d49235bf95659464a4eba63f7bbbe9bb947](https://github.com/armory-io/armory-extensions/commit/eaf71d49235bf95659464a4eba63f7bbbe9bb947)
 - Base Service VCS: [](https://github.com/spinnaker/spinnaker/commit/)
 
 Event Payload
@@ -81,9 +81,9 @@ Event Payload
       "details": {
         "baseService": "clouddriver",
         "image": {
-          "imageId": "sha256:3fd91b4c6aca6f4f59ecf96afee7ed902680c510d9b2abf146152d68159d6ab5",
+          "imageId": "sha256:b3e1fbe1aae571b248513311fc6d93e996deb6f4ca041c37be5813a0a8f0b986",
           "repository": "armory/clouddriver-armory",
-          "tag": "2026.11.09.12.21.07.release-2.42.x"
+          "tag": "2026.11.09.17.05.37.release-2.42.x"
         },
         "vcs": {
           "repo": {
@@ -91,7 +91,7 @@ Event Payload
             "repoName": "armory-extensions",
             "type": "github"
           },
-          "sha": "f2efc37b5f1e40467efac14674082db5e60e107e"
+          "sha": "eaf71d49235bf95659464a4eba63f7bbbe9bb947"
         }
       },
       "name": "clouddriver-armory"
@@ -108,9 +108,9 @@ Event Payload
       "details": {
         "baseService": "deck",
         "image": {
-          "imageId": "sha256:cac728e8e5dc5ab0c093c22f5705c7db32e833eb9072835f5c2ec4e60543c94a",
+          "imageId": "sha256:663eabd03dd3dd4d4eacc4a0da8f4b516cd414a8a34e858d60f0ac708fc81c46",
           "repository": "armory/deck-armory",
-          "tag": "2026.11.09.12.21.07.release-2.42.x"
+          "tag": "2026.11.09.17.05.37.release-2.42.x"
         },
         "vcs": {
           "repo": {
@@ -118,7 +118,7 @@ Event Payload
             "repoName": "armory-extensions",
             "type": "github"
           },
-          "sha": "f2efc37b5f1e40467efac14674082db5e60e107e"
+          "sha": "eaf71d49235bf95659464a4eba63f7bbbe9bb947"
         }
       },
       "name": "deck-armory"
@@ -135,9 +135,9 @@ Event Payload
       "details": {
         "baseService": "echo",
         "image": {
-          "imageId": "sha256:9277aec0de3d09e5c33bbdb4daca8eae2ed82249799de64904ade8a8d7e630e9",
+          "imageId": "sha256:1ec6d34974a69cdbac20c1795c16039a964c6da0d6583402fdde7c5409f88cb5",
           "repository": "armory/echo-armory",
-          "tag": "2026.11.09.12.21.07.release-2.42.x"
+          "tag": "2026.11.09.17.05.37.release-2.42.x"
         },
         "vcs": {
           "repo": {
@@ -145,7 +145,7 @@ Event Payload
             "repoName": "armory-extensions",
             "type": "github"
           },
-          "sha": "f2efc37b5f1e40467efac14674082db5e60e107e"
+          "sha": "eaf71d49235bf95659464a4eba63f7bbbe9bb947"
         }
       },
       "name": "echo-armory"
@@ -162,9 +162,9 @@ Event Payload
       "details": {
         "baseService": "fiat",
         "image": {
-          "imageId": "sha256:3cde51ea0c9bc5448a5394f9919df76616b93aefd4222aa2854a1903a6b6f9f1",
+          "imageId": "sha256:6a6c20d88a9848aff53674fc35a1073fc482a6af1dddb513a6dd21a1d486080e",
           "repository": "armory/fiat-armory",
-          "tag": "2026.11.09.12.21.07.release-2.42.x"
+          "tag": "2026.11.09.17.05.37.release-2.42.x"
         },
         "vcs": {
           "repo": {
@@ -172,7 +172,7 @@ Event Payload
             "repoName": "armory-extensions",
             "type": "github"
           },
-          "sha": "f2efc37b5f1e40467efac14674082db5e60e107e"
+          "sha": "eaf71d49235bf95659464a4eba63f7bbbe9bb947"
         }
       },
       "name": "fiat-armory"
@@ -189,9 +189,9 @@ Event Payload
       "details": {
         "baseService": "front50",
         "image": {
-          "imageId": "sha256:bc6d1b5c08de32320a925f56935dbd8c2cb1f202aad193b53713eaac0e35c631",
+          "imageId": "sha256:b8d96befad18bf30f9ed392ca5ea7a5c006800c97661c1f859ee15002650d6fc",
           "repository": "armory/front50-armory",
-          "tag": "2026.11.09.12.21.07.release-2.42.x"
+          "tag": "2026.11.09.17.05.37.release-2.42.x"
         },
         "vcs": {
           "repo": {
@@ -199,7 +199,7 @@ Event Payload
             "repoName": "armory-extensions",
             "type": "github"
           },
-          "sha": "f2efc37b5f1e40467efac14674082db5e60e107e"
+          "sha": "eaf71d49235bf95659464a4eba63f7bbbe9bb947"
         }
       },
       "name": "front50-armory"
@@ -216,9 +216,9 @@ Event Payload
       "details": {
         "baseService": "gate",
         "image": {
-          "imageId": "sha256:638068ed0ca2a4424861c80d0ce64047b7e3f36819399dd0d32b623394942fff",
+          "imageId": "sha256:806c940788715bd4b8ad98a2f6ae97d3ac3728651d8726f44480300a624d541c",
           "repository": "armory/gate-armory",
-          "tag": "2026.11.09.12.21.07.release-2.42.x"
+          "tag": "2026.11.09.17.05.37.release-2.42.x"
         },
         "vcs": {
           "repo": {
@@ -226,7 +226,7 @@ Event Payload
             "repoName": "armory-extensions",
             "type": "github"
           },
-          "sha": "f2efc37b5f1e40467efac14674082db5e60e107e"
+          "sha": "eaf71d49235bf95659464a4eba63f7bbbe9bb947"
         }
       },
       "name": "gate-armory"
@@ -243,9 +243,9 @@ Event Payload
       "details": {
         "baseService": "igor",
         "image": {
-          "imageId": "sha256:a4560d0426b3d131474b480179ddbab6c829838f47ab07d32392acff962e04f8",
+          "imageId": "sha256:2f491ede7d6b83dba7e25721880517e7adba2e1d24f9a727231ae333a966f12b",
           "repository": "armory/igor-armory",
-          "tag": "2026.11.09.12.21.07.release-2.42.x"
+          "tag": "2026.11.09.17.05.37.release-2.42.x"
         },
         "vcs": {
           "repo": {
@@ -253,7 +253,7 @@ Event Payload
             "repoName": "armory-extensions",
             "type": "github"
           },
-          "sha": "f2efc37b5f1e40467efac14674082db5e60e107e"
+          "sha": "eaf71d49235bf95659464a4eba63f7bbbe9bb947"
         }
       },
       "name": "igor-armory"
@@ -270,9 +270,9 @@ Event Payload
       "details": {
         "baseService": "kayenta",
         "image": {
-          "imageId": "sha256:994b455b78c2fa4f0fa49b49fdf03ee66d137545c2c27a4de25cbb715244bffb",
+          "imageId": "sha256:45a60b2a451c59bb2d0ae2a9c819b674b2df6af1c2fec57d836a3269653973ac",
           "repository": "armory/kayenta-armory",
-          "tag": "2026.11.09.12.21.07.release-2.42.x"
+          "tag": "2026.11.09.17.05.37.release-2.42.x"
         },
         "vcs": {
           "repo": {
@@ -280,7 +280,7 @@ Event Payload
             "repoName": "armory-extensions",
             "type": "github"
           },
-          "sha": "f2efc37b5f1e40467efac14674082db5e60e107e"
+          "sha": "eaf71d49235bf95659464a4eba63f7bbbe9bb947"
         }
       },
       "name": "kayenta-armory"
@@ -297,9 +297,9 @@ Event Payload
       "details": {
         "baseService": "orca",
         "image": {
-          "imageId": "sha256:021a4455d5c57d153d5ed15b4c6d3740bf2e5f569c8f4d42a26b1df0eaca3399",
+          "imageId": "sha256:b4e44185c62e9a4e2c8b5f3585ae075787f9b1437fc62d885fedc00f1d87c5d3",
           "repository": "armory/orca-armory",
-          "tag": "2026.11.09.12.21.07.release-2.42.x"
+          "tag": "2026.11.09.17.05.37.release-2.42.x"
         },
         "vcs": {
           "repo": {
@@ -307,7 +307,7 @@ Event Payload
             "repoName": "armory-extensions",
             "type": "github"
           },
-          "sha": "f2efc37b5f1e40467efac14674082db5e60e107e"
+          "sha": "eaf71d49235bf95659464a4eba63f7bbbe9bb947"
         }
       },
       "name": "orca-armory"
@@ -324,9 +324,9 @@ Event Payload
       "details": {
         "baseService": "rosco",
         "image": {
-          "imageId": "sha256:af4061eb18bfcf6bde2d45189c15ca9e41796da03ecc06979cf4046305a80038",
+          "imageId": "sha256:594a915d4ef09aef983cbc5e1c2fb42394b56bab758ac3d0d3177866f4cae67d",
           "repository": "armory/rosco-armory",
-          "tag": "2026.11.09.12.21.07.release-2.42.x"
+          "tag": "2026.11.09.17.05.37.release-2.42.x"
         },
         "vcs": {
           "repo": {
@@ -334,7 +334,7 @@ Event Payload
             "repoName": "armory-extensions",
             "type": "github"
           },
-          "sha": "f2efc37b5f1e40467efac14674082db5e60e107e"
+          "sha": "eaf71d49235bf95659464a4eba63f7bbbe9bb947"
         }
       },
       "name": "rosco-armory"
