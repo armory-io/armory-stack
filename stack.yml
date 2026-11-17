@@ -2,7 +2,7 @@ services:
   clouddriver-armory:
     baseService: clouddriver
     image:
-      imageId: sha256:edb4e2cb5ebcc120f5d79a9ab20bf6467b0f451440682c7318632705837da7e6
+      imageId: sha256:6f0138f78a2e35d8ed858a98048ac26f5e5b5f8b214b5df6ce72368246337bee
       repository: armory/clouddriver-armory
       tag: 2026.11.17.11.54.00.release-2.40.x
     vcs:
@@ -14,7 +14,7 @@ services:
   deck-armory:
     baseService: deck
     image:
-      imageId: sha256:ec2c2895002c78bfa1b8b1b3931e774636793e1180cf76bf6c4089d95f0597c1
+      imageId: sha256:d41e9d6058bfacac88fcbc6f437f906b451c63ebec65b8420c57a0150d1d7ca0
       repository: armory/deck-armory
       tag: 2026.11.17.11.54.00.release-2.40.x
     vcs:
@@ -26,7 +26,7 @@ services:
   dinghy:
     baseService: dinghy
     image:
-      imageId: sha256:d16e19796bc7d10f035ac22bc81563a8a73e1ce47299a93fe45f827790d52296
+      imageId: sha256:daa8a4ae22181533527968d4fd229ffb0809c1af20e2ac260baa12f312541822
       repository: armory/dinghy
       tag: 2026.11.17.11.54.00.release-2.40.x
     vcs:
@@ -38,7 +38,7 @@ services:
   echo-armory:
     baseService: echo
     image:
-      imageId: sha256:5776fdabf37f0af50eb72c656d491ef3dcd15e3bfa8a9392dcd3bcb452bc15a1
+      imageId: sha256:f6a4e7050516993b4d4ca3f325211aff805255b011a47b12fdfeab420f175da2
       repository: armory/echo-armory
       tag: 2026.11.17.11.54.00.release-2.40.x
     vcs:
@@ -50,7 +50,7 @@ services:
   fiat-armory:
     baseService: fiat
     image:
-      imageId: sha256:7150c731965c680dbec6120ea5acbdf39f398ba04c266f9f7c96a6f51fc51ec4
+      imageId: sha256:5cf7c14550d0efc4b959b9db6a54fc02387522f0e9ae8a6c68c5d3c4a0028f5f
       repository: armory/fiat-armory
       tag: 2026.11.17.11.54.00.release-2.40.x
     vcs:
@@ -62,7 +62,7 @@ services:
   front50-armory:
     baseService: front50
     image:
-      imageId: sha256:57d5d876e1a819421ac97728f3d6b69a735aec55c785fd8f698f6d3398fb287a
+      imageId: sha256:323d787ca35870824cbc3f64b63ee37cdd87354a131cc69af92d10d7194ddd57
       repository: armory/front50-armory
       tag: 2026.11.17.11.54.00.release-2.40.x
     vcs:
@@ -74,7 +74,7 @@ services:
   gate-armory:
     baseService: gate
     image:
-      imageId: sha256:4b5fbff640a2a548b05d42f9365e5e7f0aa79d842546ac6373b6daa373b90751
+      imageId: sha256:c178e467c8c6e5799313b269afe1237d089c10d83d60214304461b85892b29da
       repository: armory/gate-armory
       tag: 2026.11.17.11.54.00.release-2.40.x
     vcs:
@@ -86,7 +86,7 @@ services:
   igor-armory:
     baseService: igor
     image:
-      imageId: sha256:de74e487bd4c60bcfb5c25a715701921d12552b0ba403fe8b5db1f39a0a440c2
+      imageId: sha256:5a5b70f03e027103a3091242f6a5416bc61d24122d69130ee5753e15ad5ec4ff
       repository: armory/igor-armory
       tag: 2026.11.17.11.54.00.release-2.40.x
     vcs:
@@ -98,7 +98,7 @@ services:
   kayenta-armory:
     baseService: kayenta
     image:
-      imageId: sha256:442339115bf29b3a06abc90d2197b3641fdde0ed6d85fd00f35bc9b931eb1691
+      imageId: sha256:7fd25bb012cf5fcc9162909534b7298cb81895d7f6d82e7cda1e1a46784eb428
       repository: armory/kayenta-armory
       tag: 2026.11.17.11.54.00.release-2.40.x
     vcs:
@@ -110,7 +110,7 @@ services:
   orca-armory:
     baseService: orca
     image:
-      imageId: sha256:2316f0e97b78d6eaf03b120fb9d3697b4f84c3fa3136204614274e4e1358fb87
+      imageId: sha256:258dd2cd06af5167d6fae6afcfce61c857f0f1ad379834a77447dbcdc496f944
       repository: armory/orca-armory
       tag: 2026.11.17.11.54.00.release-2.40.x
     vcs:
@@ -122,7 +122,7 @@ services:
   rosco-armory:
     baseService: rosco
     image:
-      imageId: sha256:2051a8303e9b5b0602191b528a74f40756241fa48038ab05caf02b59cf257f1b
+      imageId: sha256:608543f656d3991ca8a6d84d08cdbe8077ae8c5dcc2a12d78973422a1cfb3474
       repository: armory/rosco-armory
       tag: 2026.11.17.11.54.00.release-2.40.x
     vcs:
@@ -134,7 +134,7 @@ services:
   terraformer:
     baseService: terraformer
     image:
-      imageId: sha256:22bac602339decf56d18fbb1a5a8d0e0f8fa8e7ab83bd955893ba5313474adaf
+      imageId: sha256:2e3c87c7271daf197feef1da5d5d5b91d1e4f725a2ffc0adf535357d69f69755
       repository: armory/terraformer
       tag: 2026.11.17.11.54.00.release-2.40.x
     vcs:
