@@ -2,7 +2,7 @@ services:
   clouddriver-armory:
     baseService: clouddriver
     image:
-      imageId: sha256:58cc52cabfc4aef44fb77e0d7940ba7d1b4ee8b1e730c9c76bf11dc6d130c811
+      imageId: sha256:130641f9403c87e8c2227d86f7540180e137d596e59681a566e282b1a173e4b6
       repository: armory/clouddriver-armory
       tag: 2026.11.17.11.50.27.release-2.41.x
     vcs:
@@ -14,7 +14,7 @@ services:
   deck-armory:
     baseService: deck
     image:
-      imageId: sha256:48308bcf53c159b4b54e0b120747d11ab289a63f18b30500d59d159ea9b02d37
+      imageId: sha256:effc238928aca48fe311de331189ed158e0c38272bb9708da850b692c404f3b5
       repository: armory/deck-armory
       tag: 2026.11.17.11.50.27.release-2.41.x
     vcs:
@@ -38,7 +38,7 @@ services:
   echo-armory:
     baseService: echo
     image:
-      imageId: sha256:051dbc4f4c1123b46543e2272c88fa46f13306f736c1ac51381bb85ea0284e91
+      imageId: sha256:ea2e4a778a73cd3a704c0240fcd697d7d7c158eb5fffd3b5c49b62a6f16b0873
       repository: armory/echo-armory
       tag: 2026.11.17.11.50.27.release-2.41.x
     vcs:
@@ -50,7 +50,7 @@ services:
   fiat-armory:
     baseService: fiat
     image:
-      imageId: sha256:fc3e8c9cccb9ee6636fe82727290c6618894e21d9cddb2066e0501381264e16d
+      imageId: sha256:c7842ee99cf83ab96e694d346efd04b5672d7c002c9480450c39701910f59013
       repository: armory/fiat-armory
       tag: 2026.11.17.11.50.27.release-2.41.x
     vcs:
@@ -62,7 +62,7 @@ services:
   front50-armory:
     baseService: front50
     image:
-      imageId: sha256:9925f256e08d51129764a5eaa67918d28a558775f76a73447c008d6ebeb3d611
+      imageId: sha256:1cf6779f74c924069fc1aac91bdfd2e654a2617fba9fd417eba7d04091243a15
       repository: armory/front50-armory
       tag: 2026.11.17.11.50.27.release-2.41.x
     vcs:
@@ -74,7 +74,7 @@ services:
   gate-armory:
     baseService: gate
     image:
-      imageId: sha256:e4253fba256a35820b5ff5267fb9ee25fa8fd483bcb049979414cd1352f80699
+      imageId: sha256:2db12816b2b23e872dc3781546ed2320ad9bb7015bd19441418b511c6e3f4aef
       repository: armory/gate-armory
       tag: 2026.11.17.11.50.27.release-2.41.x
     vcs:
@@ -86,7 +86,7 @@ services:
   igor-armory:
     baseService: igor
     image:
-      imageId: sha256:e7cebcf2aa8bbbd598a2fbf5a9d6bcce9b9f989188f03ccd94f6185e223c82cf
+      imageId: sha256:37c71124b318b053007be0c9a27f4b3902a7c08a77b93671129b28541af49f8c
       repository: armory/igor-armory
       tag: 2026.11.17.11.50.27.release-2.41.x
     vcs:
@@ -98,7 +98,7 @@ services:
   kayenta-armory:
     baseService: kayenta
     image:
-      imageId: sha256:751e35668948ca45e8025e5585484ed41c449f0565fb8cf34ed833d3b506631e
+      imageId: sha256:1836e318620ffb1dd67f2a8a471bf4339a6d971ee06856ef219f76f79ba95bd6
       repository: armory/kayenta-armory
       tag: 2026.11.17.11.50.27.release-2.41.x
     vcs:
@@ -110,7 +110,7 @@ services:
   orca-armory:
     baseService: orca
     image:
-      imageId: sha256:ceadf5945c084a970000c1784f77ba5e979b3f8edd8df29c5cf56c9c14db4fae
+      imageId: sha256:d6e55fb597606b21346c1deeff8ceba5985fc235ccc9195501576dd1ba49824d
       repository: armory/orca-armory
       tag: 2026.11.17.11.50.27.release-2.41.x
     vcs:
@@ -122,7 +122,7 @@ services:
   rosco-armory:
     baseService: rosco
     image:
-      imageId: sha256:89a5b2b01d9935490521dada62316ae7398c8b16030e36f2c3b5a06a6f69526f
+      imageId: sha256:572030bfbca9036f40c7edafce963a7498a518d365e122be47b9c78fdd13e3ae
       repository: armory/rosco-armory
       tag: 2026.11.17.11.50.27.release-2.41.x
     vcs:
@@ -134,7 +134,7 @@ services:
   terraformer:
     baseService: terraformer
     image:
-      imageId: sha256:55786e6cbe038f03cc0aeab55d6f4a78ca5314e00c7e3a703591db83da0924d7
+      imageId: sha256:58c51cfb48adc4cf5ffaa2f3dcd22e2a1b9d7d18845dd6ac963655bed53162ec
       repository: armory/terraformer
       tag: 2026.11.17.11.50.27.release-2.41.x
     vcs:
