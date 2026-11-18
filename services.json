@@ -11,7 +11,7 @@
     "details": {
       "baseService": "clouddriver",
       "image": {
-        "imageId": "sha256:dcdd4193e15f5f8ae7a98387aae034acbe39aea2b2f3c9bf1a7657c123e8ae1c",
+        "imageId": "sha256:30274371b0fab8a35d76aa953bd12796ac78c5c3a5f115dc85ed3c4febd6e840",
         "repository": "armory/clouddriver-armory",
         "tag": "2026.11.17.13.23.11.main"
       },
@@ -38,7 +38,7 @@
     "details": {
       "baseService": "deck",
       "image": {
-        "imageId": "sha256:2266a5d344677f6133ef26ff1f3c9abaf1a7022d3d94296ab0f23add95e7e548",
+        "imageId": "sha256:b7134d11f2b3b4cfd516d896b592e6246ece478c579c202b9bea1f5a97209978",
         "repository": "armory/deck-armory",
         "tag": "2026.11.17.13.23.11.main"
       },
@@ -63,9 +63,36 @@
       "sha": ""
     },
     "details": {
+      "baseService": "dinghy",
+      "image": {
+        "imageId": "sha256:5958c604447a762f20ae31b68bf18b9e51488626ea42d8ba6b804f96e64eaf01",
+        "repository": "armory/dinghy",
+        "tag": "2026.11.17.13.23.11.main"
+      },
+      "vcs": {
+        "repo": {
+          "orgName": "armory-io",
+          "repoName": "armory-extensions",
+          "type": "github"
+        },
+        "sha": "355befe18d42681bdbb570344dd3bce94343227c"
+      }
+    },
+    "name": "dinghy"
+  },
+  {
+    "baseVcs": {
+      "repo": {
+        "orgName": "spinnaker",
+        "repoName": "spinnaker",
+        "type": "github"
+      },
+      "sha": ""
+    },
+    "details": {
       "baseService": "echo",
       "image": {
-        "imageId": "sha256:ba6695eb6d2850e1a6d76589dca27210cc69479d220eac3574e6afdb28d08847",
+        "imageId": "sha256:b94101d508c7d8e07cf7e5ebf752654ef06cf8ba3b2f478019486b25818b031d",
         "repository": "armory/echo-armory",
         "tag": "2026.11.17.13.23.11.main"
       },
@@ -92,7 +119,7 @@
     "details": {
       "baseService": "fiat",
       "image": {
-        "imageId": "sha256:fa2479f5c4a94704e8e4308e5b6385c4c952ba3f84413006589d386b846f70b4",
+        "imageId": "sha256:39faee145804a8658206e50f9a05b844e2e570b56cad3555dfd335b19fba8f06",
         "repository": "armory/fiat-armory",
         "tag": "2026.11.17.13.23.11.main"
       },
@@ -119,7 +146,7 @@
     "details": {
       "baseService": "front50",
       "image": {
-        "imageId": "sha256:36c2ef593f8c499ffaa649507217978c012c9869a3c68fde8946bc08e3248598",
+        "imageId": "sha256:34bad5f51df20718167968dddb26e4af1e57494fe16c0873b85f5197a8ceba04",
         "repository": "armory/front50-armory",
         "tag": "2026.11.17.13.23.11.main"
       },
@@ -146,7 +173,7 @@
     "details": {
       "baseService": "gate",
       "image": {
-        "imageId": "sha256:ab6a895a83151bd325d279392fb3da8f5f1f4b1bfee76f294715292917727b06",
+        "imageId": "sha256:5728c2c007871ca79cebf67eee6bc8f387711754bb73430acc17f0dcb408e561",
         "repository": "armory/gate-armory",
         "tag": "2026.11.17.13.23.11.main"
       },
@@ -173,7 +200,7 @@
     "details": {
       "baseService": "igor",
       "image": {
-        "imageId": "sha256:b1a514fae1329d9755caa8d2da553ace7cb794596ee7d206361ab803340a8c16",
+        "imageId": "sha256:3993593371f81fec6056426a025e636223e188b2d36eb07b7f489ffa3ba72103",
         "repository": "armory/igor-armory",
         "tag": "2026.11.17.13.23.11.main"
       },
@@ -200,7 +227,7 @@
     "details": {
       "baseService": "kayenta",
       "image": {
-        "imageId": "sha256:10b263be36d63979cdc98e299c8cceef2fea7a1578e4ffca86e9ac193bf2dcb2",
+        "imageId": "sha256:ee499463537865f3a9462cb4eb337f8a0789cd0cd03bf06c7e78a8f787f3a68b",
         "repository": "armory/kayenta-armory",
         "tag": "2026.11.17.13.23.11.main"
       },
@@ -227,7 +254,7 @@
     "details": {
       "baseService": "orca",
       "image": {
-        "imageId": "sha256:789512583d2beaf33b6efe79a6fb511b32648d5f9b74253fc969516e40525a93",
+        "imageId": "sha256:56743af54b8e4eb7165d7e25622535ba81a6dca815273028a360f17483276515",
         "repository": "armory/orca-armory",
         "tag": "2026.11.17.13.23.11.main"
       },
@@ -254,7 +281,7 @@
     "details": {
       "baseService": "rosco",
       "image": {
-        "imageId": "sha256:64eaa5906e5a982669aada14554f225784ea99199cb8eded0d48453249d620a7",
+        "imageId": "sha256:46175a15013c32d589e60e8bb59b768056dbb5f98252ef5fd8da6a0abd1ee014",
         "repository": "armory/rosco-armory",
         "tag": "2026.11.17.13.23.11.main"
       },
@@ -268,5 +295,32 @@
       }
     },
     "name": "rosco-armory"
+  },
+  {
+    "baseVcs": {
+      "repo": {
+        "orgName": "spinnaker",
+        "repoName": "spinnaker",
+        "type": "github"
+      },
+      "sha": ""
+    },
+    "details": {
+      "baseService": "terraformer",
+      "image": {
+        "imageId": "sha256:ca1484022c629d81b8fd8200d4d6e8bebc282520a9edc212b132711537440490",
+        "repository": "armory/terraformer",
+        "tag": "2026.11.17.13.23.11.main"
+      },
+      "vcs": {
+        "repo": {
+          "orgName": "armory-io",
+          "repoName": "armory-extensions",
+          "type": "github"
+        },
+        "sha": "355befe18d42681bdbb570344dd3bce94343227c"
+      }
+    },
+    "name": "terraformer"
   }
 ]
