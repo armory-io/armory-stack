@@ -4,11 +4,11 @@
 
 * **release-2.36.x**
 
-### clouddriver-armory
+### orca-armory
 
-- Image: `armory/clouddriver-armory:2026.11.11.15.24.12.release-2.36.x`
-- Service VCS: [477998e66095b9df6e2fc3ee1e6d8c111f9477cb](https://github.com/armory-io/clouddriver-armory/commit/477998e66095b9df6e2fc3ee1e6d8c111f9477cb)
-- Base Service VCS: [1730ad7c66f7f276b707ddd54688a9ee963760e4](https://github.com/spinnaker/clouddriver/commit/1730ad7c66f7f276b707ddd54688a9ee963760e4)
+- Image: `armory/orca-armory:2026.11.19.09.46.03.release-2.36.x`
+- Service VCS: [1055b51de47fd2969f80b04f740285bdef6442dc](https://github.com/armory-io/orca-armory/commit/1055b51de47fd2969f80b04f740285bdef6442dc)
+- Base Service VCS: [5f3b9f44cf13bbc1fd098e3f6fff4bc19c7712ec](https://github.com/spinnaker/orca/commit/5f3b9f44cf13bbc1fd098e3f6fff4bc19c7712ec)
 
 Event Payload
 ```json
@@ -18,55 +18,55 @@ Event Payload
     "baseVcs": {
       "repo": {
         "orgName": "spinnaker",
-        "repoName": "clouddriver",
+        "repoName": "orca",
         "type": "github"
       },
-      "sha": "1730ad7c66f7f276b707ddd54688a9ee963760e4"
+      "sha": "5f3b9f44cf13bbc1fd098e3f6fff4bc19c7712ec"
     },
     "details": {
-      "baseService": "clouddriver",
+      "baseService": "orca",
       "image": {
-        "imageId": "sha256:cf37a175f77e3ca25707465c68320117720c789c70cda5777fcb42b2215a4210",
-        "repository": "armory/clouddriver-armory",
-        "tag": "2026.11.11.15.24.12.release-2.36.x"
+        "imageId": "sha256:f2db58d4b2e6993d8a83f860a5888b434ab8657b7d99da7b83a827203d80a412",
+        "repository": "armory/orca-armory",
+        "tag": "2026.11.19.09.46.03.release-2.36.x"
       },
       "vcs": {
         "repo": {
           "orgName": "armory-io",
-          "repoName": "clouddriver-armory",
+          "repoName": "orca-armory",
           "type": "github"
         },
-        "sha": "477998e66095b9df6e2fc3ee1e6d8c111f9477cb"
+        "sha": "1055b51de47fd2969f80b04f740285bdef6442dc"
       }
     },
-    "name": "clouddriver-armory"
+    "name": "orca-armory"
   },
   "stackEntry": {
     "baseVcs": {
       "repo": {
         "orgName": "spinnaker",
-        "repoName": "clouddriver",
+        "repoName": "orca",
         "type": "github"
       },
-      "sha": "1730ad7c66f7f276b707ddd54688a9ee963760e4"
+      "sha": "5f3b9f44cf13bbc1fd098e3f6fff4bc19c7712ec"
     },
     "details": {
-      "baseService": "clouddriver",
+      "baseService": "orca",
       "image": {
-        "imageId": "sha256:cf37a175f77e3ca25707465c68320117720c789c70cda5777fcb42b2215a4210",
-        "repository": "armory/clouddriver-armory",
-        "tag": "2026.11.11.15.24.12.release-2.36.x"
+        "imageId": "sha256:f2db58d4b2e6993d8a83f860a5888b434ab8657b7d99da7b83a827203d80a412",
+        "repository": "armory/orca-armory",
+        "tag": "2026.11.19.09.46.03.release-2.36.x"
       },
       "vcs": {
         "repo": {
           "orgName": "armory-io",
-          "repoName": "clouddriver-armory",
+          "repoName": "orca-armory",
           "type": "github"
         },
-        "sha": "477998e66095b9df6e2fc3ee1e6d8c111f9477cb"
+        "sha": "1055b51de47fd2969f80b04f740285bdef6442dc"
       }
     },
-    "name": "clouddriver-armory"
+    "name": "orca-armory"
   },
   "stackFile": "stack.yml",
   "stackPath": "services"
