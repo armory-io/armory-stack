@@ -4,11 +4,11 @@
 
 * **release-2.36.x**
 
-### clouddriver-armory
+### front50-armory
 
-- Image: `armory/clouddriver-armory:2026.11.11.15.24.12.release-2.36.x`
-- Service VCS: [477998e66095b9df6e2fc3ee1e6d8c111f9477cb](https://github.com/armory-io/clouddriver-armory/commit/477998e66095b9df6e2fc3ee1e6d8c111f9477cb)
-- Base Service VCS: [1730ad7c66f7f276b707ddd54688a9ee963760e4](https://github.com/spinnaker/clouddriver/commit/1730ad7c66f7f276b707ddd54688a9ee963760e4)
+- Image: `armory/front50-armory:2026.11.19.09.45.42.release-2.36.x`
+- Service VCS: [bafaab49ee585926df79a447b34924491e248124](https://github.com/armory-io/front50-armory/commit/bafaab49ee585926df79a447b34924491e248124)
+- Base Service VCS: [3325d3cd364842342b3fb04c8fd349eb9ca31fb9](https://github.com/spinnaker/front50/commit/3325d3cd364842342b3fb04c8fd349eb9ca31fb9)
 
 Event Payload
 ```json
@@ -18,55 +18,55 @@ Event Payload
     "baseVcs": {
       "repo": {
         "orgName": "spinnaker",
-        "repoName": "clouddriver",
+        "repoName": "front50",
         "type": "github"
       },
-      "sha": "1730ad7c66f7f276b707ddd54688a9ee963760e4"
+      "sha": "3325d3cd364842342b3fb04c8fd349eb9ca31fb9"
     },
     "details": {
-      "baseService": "clouddriver",
+      "baseService": "front50",
       "image": {
-        "imageId": "sha256:cf37a175f77e3ca25707465c68320117720c789c70cda5777fcb42b2215a4210",
-        "repository": "armory/clouddriver-armory",
-        "tag": "2026.11.11.15.24.12.release-2.36.x"
+        "imageId": "sha256:c6f733c04509ec3b74cbe52f576e21c4ee6d4c4ae1bdd37355226eef71948f57",
+        "repository": "armory/front50-armory",
+        "tag": "2026.11.19.09.45.42.release-2.36.x"
       },
       "vcs": {
         "repo": {
           "orgName": "armory-io",
-          "repoName": "clouddriver-armory",
+          "repoName": "front50-armory",
           "type": "github"
         },
-        "sha": "477998e66095b9df6e2fc3ee1e6d8c111f9477cb"
+        "sha": "bafaab49ee585926df79a447b34924491e248124"
       }
     },
-    "name": "clouddriver-armory"
+    "name": "front50-armory"
   },
   "stackEntry": {
     "baseVcs": {
       "repo": {
         "orgName": "spinnaker",
-        "repoName": "clouddriver",
+        "repoName": "front50",
         "type": "github"
       },
-      "sha": "1730ad7c66f7f276b707ddd54688a9ee963760e4"
+      "sha": "3325d3cd364842342b3fb04c8fd349eb9ca31fb9"
     },
     "details": {
-      "baseService": "clouddriver",
+      "baseService": "front50",
       "image": {
-        "imageId": "sha256:cf37a175f77e3ca25707465c68320117720c789c70cda5777fcb42b2215a4210",
-        "repository": "armory/clouddriver-armory",
-        "tag": "2026.11.11.15.24.12.release-2.36.x"
+        "imageId": "sha256:c6f733c04509ec3b74cbe52f576e21c4ee6d4c4ae1bdd37355226eef71948f57",
+        "repository": "armory/front50-armory",
+        "tag": "2026.11.19.09.45.42.release-2.36.x"
       },
       "vcs": {
         "repo": {
           "orgName": "armory-io",
-          "repoName": "clouddriver-armory",
+          "repoName": "front50-armory",
           "type": "github"
         },
-        "sha": "477998e66095b9df6e2fc3ee1e6d8c111f9477cb"
+        "sha": "bafaab49ee585926df79a447b34924491e248124"
       }
     },
-    "name": "clouddriver-armory"
+    "name": "front50-armory"
   },
   "stackFile": "stack.yml",
   "stackPath": "services"
