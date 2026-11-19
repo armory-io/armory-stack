@@ -81,7 +81,7 @@ Event Payload
       "details": {
         "baseService": "clouddriver",
         "image": {
-          "imageId": "sha256:ce6ee8fc69a2f0bdbe2c79785b2f3815907750b508e5cea87fed05a183b6c6a5",
+          "imageId": "sha256:4bdbc692d1747e0f78827b65031a253ac4c5a2f4de244e03265a96f188925078",
           "repository": "armory/clouddriver-armory",
           "tag": "2026.11.17.12.00.44.release-2.42.x"
         },
@@ -108,7 +108,7 @@ Event Payload
       "details": {
         "baseService": "deck",
         "image": {
-          "imageId": "sha256:b28850c43b987598fe0b7aa8d1ffaa3e09ca769ca0ceb57af1480267f2fc2352",
+          "imageId": "sha256:f18b28915a3e286beec5f01db1e65946975ce00853fda6b3439191ae367bc872",
           "repository": "armory/deck-armory",
           "tag": "2026.11.17.12.00.44.release-2.42.x"
         },
@@ -135,7 +135,7 @@ Event Payload
       "details": {
         "baseService": "echo",
         "image": {
-          "imageId": "sha256:31c0c4034df6a1d9b55095196a4fcb39d5b0337c0510b8977ab383a8379bbab4",
+          "imageId": "sha256:a529633ffebc8e87d76d20e0c1a74e2ace103c919b6cd82c41d7566b33acb735",
           "repository": "armory/echo-armory",
           "tag": "2026.11.17.12.00.44.release-2.42.x"
         },
@@ -162,7 +162,7 @@ Event Payload
       "details": {
         "baseService": "fiat",
         "image": {
-          "imageId": "sha256:3462a938433516ca92464e97e11f52459f1c70194501966ddbc63303f0a8103c",
+          "imageId": "sha256:306c312ce939583fb568defda5976c376bbf5d4852943fb7b0a074b3d91f51e9",
           "repository": "armory/fiat-armory",
           "tag": "2026.11.17.12.00.44.release-2.42.x"
         },
@@ -189,7 +189,7 @@ Event Payload
       "details": {
         "baseService": "front50",
         "image": {
-          "imageId": "sha256:505a7e42f3abfb2b21ff0cc3f7099039f971bf34463c9f475f398de0798034b4",
+          "imageId": "sha256:c60d6ff0bcce0dc1b17aeda0701e3136335c00936fb05222c2a66efb026083a8",
           "repository": "armory/front50-armory",
           "tag": "2026.11.17.12.00.44.release-2.42.x"
         },
@@ -216,7 +216,7 @@ Event Payload
       "details": {
         "baseService": "gate",
         "image": {
-          "imageId": "sha256:9ba6a0f8dd27e8ba688b4b4c7d7b4c15fd5c24b82f41ed52c83d90bd3c62616a",
+          "imageId": "sha256:4e17371f82324dc9f9a4306ade5f11019def69e2c9514793a1a95751bb0e3356",
           "repository": "armory/gate-armory",
           "tag": "2026.11.17.12.00.44.release-2.42.x"
         },
@@ -243,7 +243,7 @@ Event Payload
       "details": {
         "baseService": "igor",
         "image": {
-          "imageId": "sha256:96c03fd3b5be8dd5e0f60f1bb9049a831997f119a1a09be2a102093274b72f65",
+          "imageId": "sha256:735db1e7d0017d83e35a266579469538e85e25934f0c3b21179d08255d62986d",
           "repository": "armory/igor-armory",
           "tag": "2026.11.17.12.00.44.release-2.42.x"
         },
@@ -270,7 +270,7 @@ Event Payload
       "details": {
         "baseService": "kayenta",
         "image": {
-          "imageId": "sha256:daa86b4fb4a3b3504dd77f0c89f1bb1989ad042fd6529af3e557b8f981f774a8",
+          "imageId": "sha256:a479616afb84e03450a8ebaf2197b0a87393a97186ac402f85dc3500cfc28e4a",
           "repository": "armory/kayenta-armory",
           "tag": "2026.11.17.12.00.44.release-2.42.x"
         },
@@ -297,7 +297,7 @@ Event Payload
       "details": {
         "baseService": "orca",
         "image": {
-          "imageId": "sha256:2a37723f061026a989d9be30cc79bbf89d30e61e71df2e90fda7f8eeac5c6ca0",
+          "imageId": "sha256:6930badca47b4466fd4e3ad64d7ba5d8453edef0a0690b0c6450d8316eabdec9",
           "repository": "armory/orca-armory",
           "tag": "2026.11.17.12.00.44.release-2.42.x"
         },
@@ -324,7 +324,7 @@ Event Payload
       "details": {
         "baseService": "rosco",
         "image": {
-          "imageId": "sha256:e672875dfd584e3cdc7537215a2a46aedd369df7e9f03c108f249f47860d36de",
+          "imageId": "sha256:0e6431db6e8d81178c2c1cefa903814162e43b547dd7d503a0559c042c110d43",
           "repository": "armory/rosco-armory",
           "tag": "2026.11.17.12.00.44.release-2.42.x"
         },
