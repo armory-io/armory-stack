@@ -11,9 +11,9 @@
     "details": {
       "baseService": "clouddriver",
       "image": {
-        "imageId": "sha256:cf37a175f77e3ca25707465c68320117720c789c70cda5777fcb42b2215a4210",
+        "imageId": "sha256:2be55dc6d74e3a83a533aee7e62d4c1e09df8f97b11d6fde069ac950dae8db17",
         "repository": "armory/clouddriver-armory",
-        "tag": "2026.11.11.15.24.12.release-2.36.x"
+        "tag": "2026.11.19.09.45.26.release-2.36.x"
       },
       "vcs": {
         "repo": {
@@ -21,7 +21,7 @@
           "repoName": "clouddriver-armory",
           "type": "github"
         },
-        "sha": "477998e66095b9df6e2fc3ee1e6d8c111f9477cb"
+        "sha": "0f59598ad4b065329b41d5c65ed925bbd1c80b3f"
       }
     },
     "name": "clouddriver-armory"
