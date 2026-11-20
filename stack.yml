@@ -2,7 +2,7 @@ services:
   clouddriver-armory:
     baseService: clouddriver
     image:
-      imageId: sha256:5a000db9e9a5ffae95b5d3c680cf8d697832464ad585f58cf41cd46356cd8e6b
+      imageId: sha256:c23a4c9411f912f684d1376e755150c700b379fddc5ce406ffb1847112dd6884
       repository: armory/clouddriver-armory
       tag: 2026.11.17.13.23.11.main
     vcs:
@@ -14,7 +14,7 @@ services:
   deck-armory:
     baseService: deck
     image:
-      imageId: sha256:6e38328e399fdc1c0c76a0f13ea90038416c4362583c7c7d8cdbf3be0a83f2c4
+      imageId: sha256:c2c8738382d7f8fe23873d79f07da08793e39d8e7ac2c44756a80c24b6e2c781
       repository: armory/deck-armory
       tag: 2026.11.17.13.23.11.main
     vcs:
@@ -26,7 +26,7 @@ services:
   dinghy:
     baseService: dinghy
     image:
-      imageId: sha256:1aef419f026431e32d63046a8333ae68e8d88c85c0a1979c651b5efd962291fe
+      imageId: sha256:b316c084ec8958f4f38a65c625854f19c1f19277c4349473974e701aea70b6d3
       repository: armory/dinghy
       tag: 2026.11.17.13.23.11.main
     vcs:
@@ -38,7 +38,7 @@ services:
   echo-armory:
     baseService: echo
     image:
-      imageId: sha256:5b60e5f2a15924108c2b85b98961fd3ff8b37b1f7a97df228593f61b799ee959
+      imageId: sha256:73540042d40911a919a71854bf30f14f64df0e929c99a6076afaa1b68c561b67
       repository: armory/echo-armory
       tag: 2026.11.17.13.23.11.main
     vcs:
@@ -50,7 +50,7 @@ services:
   fiat-armory:
     baseService: fiat
     image:
-      imageId: sha256:8bfcf2c8dd18d4ddfac212fa9b99ca0d5941ea168b1f308080180914ceaf41c8
+      imageId: sha256:6233ca3b152036c950a8c13e5dbb4dfbb32f1f4708c3c78e81cf3c134eba2f40
       repository: armory/fiat-armory
       tag: 2026.11.17.13.23.11.main
     vcs:
@@ -62,7 +62,7 @@ services:
   front50-armory:
     baseService: front50
     image:
-      imageId: sha256:070b7f7c63281ee2388fb51d7d4e1d5308d60196920e0b626f3b81cd9221d0c5
+      imageId: sha256:a2a2ca06be7ddaa1ef4bb41030578b5bcf86f0d68a98f317d211935231dcf550
       repository: armory/front50-armory
       tag: 2026.11.17.13.23.11.main
     vcs:
@@ -74,7 +74,7 @@ services:
   gate-armory:
     baseService: gate
     image:
-      imageId: sha256:82560985170dab882ab5a9b17bb3ee429b2180dff09d5e8f709a017a58711fa7
+      imageId: sha256:93a2136999163ee36353f379a2ec4c4065cfc7e54a1b96fffa73279234e0b002
       repository: armory/gate-armory
       tag: 2026.11.17.13.23.11.main
     vcs:
@@ -86,7 +86,7 @@ services:
   igor-armory:
     baseService: igor
     image:
-      imageId: sha256:4959e1b54f96951b91d74dedaf3e8f24fe3a2e8314920501b7502ff20e23e780
+      imageId: sha256:a76418b403737ac9d0b22054d144fdecf13f791027a434a3963305e16a2cbdd0
       repository: armory/igor-armory
       tag: 2026.11.17.13.23.11.main
     vcs:
@@ -98,7 +98,7 @@ services:
   kayenta-armory:
     baseService: kayenta
     image:
-      imageId: sha256:d59774fd228a75dc280c58f91bc4fa97eed42343340aa2c228c17912035bd5ba
+      imageId: sha256:ed276b7df310331bd5d79d35a29076766ac60455fe6c79bce4a0fadf334da1e3
       repository: armory/kayenta-armory
       tag: 2026.11.17.13.23.11.main
     vcs:
@@ -110,7 +110,7 @@ services:
   orca-armory:
     baseService: orca
     image:
-      imageId: sha256:95a478ecd466d96f2bd620af0c43e88c420a296dc95c712ebaf60251c8a47146
+      imageId: sha256:2abee35d3f015b18a9cfc264b317ef8c0f61206de72a29e66117259fdaf85725
       repository: armory/orca-armory
       tag: 2026.11.17.13.23.11.main
     vcs:
@@ -122,7 +122,7 @@ services:
   rosco-armory:
     baseService: rosco
     image:
-      imageId: sha256:7705204c5e1eda22d167c6c6db15362bcab799efe22d4cf2190e843f71753e57
+      imageId: sha256:cfe742383d41a26249cf6eec654b405bd996069ba40159acd394a870b02e19c7
       repository: armory/rosco-armory
       tag: 2026.11.17.13.23.11.main
     vcs:
@@ -134,7 +134,7 @@ services:
   terraformer:
     baseService: terraformer
     image:
-      imageId: sha256:a2674bd5f93193573714fa5bacf878979c8a0479cb98203c6815d94a5d8c2157
+      imageId: sha256:453654d18041dfdd8cb18e798ca8e03335fa18077fefaa778daa9fd8c585459b
       repository: armory/terraformer
       tag: 2026.11.17.13.23.11.main
     vcs:
