@@ -28,6 +28,12 @@
 - Service VCS: [355befe18d42681bdbb570344dd3bce94343227c](https://github.com/armory-io/armory-extensions/commit/355befe18d42681bdbb570344dd3bce94343227c)
 - Base Service VCS: [](https://github.com/spinnaker/spinnaker/commit/)
 
+### fiat-armory
+
+- Image: `armory/fiat-armory:2026.11.17.13.23.11.main`
+- Service VCS: [355befe18d42681bdbb570344dd3bce94343227c](https://github.com/armory-io/armory-extensions/commit/355befe18d42681bdbb570344dd3bce94343227c)
+- Base Service VCS: [](https://github.com/spinnaker/spinnaker/commit/)
+
 ### front50-armory
 
 - Image: `armory/front50-armory:2026.11.17.13.23.11.main`
@@ -182,6 +188,33 @@ Event Payload
         }
       },
       "name": "echo-armory"
+    },
+    {
+      "baseVcs": {
+        "repo": {
+          "orgName": "spinnaker",
+          "repoName": "spinnaker",
+          "type": "github"
+        },
+        "sha": ""
+      },
+      "details": {
+        "baseService": "fiat",
+        "image": {
+          "imageId": "sha256:8bfcf2c8dd18d4ddfac212fa9b99ca0d5941ea168b1f308080180914ceaf41c8",
+          "repository": "armory/fiat-armory",
+          "tag": "2026.11.17.13.23.11.main"
+        },
+        "vcs": {
+          "repo": {
+            "orgName": "armory-io",
+            "repoName": "armory-extensions",
+            "type": "github"
+          },
+          "sha": "355befe18d42681bdbb570344dd3bce94343227c"
+        }
+      },
+      "name": "fiat-armory"
     },
     {
       "baseVcs": {
