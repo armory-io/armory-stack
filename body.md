@@ -22,6 +22,12 @@
 - Service VCS: [08c2dfae0ac29ccbe9c89cf85b1da064f8f62ca1](https://github.com/armory-io/armory-extensions/commit/08c2dfae0ac29ccbe9c89cf85b1da064f8f62ca1)
 - Base Service VCS: [](https://github.com/spinnaker/spinnaker/commit/)
 
+### echo-armory
+
+- Image: `armory/echo-armory:2026.11.17.11.54.00.release-2.40.x`
+- Service VCS: [08c2dfae0ac29ccbe9c89cf85b1da064f8f62ca1](https://github.com/armory-io/armory-extensions/commit/08c2dfae0ac29ccbe9c89cf85b1da064f8f62ca1)
+- Base Service VCS: [](https://github.com/spinnaker/spinnaker/commit/)
+
 ### fiat-armory
 
 - Image: `armory/fiat-armory:2026.11.17.11.54.00.release-2.40.x`
@@ -155,6 +161,33 @@ Event Payload
         }
       },
       "name": "dinghy"
+    },
+    {
+      "baseVcs": {
+        "repo": {
+          "orgName": "spinnaker",
+          "repoName": "spinnaker",
+          "type": "github"
+        },
+        "sha": ""
+      },
+      "details": {
+        "baseService": "echo",
+        "image": {
+          "imageId": "sha256:c2d1b8110df28ab66133b48489b96a32b90f238c846eda8042adcb15e7025a41",
+          "repository": "armory/echo-armory",
+          "tag": "2026.11.17.11.54.00.release-2.40.x"
+        },
+        "vcs": {
+          "repo": {
+            "orgName": "armory-io",
+            "repoName": "armory-extensions",
+            "type": "github"
+          },
+          "sha": "08c2dfae0ac29ccbe9c89cf85b1da064f8f62ca1"
+        }
+      },
+      "name": "echo-armory"
     },
     {
       "baseVcs": {
