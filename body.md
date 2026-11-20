@@ -93,7 +93,7 @@ Event Payload
       "details": {
         "baseService": "clouddriver",
         "image": {
-          "imageId": "sha256:e379811b12b25d55d424c3a52ee24481086122d4552f309fa2a5fb6591857893",
+          "imageId": "sha256:1571540c94e3496537e3fd0ab8cfc141700160b725704ab75017ac032e4db2d8",
           "repository": "armory/clouddriver-armory",
           "tag": "2026.11.17.11.54.00.release-2.40.x"
         },
@@ -120,7 +120,7 @@ Event Payload
       "details": {
         "baseService": "deck",
         "image": {
-          "imageId": "sha256:bccff10782df82c882beb50d380efc93da701d8c0b2eb2feeeabd0c56e4e2426",
+          "imageId": "sha256:f517c1d767945e6744f14b61af48fe4644a0cccb0fda44655c901c2dd163e1b6",
           "repository": "armory/deck-armory",
           "tag": "2026.11.17.11.54.00.release-2.40.x"
         },
@@ -147,7 +147,7 @@ Event Payload
       "details": {
         "baseService": "dinghy",
         "image": {
-          "imageId": "sha256:ec7e35e33a6cc047b93709376350d1a12583add2085f7b574eab99270000f2d1",
+          "imageId": "sha256:f364a04eeb92223814f45eaa2edc00a8f69ef16e95bd81615825dd70f8d6ce79",
           "repository": "armory/dinghy",
           "tag": "2026.11.17.11.54.00.release-2.40.x"
         },
@@ -174,7 +174,7 @@ Event Payload
       "details": {
         "baseService": "echo",
         "image": {
-          "imageId": "sha256:c2d1b8110df28ab66133b48489b96a32b90f238c846eda8042adcb15e7025a41",
+          "imageId": "sha256:59283f2332a30020a35f1278ac0eb7293aa033df75289e00b9d08de3e6b39aea",
           "repository": "armory/echo-armory",
           "tag": "2026.11.17.11.54.00.release-2.40.x"
         },
@@ -201,7 +201,7 @@ Event Payload
       "details": {
         "baseService": "fiat",
         "image": {
-          "imageId": "sha256:e0d5f06ffdd525ae9656d2c933ac0800c483a776d4bc7102b86037b5be7275da",
+          "imageId": "sha256:b8df1c57ff395e532dc334fd8d3e6b1bdd6ee1ef14d4bfdfa0388019bae93592",
           "repository": "armory/fiat-armory",
           "tag": "2026.11.17.11.54.00.release-2.40.x"
         },
@@ -228,7 +228,7 @@ Event Payload
       "details": {
         "baseService": "front50",
         "image": {
-          "imageId": "sha256:d1705303a67965b44e07b5bc6a7b995b35f8c90fa8c841d998c1528a74eca536",
+          "imageId": "sha256:c599e603e2119ddee39793fc26bd72c4ac23727483a84dad9ad8cfc4bd44b833",
           "repository": "armory/front50-armory",
           "tag": "2026.11.17.11.54.00.release-2.40.x"
         },
@@ -255,7 +255,7 @@ Event Payload
       "details": {
         "baseService": "gate",
         "image": {
-          "imageId": "sha256:edef6cff43a83772b34c863b7b039c6bbe8626199cd7a5081298b88a841b6fee",
+          "imageId": "sha256:7ecf4d6495198558ef961bbb44bd9eb3668b719785dde21dcc91572911f8239d",
           "repository": "armory/gate-armory",
           "tag": "2026.11.17.11.54.00.release-2.40.x"
         },
@@ -282,7 +282,7 @@ Event Payload
       "details": {
         "baseService": "igor",
         "image": {
-          "imageId": "sha256:50c04a925e163ee08f64a1b0e8f58798c57c817b6d782844133f61e77b0ec026",
+          "imageId": "sha256:8177ff5527fcd1b7d00885247faa385e1c506a17be2a6f9870389f1d6ce6c98d",
           "repository": "armory/igor-armory",
           "tag": "2026.11.17.11.54.00.release-2.40.x"
         },
@@ -309,7 +309,7 @@ Event Payload
       "details": {
         "baseService": "kayenta",
         "image": {
-          "imageId": "sha256:593f40d97ba11b25527e5538f810460ed1ed811016fa26102b6583d232fc0561",
+          "imageId": "sha256:198a44bc19b42494ba338221b94e0ab178a1ce559a3c7517799da35f498916e3",
           "repository": "armory/kayenta-armory",
           "tag": "2026.11.17.11.54.00.release-2.40.x"
         },
@@ -336,7 +336,7 @@ Event Payload
       "details": {
         "baseService": "orca",
         "image": {
-          "imageId": "sha256:a922e5f86fb214ea9df669f8f6d6e60f6dfaf3fa182d87010cf5e12b04847482",
+          "imageId": "sha256:fc969e9a91dd9c7677a1cdc47159c58fedf55e42c9054f368c606e472f2e0d37",
           "repository": "armory/orca-armory",
           "tag": "2026.11.17.11.54.00.release-2.40.x"
         },
@@ -363,7 +363,7 @@ Event Payload
       "details": {
         "baseService": "rosco",
         "image": {
-          "imageId": "sha256:3764712e964246fdfd62d98521da0eb13a3974c0d3cf61f16dc0802805a72d2d",
+          "imageId": "sha256:abe2cee78d592bebca8d0899ec62198282167ffce9003de74361f515b2c3f3f0",
           "repository": "armory/rosco-armory",
           "tag": "2026.11.17.11.54.00.release-2.40.x"
         },
@@ -390,7 +390,7 @@ Event Payload
       "details": {
         "baseService": "terraformer",
         "image": {
-          "imageId": "sha256:b50e3d3494f4c9af814e3f1e5a898e9e5f73d8646c7228e99c2d9f911a8df301",
+          "imageId": "sha256:d6e8673abfa686c8fd82d7dc9171e4821ba6693c8a3557de6037087084af76c1",
           "repository": "armory/terraformer",
           "tag": "2026.11.17.11.54.00.release-2.40.x"
         },
