@@ -117,6 +117,33 @@
       "sha": ""
     },
     "details": {
+      "baseService": "fiat",
+      "image": {
+        "imageId": "sha256:8bfcf2c8dd18d4ddfac212fa9b99ca0d5941ea168b1f308080180914ceaf41c8",
+        "repository": "armory/fiat-armory",
+        "tag": "2026.11.17.13.23.11.main"
+      },
+      "vcs": {
+        "repo": {
+          "orgName": "armory-io",
+          "repoName": "armory-extensions",
+          "type": "github"
+        },
+        "sha": "355befe18d42681bdbb570344dd3bce94343227c"
+      }
+    },
+    "name": "fiat-armory"
+  },
+  {
+    "baseVcs": {
+      "repo": {
+        "orgName": "spinnaker",
+        "repoName": "spinnaker",
+        "type": "github"
+      },
+      "sha": ""
+    },
+    "details": {
       "baseService": "front50",
       "image": {
         "imageId": "sha256:070b7f7c63281ee2388fb51d7d4e1d5308d60196920e0b626f3b81cd9221d0c5",
